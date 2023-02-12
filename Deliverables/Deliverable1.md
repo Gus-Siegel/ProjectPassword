@@ -47,7 +47,7 @@ Interview 2:
  Shawna Nielsen Interviewed by Taylor Nielsen
  - When: Friday 9:30 Am 2/10/2023
  - Customer segment
- I choose to interview this customer because they r0
+ I choose to interview this customer because they represent someone who has very limited knowledge around technology. They use technology every day but severely struggle to manage most aspects of organization and navigation when it comes to electronics and accounts. 
  
  - Key insights from the interview:
  Interviewee has very little understanding surrounding password set ups and management. Selects the hardest password suggested by apple products but has not set up password management across devices and can not replicate the password. Must use dedicated device associated with setting up the password. Interviewee trusts finger print log in and understands that our system would also use a type of biometric evaluation. Thinks it would be much easier to use than typical password log in systems.
