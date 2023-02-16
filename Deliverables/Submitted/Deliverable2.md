@@ -24,9 +24,9 @@ Group Members: Taylor Nielsen, Eduardo De La Rosa, Alexander Siegel, Brock Heinz
 
 ## 2. Stakeholders
 
-**Users**: [INSERT HERE]
-**Competitors**: [INSERT HERE]
-**Detractors**: [INSERT HERE]
+**Users**: [INSERT HERE]\
+**Competitors**: [INSERT HERE]\
+**Detractors**: [INSERT HERE]\
 **Developers**: [INSERT HERE]
 
 ## 3. Functional requirements (features)
