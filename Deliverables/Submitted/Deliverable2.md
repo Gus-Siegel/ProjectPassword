@@ -1,7 +1,4 @@
-
 # D.2 Requirements
-
-# D.1 Project Inception
 
 Group 04 – “TypeLock”\
 Date: Feb 16, 2023\
@@ -140,7 +137,7 @@ Group Members: Taylor Nielsen, Eduardo De La Rosa, Alexander Siegel, Brock Heinz
 
 **Alternative Flow**: [INSERT HERE]
 
-# 7. User stories
+## 7. User stories
 
 **User story 1**: [INSERT HERE]\
 Priority Level: [INSERT HERE]\
