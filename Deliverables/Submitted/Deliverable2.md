@@ -34,10 +34,20 @@ Group Members: Taylor Nielsen, Eduardo De La Rosa, Alexander Siegel, Brock Heinz
 
 ## 4. Non-functional requirements
 
-- [INSERT HERE]
-- [INSERT HERE]
-- [INSERT HERE]
-- [INSERT HERE]
+1. readability,maintainability\
+Three sections: back-end, front-end, server. Each is written in the same language. \
+Importance: Partitioning each part will create modularity and help identify input/output needed for each section. 
+Each section is written in the same language so that functions in each section are compatible. \
+Verifiability: No section computes something that another section was assigned, each section is written in one language. 
+2. reliability\
+Available to users on different devices\
+Importance: Users are able to access their account several devices, so that their devices are compatible. \
+Verifiability: The system can be used on most device types, and does not limit the account to be used on exactly one device. 
+3. functionally suitable\
+Backend algorithms correctly identify users by their typing style. \
+Importance: Users need to be able to log into their account, and not be able to log into others' accounts. \
+Verifiability: A user is verified by the system when using their account, and rejected by the system when using another user's account. 
+
 
 ## 5. MVP
 
@@ -179,12 +189,12 @@ Estimated Hours: [INSERT HERE]
 Priority Level: [INSERT HERE]\
 Estimated Hours: [INSERT HERE]
 
-**User story 11**: [INSERT HERE]\
-Priority Level: [INSERT HERE]\
+**User story 11**: As a busy person, I want a quick and consistent way to log in to my account, so that I do not need to spend excessive time logging in. \
+Priority Level: Nice to have\
 Estimated Hours: [INSERT HERE]
 
-**User story 12**: [INSERT HERE]\
-Priority Level: [INSERT HERE]\
+**User story 12**: As a forgetful person, I want to not need to remember a password, so that I do not need to remember information to log in. \
+Priority Level: Nice to have\
 Estimated Hours: [INSERT HERE]
 
 ## 8. Issue Tracker
