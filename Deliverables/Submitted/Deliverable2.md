@@ -30,9 +30,9 @@ Internet users that have difficulty keeping track of their passwords and logging
 
 ## 3. Functional requirements (features)
 
-- [INSERT HERE]
-- [INSERT HERE]
-- [INSERT HERE]
+- Identify user based on how they type\
+- Account is secure from others \
+- Account is still easy to log into 
 
 ## 4. Non-functional requirements
 
@@ -160,13 +160,13 @@ Estimated Hours: [48 hours]
 Priority Level: [10]\
 Estimated Hours: [76 hours]
 
-**User story 3**: [INSERT HERE]\
-Priority Level: [INSERT HERE]\
-Estimated Hours: [INSERT HERE]
+**User story 3**: [As a developer, I want to be able to switch keyboards and still log into my account]\
+Priority Level: [4]\
+Estimated Hours: [60 hours]
 
-**User story 4**: [INSERT HERE]\
-Priority Level: [INSERT HERE]\
-Estimated Hours: [INSERT HERE]
+**User story 4**: [As a user, I want to be able to log in when its cold and my fingers aren't working]\
+Priority Level: [5]\
+Estimated Hours: [60 hours]
 
 **User story 5**: [INSERT HERE]\
 Priority Level: [INSERT HERE]\
