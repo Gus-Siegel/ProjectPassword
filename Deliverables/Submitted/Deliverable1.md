@@ -228,14 +228,6 @@ TypeLock is a free and convenient application designed to help users securely ac
 - Interviewee is somewhat skeptical as to the accuracy of typing style as proof of identity (particularly when handled outside a professional software engineering team), but says that the tech could be useful if someone got it to work as intended.
 
 **Representative quotes:**
-- "Biometrics are useful because it's easily accessible, and you don't have to go through the effort of changing such-and-such passwords on a routine basis. That's not the case with string-based keys, because you have to constantly keep things fresh to make sure the company doesn't lose a lot of important stuff."
-
-
-**Key insights from the interview:**
-- Interviewee is somewhat skeptical as to the accuracy of typing style as proof of identity (particularly when handled outside a professional software engineering team), but says that the tech could be useful if someone got it to work as intended.
-
-**Representative quotes:**
-- "Biometrics are useful because it's easily accessible, and you don't have to go through the effort of changing such-and-such passwords on a routine basis. That's not the case with string-based keys, because you have to constantly keep things fresh to make sure the company doesn't lose a lot of important stuff."
 
 - "Biometrics are useful because it's easily accessible, and you don't have to go through the effort of changing such-and-such passwords on a routine basis. That's not the case with string-based keys, because you have to constantly keep things fresh to make sure the company doesn't lose a lot of important stuff."
 
