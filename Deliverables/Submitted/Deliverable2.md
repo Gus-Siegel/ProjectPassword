@@ -53,9 +53,12 @@ Verifiability: A user is verified by the system when using their account, and re
 
 ## 5. MVP
 
-- [INSERT HERE]
-- [INSERT HERE]
-- [INSERT HERE]
+Even in the final version, any servers or user login systems we add will end up serving as a practical demonstration of the core product-- which is
+fundamentally a **tool** to be used in _other_ products.
+Therefore a minimum viable product for this program, since its primary function is its entire value, would be an isolated version of our typing recognition method.
+That MVP must be able to build a typing style dataset from a sample size of user inputs, and recognize if further inputs of the phrase match the style within a
+certain tolerance level. We will need to validate that the system is able to accurately recognize style at a statistically consistent rate via
+iterative implementation and user testing cycles.
 
 ## 6. Use cases
 
