@@ -23,10 +23,10 @@ Internet users that have difficulty keeping track of their passwords and logging
 
 ## 2. Stakeholders
 
-**Users**: [INSERT HERE]\
-**Competitors**: [INSERT HERE]\
-**Detractors**: [INSERT HERE]\
-**Developers**: [INSERT HERE]
+**Users**: Companies looking for the next big login method, people that don't want to remember many different passwords.\
+**Competitors**: FaceID and Fingerprint Scan password companies\
+**Detractors**: People that don't think reading someone's typing style is secure enough for a password.\
+**Developers**: Alexander Siegel, Brock Heinz, Eduardo De La Rosa, Levi Watlington, Michael Vertin, Taylor Nielsen
 
 ## 3. Functional requirements (features)
 
@@ -178,27 +178,27 @@ Estimated Hours: [INSERT HERE]
 
 **User story 7**: [INSERT HERE]\
 Priority Level: [INSERT HERE]\
-Estimated Hours: [INSERT HERE]
+Estimated Hours: [INSERT HERE]\
 
-**User story 8**: [INSERT HERE]\
+**User story 8**:[INSERT HERE]\
 Priority Level: [INSERT HERE]\
-Estimated Hours: [INSERT HERE]
+Estimated Hours: [INSERT HERE]\
 
-**User story 9**: [INSERT HERE]\
-Priority Level: [INSERT HERE]\
-Estimated Hours: [INSERT HERE]
+**User story 9**: As an elderly person, I want an easier way to login so I don’t have to remember so many passwords.\
+Priority Level: Nice to have\
+Estimated Hours: 0.05\
 
-**User story 10**: [INSERT HERE]\
-Priority Level: [INSERT HERE]\
-Estimated Hours: [INSERT HERE]
+**User story 10**: As a college student, I want a more secure login so I don’t have to constantly change my passwords.\
+Priority Level: Nice to have\
+Estimated Hours: 0.05\
 
 **User story 11**: As a busy person, I want a quick and consistent way to log in to my account, so that I do not need to spend excessive time logging in. \
 Priority Level: Nice to have\
-Estimated Hours: [INSERT HERE]
+Estimated Hours: [INSERT HERE]\
 
 **User story 12**: As a forgetful person, I want to not need to remember a password, so that I do not need to remember information to log in. \
 Priority Level: Nice to have\
-Estimated Hours: [INSERT HERE]
+Estimated Hours: [INSERT HERE]\
 
 ## 8. Issue Tracker
 
