@@ -9,15 +9,17 @@ Group Members: Taylor Nielsen, Eduardo De La Rosa, Alexander Siegel, Brock Heinz
 
 ### 1.1 Problem statement
 
-[INSERT HERE]
+[The issue with having many accounts with unique individual passwords affects all internet users who struggle to memorize each individual set of account/password combination and impacts the users time and the account security]
 
 ### 1.2. Product Position Statement
 
-[INSERT HERE]
+[For internet users who have multitudes of passwords, TypeLock is an account login system that uses metrics such as type speed and accuracy to correctly identify the user without the need of a dedicated password; unlike the current system of memorizing unique passwords and their matching accounts, our product does not rely on exact memorization and correct input of a short password but rather the input of a given phrase/paragraph the user hsa seen before. ]
 
 ### 1.3. Value proposition
 
-[INSERT HERE]
+[TypeLock allows internet users easy log in to their accounts without the need to memorize individual passwords by analyzing their typing metrics to grant them access to their accounts.
+
+Internet users that have difficulty keeping track of their passwords and logging into their individual accounts.]
 
 ## 2. Stakeholders
 
@@ -65,15 +67,16 @@ Verifiability: A user is verified by the system when using their account, and re
 
 **Use case 1:**
 
-**Use Case**: [INSERT HERE]\
-**Actor**: [INSERT HERE]\
-**Description**: [INSERT HERE]\
-**Preconditions**: [INSERT HERE]\
-**Postconditions**: [INSERT HERE]\
+**Use Case**: [Logging into bank account]\
+**Actor**: [Internet user]\
+**Description**: [The internet user has opted into online banking and needs to log into his banking app to transfer money, to do this they use the TypeLock system to gain access.]\
+**Preconditions**: [Internet user must have an online banking system, money to transfer and access to a keyboard.]\
 **Main Flow**:
 
-1. [INSERT HERE]
-2. [INSERT HERE]
+1. [User enters unique user/account name.]
+2. [User then types passphrase into metric analyzing box.]
+3. [TypeLock compares typing biometrics with database.]
+4. [TypeLock confirms user identity and grants account access.]
 
 **Alternative Flow**: [INSERT HERE]
 
@@ -149,13 +152,13 @@ Verifiability: A user is verified by the system when using their account, and re
 
 ## 7. User stories
 
-**User story 1**: [INSERT HERE]\
-Priority Level: [INSERT HERE]\
-Estimated Hours: [INSERT HERE]
+**User story 1**: [As a user, I want to be able to reset my typing metrics if my typing improves overtime, so that my log in metrics continue to match those in the database]\
+Priority Level: [6]\
+Estimated Hours: [48 hours]
 
-**User story 2**: [INSERT HERE]\
-Priority Level: [INSERT HERE]\
-Estimated Hours: [INSERT HERE]
+**User story 2**: [As a user, I want to be able to send a secure code to my phone, confirming my identity if my metrics don't work after a few tries, so I can still log in.]\
+Priority Level: [10]\
+Estimated Hours: [76 hours]
 
 **User story 3**: [INSERT HERE]\
 Priority Level: [INSERT HERE]\
