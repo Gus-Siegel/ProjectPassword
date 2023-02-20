@@ -68,7 +68,8 @@ iterative implementation and user testing cycles.
 
 ### 6.1. Use case diagram
 
-![]([INSERT LINK OF DIAGRAM HERE])
+![UseCaseDiagram](https://user-images.githubusercontent.com/102486288/220025797-74f40f0d-3f8f-4bba-b193-aa2a8a0b80d8.png)
+
 
 ### 6.2. Use case descriptions
 
