@@ -182,13 +182,13 @@ Estimated Hours: [60 hours]
 Priority Level: [5]\
 Estimated Hours: [60 hours]
 
-**User story 5**: [INSERT HERE]\
-Priority Level: [INSERT HERE]\
-Estimated Hours: [INSERT HERE]
+**User story 5**: As a busy executive, I want a more efficient and secure way to log into my accounts, so that I can save time and eliminate the need to remember multiple passwords.\
+Priority Level: 7\
+Estimated Hours: 8
 
-**User story 6**: [INSERT HERE]\
-Priority Level: [INSERT HERE]\
-Estimated Hours: [INSERT HERE]
+**User story 6**: As a small business owner, I want a more secure login system for my employees, so that I can protect my customers' sensitive information and give my employees a convenient and secure way to access their accounts.\
+Priority Level: 5\
+Estimated Hours: 16
 
 **User story 7**: [As a security consultant, I want to be able to circumvent the threat of password leaks so my clients can keep their information safe.]\
 Priority Level: [7]\
