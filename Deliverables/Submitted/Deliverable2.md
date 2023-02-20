@@ -36,19 +36,24 @@ Internet users that have difficulty keeping track of their passwords and logging
 
 ## 4. Non-functional requirements
 
-1. Readability and maintainability\
-Three sections: back-end, front-end, server. Each is written in the same language. \
-Importance: Partitioning each part will create modularity and help identify input/output needed for each section.
-Each section is written in the same language so that functions in each section are compatible. \
-Verifiability: No section computes something that another section was assigned, each section is written in one language.
-2. Reliability\
-Available to users on different devices\
-Importance: Users are able to access their account several devices, so that their devices are compatible. \
-Verifiability: The system can be used on most device types, and does not limit the account to be used on exactly one device.
-3. Functionally suitable\
-Backend algorithms correctly identify users by their typing style. \
-Importance: Users need to be able to log into their account, and not be able to log into others' accounts. \
-Verifiability: A user is verified by the system when using their account, and rejected by the system when using another user's account.
+1. Readability and maintainability
+
+- Three sections: back-end, front-end, server. Each is written in the same language.
+- Importance: Partitioning each part will create modularity and help identify input/output needed for each section.
+Each section is written in the same language so that functions in each section are compatible.
+- Verifiability: No section computes something that another section was assigned, each section is written in one language.
+
+2. Reliability
+
+- Available to users on different devices\
+Importance: Users are able to access their account several devices, so that their devices are compatible.
+- Verifiability: The system can be used on most device types, and does not limit the account to be used on exactly one device.
+
+3. Functionally suitable
+
+- Backend algorithms correctly identify users by their typing style.
+- Importance: Users need to be able to log into their account, and not be able to log into others' accounts.
+- Verifiability: A user is verified by the system when using their account, and rejected by the system when using another user's account.
 
 ## 5. MVP
 
@@ -147,31 +152,46 @@ iterative implementation and user testing cycles.
 
 **Use case 5:**
 
-**Use Case**: [INSERT HERE]\
-**Actor**: [INSERT HERE]\
-**Description**: [INSERT HERE]\
-**Preconditions**: [INSERT HERE]\
-**Postconditions**: [INSERT HERE]\
+**Use Case**: Logging in to a TypeLock Enabled Website\
+**Actor**: User\
+**Description**: A user wants to log in to a TypeLock enabled website using their typing style. The website prompts the user to type a reference phrase using their typing style, which is then compared to the user's previously created Typing Style Dataset. If the typing style matches, the user is granted access to their account.\
+**Preconditions**: User must have a previously created Typing Style Dataset.\
+**Postconditions**: The user is granted access to their account or is denied access if their typing style does not match the reference phrase.\
+
 **Main Flow**:
 
-1. [INSERT HERE]
-2. [INSERT HERE]
+1. User navigates to the login page of the TypeLock enabled website.
+2. User is prompted to type a reference phrase using their typing style.
+3. User types the reference phrase.
+4. TypeLock compares the typing style used to type the reference phrase to the user's previously created Typing Style Dataset.
+5. If the typing style matches, the user is granted access to their account. If it does not match, the user is denied access.
 
-**Alternative Flow**: [INSERT HERE]
+**Alternative Flow**:
+
+1. User has trouble typing the reference phrase correctly.
+2. The website prompts the user to try again or to use a backup authentication method (such as a temporary password or an SMS code).
 
 **Use case 6:**
 
-**Use Case**: [INSERT HERE]\
-**Actor**: [INSERT HERE]\
-**Description**: [INSERT HERE]\
-**Preconditions**: [INSERT HERE]\
-**Postconditions**: [INSERT HERE]\
+**Use Case**: Resetting Typing Style Dataset\
+**Actor**: User\
+**Description**: A user wants to reset their Typing Style Dataset for a TypeLock enabled website. The website prompts the user to type a reference phrase multiple times to create a new Typing Style Dataset, which will be used for future logins.\
+**Preconditions**: User must have previously created a Typing Style Dataset.\
+**Postconditions**: A new Typing Style Dataset has been created and will be used for future logins.\
+
 **Main Flow**:
 
-1. [INSERT HERE]
-2. [INSERT HERE]
+1. User selects "Reset Typing Style Dataset" option from the website.
+2. The website generates a reference phrase of moderate length for the user to type.
+3. User is prompted to type the reference phrase a specific number of times.
+4. User types the reference phrase for the determined number of repetitions.
+5. TypeLock compiles the input statistics from each repetition into a new dataset attributed to the user.
+6. The new Typing Style Dataset is saved for future use in logging in to the website.
 
-**Alternative Flow**: [INSERT HERE]
+**Alternative Flow**:
+
+1. User cancels the reset request before completing the typing of the reference phrase.
+2. No new Typing Style Dataset is created and the user's previous dataset remains in use.
 
 ## 7. User stories
 
@@ -228,4 +248,3 @@ Estimated Hours: 9\
 **Issue Tracker Link:** https://github.com/Gus-Siegel/ProjectPassword/issues
 
 <img width="1440" alt="Screen Shot 2023-02-19 at 10 32 11 PM" src="https://user-images.githubusercontent.com/90239263/220017356-e6f5a90b-f9c5-49b1-9731-7427a5f9c25d.png">
-
