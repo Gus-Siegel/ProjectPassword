@@ -63,7 +63,7 @@ iterative implementation and user testing cycles.
 
 ### 6.1. Use case diagram
 
-![]([INSERT LINK OF DIAGRAM HERE])
+![Use Case Diagram](/UseCaseDiagram "Use case for Typelock")
 
 ### 6.2. Use case descriptions
 
