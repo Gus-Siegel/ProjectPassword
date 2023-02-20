@@ -81,21 +81,22 @@ iterative implementation and user testing cycles.
 3. [TypeLock compares typing biometrics with database.]
 4. [TypeLock confirms user identity and grants account access.]
 
-**Alternative Flow**: [INSERT HERE]
+**Alternative Flow**: [N/A]
 
 **Use case 2:**
 
-**Use Case**: [INSERT HERE]\
-**Actor**: [INSERT HERE]\
-**Description**: [INSERT HERE]\
-**Preconditions**: [INSERT HERE]\
-**Postconditions**: [INSERT HERE]\
+**Use Case**: [Logging into Fafsa website]\
+**Actor**: [Fafsa applicant]\
+**Description**: [The applicant needs to login to the Fafsa website for the first time this year to renew it for the next school year. The Typelock program will observe the typing and discern who the user is to decide to grant access or not.]\
+**Preconditions**: [Must have a Fafsa account]\
+**Postconditions**: [N/A]\
 **Main Flow**:
 
-1. [INSERT HERE]
-2. [INSERT HERE]
+1. [Applicant enters username]
+2. [Applicant types prompted text into the password field]
+3. [Typelock observes typing style and compares with those in its database to confirm and grant access
 
-**Alternative Flow**: [INSERT HERE]
+**Alternative Flow**: [N/A]
 
 **Use case 3:**
 
