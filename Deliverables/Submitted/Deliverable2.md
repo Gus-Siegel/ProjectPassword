@@ -100,17 +100,27 @@ iterative implementation and user testing cycles.
 
 **Use case 3:**
 
-**Use Case**: [INSERT HERE]\
-**Actor**: [INSERT HERE]\
-**Description**: [INSERT HERE]\
-**Preconditions**: [INSERT HERE]\
-**Postconditions**: [INSERT HERE]\
+**Use Case**: [Initializing style dataset for user]\
+**Actor**: [Login User]\
+**Description**: [A user needs to create an account on a Typelock enabled website. The program will generate a passphrase and prompt the user to type it a specific number of times, allowing them to login with their typing style for the given phrase.]\
+**Preconditions**: [User must not have an account, or is choosing to generate a new style key for a preexisting account]\
+**Postconditions**: [A style dataset has been created for the user to be referenced in future login attempts]\
 **Main Flow**:
 
-1. [INSERT HERE]
-2. [INSERT HERE]
+1. [User opts to create an account]
+2. [Typelock generates a string of moderate length for the reference phrase]
+3. [User is allowed any number of practice runs to type the phrase]
+4. [User ends practice phase]
+5. [User types the phrase with a determined number of repetitions]
+6. [Typelock compiles the input statistics from each repetition into dataset attributed to user]
+7. [User finishes account creation]
 
-**Alternative Flow**: [INSERT HERE]
+**Alternative Flow**:
+
+1. [User opts to create new style key]
+2. [Website prompts user to verify old style key or provide alternate form of authentication]
+3. [Typelock produces reference phrase and user provides dataset as normal]
+4. [User confirms new style key]
 
 **Use case 4:**
 
@@ -180,13 +190,13 @@ Estimated Hours: [INSERT HERE]
 Priority Level: [INSERT HERE]\
 Estimated Hours: [INSERT HERE]
 
-**User story 7**: [INSERT HERE]\
-Priority Level: [INSERT HERE]\
-Estimated Hours: [INSERT HERE]\
+**User story 7**: [As a security consultant, I want to be able to circumvent the threat of password leaks so my clients can keep their information safe.]\
+Priority Level: [7]\
+Estimated Hours: [80 hours]\
 
-**User story 8**:[INSERT HERE]\
-Priority Level: [INSERT HERE]\
-Estimated Hours: [INSERT HERE]\
+**User story 8**:[As a novice tech user, I want to be able to use a more flexible login system so I don't get locked out of my accounts.]\
+Priority Level: [6]\
+Estimated Hours: [40 hours]\
 
 **User story 9**: As an elderly person, I want an easier way to login so I don’t have to remember so many passwords.\
 Priority Level: Nice to have\
