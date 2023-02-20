@@ -36,20 +36,20 @@ Internet users that have difficulty keeping track of their passwords and logging
 
 ## 4. Non-functional requirements
 
-1. Readability and maintainability
+**Readability and maintainability:**
 
 - Three sections: back-end, front-end, server. Each is written in the same language.
 - Importance: Partitioning each part will create modularity and help identify input/output needed for each section.
 Each section is written in the same language so that functions in each section are compatible.
 - Verifiability: No section computes something that another section was assigned, each section is written in one language.
 
-2. Reliability
+**Reliability:**
 
 - Available to users on different devices\
 Importance: Users are able to access their account several devices, so that their devices are compatible.
 - Verifiability: The system can be used on most device types, and does not limit the account to be used on exactly one device.
 
-3. Functionally suitable
+**Functionally suitable:**
 
 - Backend algorithms correctly identify users by their typing style.
 - Importance: Users need to be able to log into their account, and not be able to log into others' accounts.
@@ -69,7 +69,6 @@ iterative implementation and user testing cycles.
 ### 6.1. Use case diagram
 
 ![UseCaseDiagram](https://user-images.githubusercontent.com/102486288/220025797-74f40f0d-3f8f-4bba-b193-aa2a8a0b80d8.png)
-
 
 ### 6.2. Use case descriptions
 
@@ -242,10 +241,10 @@ Estimated Hours: 20
 
 **User story 12**: As a forgetful person, I want to not need to remember a password, so that I do not need to remember information to log in.\
 Priority Level: 8\
-Estimated Hours: 9\
+Estimated Hours: 9
 
 ## 8. Issue Tracker
 
-**Issue Tracker Link:** https://github.com/Gus-Siegel/ProjectPassword/issues
+**Issue Tracker Link:** <https://github.com/Gus-Siegel/ProjectPassword/issues>
 
-<img width="1440" alt="Screen Shot 2023-02-19 at 10 32 11 PM" src="https://user-images.githubusercontent.com/90239263/220017356-e6f5a90b-f9c5-49b1-9731-7427a5f9c25d.png">
+![IssueTracker](https://user-images.githubusercontent.com/90239263/220017356-e6f5a90b-f9c5-49b1-9731-7427a5f9c25d.png)
