@@ -216,5 +216,7 @@ Estimated Hours: [INSERT HERE]\
 
 ## 8. Issue Tracker
 
-![]([INSERT LINK OF ISSUE TRACKER HERE])\
-![]([INSERT LINK OF ISSUE TRACKER SCREENSHOT HERE])
+**Issue Tracker Link:** https://github.com/Gus-Siegel/ProjectPassword/issues
+
+<img width="1440" alt="Screen Shot 2023-02-19 at 10 32 11 PM" src="https://user-images.githubusercontent.com/90239263/220017356-e6f5a90b-f9c5-49b1-9731-7427a5f9c25d.png">
+
