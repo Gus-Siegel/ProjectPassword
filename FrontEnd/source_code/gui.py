@@ -40,5 +40,13 @@ def login():
 login_button = tk.Button(root, text="Login", font=("Nunito", 16), bg="#000000", fg="#1F1F1F", command=login)
 login_button.pack(pady=20)
 
+# Create the clear button function
+def clear_password():
+    password_entry.delete(0, tk.END)
+
+# Create the clear button
+clear_button = tk.Button(root, text="Clear", font=("Nunito", 16), bg="#000000", fg="#1F1F1F", command=clear_password)
+clear_button.pack(pady=0)
+
 # Start the GUI event loop
 root.mainloop()
