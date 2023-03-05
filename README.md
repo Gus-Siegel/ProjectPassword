@@ -33,10 +33,8 @@ With Typelock, you can use your personal typing style to authenicate and log int
 ## Technologies
 
 - Python
+- C++
 - SQL
-- JavaScript
-- HTML
-- CSS
 
 ## Setup
 
