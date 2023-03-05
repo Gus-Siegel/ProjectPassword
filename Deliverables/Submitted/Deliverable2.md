@@ -105,7 +105,7 @@ iterative implementation and user testing cycles.
 **Actor**: Login User\
 **Description**: A user needs to create an account on a Typelock enabled website. The program will generate a passphrase and prompt the user to type it a specific number of times, allowing them to login with their typing style for the given phrase.\
 **Preconditions**: User must not have an account, or is choosing to generate a new style key for a preexisting account\
-**Postconditions**: A style dataset has been created for the user to be referenced in future login attempts\
+**Postconditions**: A style dataset has been created for the user to be referenced in future login attempts
 
 **Main Flow**:
 
@@ -115,7 +115,7 @@ iterative implementation and user testing cycles.
 4. User ends practice phase
 5. User types the phrase with a determined number of repetitions
 6. TypeLock compiles the input statistics from each repetition into dataset attributed to user
-7. [User finishes account creation]
+7. User finishes account creation
 
 **Alternative Flow**:
 
@@ -130,7 +130,7 @@ iterative implementation and user testing cycles.
 **Actor**: User\
 **Description**: A user wants to create a Typing Style Dataset for future use in logging in to a TypeLock enabled website. The program prompts the user to type a specific reference phrase a few times, which is then used to generate a dataset based on the user's unique typing style. This dataset is then saved for future use, allowing the user to log in to their account using their typing style for the given reference phrase.\
 **Preconditions**: User must have an account on a TypeLock enabled website.\
-**Postconditions**: A typing style dataset has been created for the user to be referenced in future login attempts.\
+**Postconditions**: A typing style dataset has been created for the user to be referenced in future login attempts.
 
 **Main Flow**:
 
@@ -156,7 +156,7 @@ iterative implementation and user testing cycles.
 **Actor**: User\
 **Description**: A user wants to log in to a TypeLock enabled website using their typing style. The website prompts the user to type a reference phrase using their typing style, which is then compared to the user's previously created Typing Style Dataset. If the typing style matches, the user is granted access to their account.\
 **Preconditions**: User must have a previously created Typing Style Dataset.\
-**Postconditions**: The user is granted access to their account or is denied access if their typing style does not match the reference phrase.\
+**Postconditions**: The user is granted access to their account or is denied access if their typing style does not match the reference phrase.
 
 **Main Flow**:
 
@@ -177,7 +177,7 @@ iterative implementation and user testing cycles.
 **Actor**: User\
 **Description**: A user wants to reset their Typing Style Dataset for a TypeLock enabled website. The website prompts the user to type a reference phrase multiple times to create a new Typing Style Dataset, which will be used for future logins.\
 **Preconditions**: User must have previously created a Typing Style Dataset.\
-**Postconditions**: A new Typing Style Dataset has been created and will be used for future logins.\
+**Postconditions**: A new Typing Style Dataset has been created and will be used for future logins.
 
 **Main Flow**:
 
