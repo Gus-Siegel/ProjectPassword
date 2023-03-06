@@ -79,7 +79,7 @@ To create or reset your Typing Style Dataset, follow these steps:
 
 ## Contributing
 
-Contributions to TypeLock are welcome. Please refer to the contributing guidelines for more information.
+Contributions to TypeLock are welcome. Please refer to the [contributing guidelines](https://github.com/Gus-Siegel/ProjectPassword/blob/main/CONTRIBUTING.MD) for more information.
 
 ## Authors
 
