@@ -15,7 +15,7 @@ Before making a contribution, please make sure that you have done the following:
 
 ## Code of Conduct
 
-We expect all contributors to follow our code of conduct, which can be found at the following link. Please make sure to read and understand our code of conduct before making a contribution.
+We expect all contributors to follow our code of conduct, which can be found at the following [link](https://github.com/Gus-Siegel/ProjectPassword/blob/main/CODE_OF_CONDUCT.md). Please make sure to read and understand our code of conduct before making a contribution.
 
 ## Reporting Bugs
 
