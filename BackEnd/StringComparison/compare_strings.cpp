@@ -21,6 +21,29 @@ CharState::CharState()
     // value is undefined
 }
 
+// CharState copy constructor, deep copies values
+CharState::CharState( const CharState &source )
+{
+    isBuffer = source.isBuffer;
+    delay = source.delay;
+    value = source.value;
+}
+
+
+void CharState::printListForm( const std::string end ) const
+{
+	std::cout << "{" << delay << ",'";
+	if( isBuffer )
+	{
+		std::cout << "_";
+	}
+	else
+	{
+		std::cout << value;
+	}
+	std::cout << "'}" << end;
+}
+
 
 
 
@@ -31,7 +54,13 @@ CharState::CharState()
 // CharStateList constructor, initializes empty list
 CharStateList::CharStateList()
 {
-    // nothing to initialize
+    // initialize as empty data
+}
+
+// copy constructor, deep copies all values
+CharStateList::CharStateList( const CharStateList &source )
+{
+    chars = source.chars;
 }
 
 // assign source list to destination list
@@ -43,8 +72,9 @@ void CharStateList::operator=( const CharStateList &source )
 
 
 
+
 // add toAppend to end of list
-void CharStateList::append( CharState &toAppend )
+void CharStateList::append( const CharState &toAppend )
 {
     chars.push_back( toAppend );
 }
@@ -95,6 +125,26 @@ void CharStateList::printString() const
     }
 }
 
+void CharStateList::printListForm( const std::string end ) const
+{
+    std::cout << "{";
+    std::list<CharState>::const_iterator wkgIter;
+    std::list<CharState>::const_iterator tempIter;
+
+    wkgIter = chars.begin();
+    while( wkgIter != chars.end() )
+    {
+        wkgIter->printListForm( "" );
+        wkgIter++;
+        if( wkgIter != chars.end() )
+        {
+            std::cout << ",";
+        }
+    }
+
+    std::cout << "}" << end;
+}
+
 // set charVals in list to match toSet, sets delays to 0
 void CharStateList::set_word( const std::string &toSet )
 {
@@ -109,11 +159,35 @@ void CharStateList::set_word( const std::string &toSet )
     }
 }
 
+// input: all delays are a time the character was pressed. 
+	// output: delays become time from previous press to current press
+void CharStateList::setToDelay()
+{
+	double prevTime, newTime;
+	std::list<CharState>::iterator wkgState;
+	
+	// only process if elements exist
+	if( chars.size() > 0 )
+	{
+		prevTime = chars.begin()->delay;
+		wkgState = chars.begin();
+		for( wkgState = chars.begin(); wkgState != chars.end(); wkgState++ )
+		{
+			newTime = wkgState->delay;
+			wkgState->delay -= prevTime;
+			prevTime = newTime;
+		}
+
+	}
+}
+
 // size of list
 int CharStateList::size() const
 {
     return chars.size();
 }
+
+
 
 
 
@@ -317,6 +391,7 @@ bool equalCharStateValues( const CharState &oneCharState,
 
 
 
+
 ////////////////////////////////// TimeWeightType /////////////////////////////
 
 // contructor, resets data
@@ -327,14 +402,22 @@ TimeWeightType::TimeWeightType()
 
 
 
-
+/* 
+    Current Algorithm:
+Input: two aligned lists of delays
+Weights one list such that its average matches other
+Find sum of differences of each pair. 
+Divide differences by sum of array and size to get average key ratio
+*/
+// undefined behavior if one of the delays is 0
 double TimeWeightType::getTimeErrorWeight() const
 {
     std::vector<double>::const_iterator wkgOne, wkgOther;
 
     double oneSum, otherSum, oneRatio, weightedOne, weightedOther;
-    double difference, sumOfDifferences = 0, averageDifference;
-    double errorRatio;
+    double minDelay, maxDelay;
+    double sumOfRatios = 0;
+    double averageRatioError;
 
     // find sum of each vector
     oneSum = sumVector( firstTimeVector );
@@ -344,7 +427,7 @@ double TimeWeightType::getTimeErrorWeight() const
     if( oneSum == 0 || otherSum == 0 )
     {
         // divide by zero
-        return (double)INT_MAX;
+        return (double)1;
     }
 
     // find ratio to multiply one by to weight with other
@@ -360,39 +443,46 @@ double TimeWeightType::getTimeErrorWeight() const
         weightedOne = *wkgOne * oneRatio;
         weightedOther = *wkgOther;
 
-        // add weighted difference to sumOfDifferences
-        difference = weightedOne - weightedOther;
-        sumOfDifferences += abs( difference );
+        // find min/max of weighted values
+        minDelay = min( weightedOne, weightedOther );
+        maxDelay = max( weightedOne, weightedOther );
+
+        // do not penalize for indeterminate
+        if( maxDelay == 0 )
+        {
+            sumOfRatios += 1;
+        }
+        else
+        {
+            // add ratio of min:max delay to sumOfRatios
+            sumOfRatios += minDelay / maxDelay;
+        }
     }
 
     // find average error ratio
-    averageDifference = sumOfDifferences / firstTimeVector.size();
-    errorRatio = averageDifference / otherSum;
-
-    // return weighted error
-    return errorRatio * TIME_ERROR_WEIGHT;
+    averageRatioError = 1 - sumOfRatios / (double)firstTimeVector.size();
+    return averageRatioError * TIME_ERROR_WEIGHT;
 }
 
-// TODO: modify parameters to be CharStates, such that 
-//       buffer can be analyzed from boolean instead of delay
-void TimeWeightType::insertComparison( double timeOne, double timeTwo )
+void TimeWeightType::insertComparison( const CharState &firstChar, 
+                                       const CharState &secondChar )
 {
-    // case timeOne is not a buffer
-    if( timeOne != BUFFER )
+    // case first is not a buffer
+    if( !firstChar.isBuffer )
     {
         // add timeOne to firstWkgTime
-        firstWkgTime += timeOne;
+        firstWkgTime += firstChar.delay;
     }
 
-    // case timeTwo is not a buffer
-    if( timeTwo != BUFFER )
+    // case second is not a buffer
+    if( !secondChar.isBuffer )
     {
         // add timeTwo to secondWkgTime
-        secondWkgTime += timeTwo;
+        secondWkgTime += secondChar.delay;
     }
 
-    // case timeOne and timetwo are not buffers
-    if( timeOne != BUFFER && timeTwo != BUFFER )
+    // case both are not buffers
+    if( !firstChar.isBuffer && !secondChar.isBuffer )
     {
         // append working times to time vectors
         firstTimeVector.push_back( firstWkgTime );
@@ -403,6 +493,7 @@ void TimeWeightType::insertComparison( double timeOne, double timeTwo )
         secondWkgTime = 0;
     }
 }
+
 
 
 // reset all values for comparison
@@ -433,16 +524,13 @@ double getWeightTimeErrors( const CharStateList &oneStateList,
              wkgOneChar != oneStateList.chars.end();
                  wkgOneChar++, wkgOtherChar++ )
     {
-        timeErrors.insertComparison( wkgOneChar->delay, 
-                                     wkgOtherChar->delay );
+        timeErrors.insertComparison( *wkgOneChar, 
+                                     *wkgOtherChar );
     }
 
     // return error weight of timeErrors
     return timeErrors.getTimeErrorWeight();
 }
-
-
-
 
 
 
