@@ -12,10 +12,10 @@
 
 
 // weight constants
-const double MISSING_CHAR_WEIGHT = 1;
-const double MISTYPE_WEIGHT = 1;
-const double TIME_ERROR_WEIGHT = 10.0;
-
+const double MISSING_CHAR_WEIGHT = 1.0;
+const double MISTYPE_WEIGHT = 1.0;
+const double TIME_ERROR_WEIGHT = 1.0;
+ 
 // maximum error before recursion stops
 const int MAX_SPELLING_ERROR = 8; // INT_MAX
 
@@ -23,7 +23,6 @@ const int MAX_SPELLING_ERROR = 8; // INT_MAX
 // buffer represents a position where no char is located, to keep alignment
 //    between multiple CharStateLists 
 const double BUFFER = -1001.0;
-
 
 // class definitions
 class TimeWeightType;
@@ -42,13 +41,13 @@ private:
     std::vector<double> firstTimeVector;
     std::vector<double> secondTimeVector;
 
-    void insertComparison( double timeOne, double timeTwo );
+    void insertComparison( const CharState &firstChar, 
+                           const CharState &secondChar );
     double getTimeErrorWeight() const;
 
 
 public:
     TimeWeightType();
-    
     void reset();
 
     friend double getWeightTimeErrors( const CharStateList &oneStateList, 
@@ -60,12 +59,15 @@ class CharState
 {
 private:
 public:
+// TODO: make these values private
     char value;
     double delay;
     bool isBuffer;
 
     CharState();
     CharState( char charVal, double time );
+    CharState( const CharState &source );
+    void printListForm( const std::string end = "\n" ) const;
 };
 
 
@@ -74,25 +76,26 @@ class CharStateList
 {
 private:
     std::list<CharState> chars;
-
 public:
-
-
     CharStateList();
+    CharStateList( const CharStateList &source );
     void set_word( const std::string &toSet );
     void printString() const;
-    void append( CharState &toAppend );
+    void append( const CharState &toAppend );
     void insert( CharState &toInsert, int insertIndex );
     CharState &getReference( int refIndex );
     int size() const;
     void insertBuffer( int insertIndex );
     void operator=( const CharStateList &source );
+    void printListForm( const std::string end = "\n" ) const;
+    void setToDelay();
 
     friend double weightTimeErrors( const CharStateList &oneStateList, 
                          const CharStateList &otherStateList );
     friend double getWeightTimeErrors( const CharStateList &oneList, 
                                        const CharStateList &otherList );
 };
+
 
 
 
@@ -166,13 +169,43 @@ ValueType sumVector( const std::vector<ValueType> vector )
     {
         sum += *iter;
     }
-
     return sum;
-
 }
 
+#ifndef MIN_FUNCTION
+#define MIN_FUNCTION
+// minimum of two values
+template <typename ValueType>
+ValueType min( const ValueType &one, const ValueType &other )
+{
+	if( one < other )
+	{
+		return one;
+	}
+	return other;
+}
+#endif // MIN_FUNCTION
 
 
+#ifndef MAX_FUNCTION
+#define MAX_FUNCTION
+// maximum of two values
+template <typename ValueType>
+ValueType max( const ValueType &one, const ValueType &other )
+{
+	if( one > other )
+	{
+		return one;
+	}
+	return other;
+}
+#endif // MAX_FUNCTION
+
+
+
+// verifying functions
+bool verifyUser( CharStateList &one, CharStateList &other );
+bool verifyUser( const std::string strOne, const std::string strTwo );
 
 
 

@@ -6,8 +6,9 @@ import socket
 
 def client_program():
     # get the hostname
-    host = '127.0.0.1'
+    host = socket.gethostname()
     port = 5000 # initiate port no above 1024
+    print(host)
 
     client_socket = socket.socket() # get instance
     client_socket.connect((host,port)) # connect to the server
@@ -24,13 +25,9 @@ def client_program():
 
     client_socket.close() #close the connection
 
-    if __name__ == '__main__':
-        client_program()
+client_program()
 
 
 
-
-if __name__ == '__main__':
-    server_program()
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
