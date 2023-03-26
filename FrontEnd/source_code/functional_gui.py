@@ -28,7 +28,7 @@ root.geometry("500x350")
 root.configure(bg="#1F1F1F")
 
 # Create the TypeLock logo
-logo_image = tk.PhotoImage(file="logo.png")
+logo_image = tk.PhotoImage(file="FrontEnd/logo.png")
 logo_label = tk.Label(root, image=logo_image, bg="#1F1F1F")
 logo_label.pack(pady=10)
 
@@ -55,7 +55,7 @@ def login():
     password = password_entry.get()
     print(f"Passphrase Entered: {password}")
     print("Keypress data:", keypress_data)
-    keyboard_listener.stop()
+    keyboard_listener.stop()    
 
 login_button = tk.Button(root, text="Login", font=("Nunito", 16), bg="#000000", fg="#1F1F1F", command=login)
 login_button.pack(pady=20)
