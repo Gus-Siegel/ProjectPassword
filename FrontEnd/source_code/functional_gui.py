@@ -80,9 +80,6 @@ passphrase_text_label = tk.Label(root, text=f"{passphrase}",
                                         fg="#FFFFFF", bg="#1F1F1F")
 passphrase_text_label.pack(pady=(0, 10))
 
-# Create and format the passphrase instructions label
-
-
 # Create and format the passphrase entry box with placeholder text
 passphrase_placeholder = "Type the passphrase"
 passphrase_entry_box = tk.Entry(root, width=20,
@@ -113,6 +110,7 @@ def login_user():
     print(f"Username Entered: {username_entered}")
     print(f"Passphrase Entered: {passphrase_entered}")
     print("Keypress data:", keypress_data)
+    clear_and_reset()
 
 # Create the login button
 login_button = tk.Button(root, width=10,
