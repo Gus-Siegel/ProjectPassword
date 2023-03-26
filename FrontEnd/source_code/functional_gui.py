@@ -14,7 +14,7 @@ def log_key_press(event):
 # Create the main window of the gui
 root = tk.Tk()
 root.title("TypeLock")
-root.geometry("500x425")
+root.geometry("500x400")
 
 # Set the window color
 root.configure(bg="#1F1F1F")
@@ -24,23 +24,47 @@ logo_image = tk.PhotoImage(file="logo.png")
 logo_label = tk.Label(root, image=logo_image, bg="#1F1F1F")
 logo_label.pack()
 
+# Show the placeholder text for the entry boxes
+def show_placeholder(event, entry, placeholder):
+    if entry.get() == '':
+        entry.insert(0, placeholder)
+        entry.configure(fg="#808080")
+
+# Hide the placeholder text for the entry boxes
+def hide_placeholder(event, entry, placeholder):
+    if entry.get() == placeholder:
+        entry.delete(0, tk.END)
+        entry.configure(fg="#1F1F1F")
+
 # Create and format the username label
-username_label = tk.Label(root,text="Username:",
+username_label = tk.Label(root,text="Username",
                                 font=("Nunito", 16),
                                 fg="#FFFFFF",
                                 bg="#1F1F1F")
 username_label.pack(pady=(10, 0))
 
-# Create and format the username entry box
+# Create and format the username entry box with placeholder text
+username_placeholder = "Type your username"
 username_entry_box = tk.Entry(root, width=20,
-                                    font=("Nunito", 16),
-                                    bg="#FFFFFF",
-                                    fg="#1F1F1F",
-                                    insertbackground="#FFFFFF")
+                                font=("Nunito", 16),
+                                bg="#FFFFFF",
+                                fg="#808080",
+                                insertbackground="#FFFFFF")
+username_entry_box.insert(0, username_placeholder)
+username_entry_box.bind("<FocusIn>",
+                        lambda event: hide_placeholder(
+                            event,
+                            username_entry_box,
+                            username_placeholder))
+username_entry_box.bind("<FocusOut>",
+                        lambda event: show_placeholder(
+                            event,
+                            username_entry_box,
+                            username_placeholder))
 username_entry_box.pack(pady=(0, 10))
 
 # Create and format the passphrase label
-passphrase_label = tk.Label(root, text="Passphrase:",
+passphrase_label = tk.Label(root, text="Passphrase",
                                     font=("Nunito", 16),
                                     fg="#FFFFFF",
                                     bg="#1F1F1F")
@@ -57,19 +81,26 @@ passphrase_text_label = tk.Label(root, text=f"{passphrase}",
 passphrase_text_label.pack(pady=(0, 10))
 
 # Create and format the passphrase instructions label
-passphrase_instructions__label = tk.Label(root,
-                                            text="Type the passphrase below:",
-                                            font=("Nunito", 16),
-                                            fg="#FFFFFF",
-                                            bg="#1F1F1F")
-passphrase_instructions__label.pack(pady=(5, 0))
 
-# Create and format the passphrase entry box
+
+# Create and format the passphrase entry box with placeholder text
+passphrase_placeholder = "Type the passphrase"
 passphrase_entry_box = tk.Entry(root, width=20,
-                                        font=("Nunito", 16),
-                                        bg="#FFFFFF",
-                                        fg="#1F1F1F",
-                                        insertbackground="#FFFFFF")
+                                font=("Nunito", 16),
+                                bg="#FFFFFF",
+                                fg="#808080",
+                                insertbackground="#FFFFFF")
+passphrase_entry_box.insert(0, passphrase_placeholder)
+passphrase_entry_box.bind("<FocusIn>",
+                            lambda event: hide_placeholder(
+                                event,
+                                passphrase_entry_box,
+                                passphrase_placeholder))
+passphrase_entry_box.bind("<FocusOut>",
+                            lambda event: show_placeholder(
+                                event,
+                                passphrase_entry_box,
+                                passphrase_placeholder))
 passphrase_entry_box.pack(pady=(0, 10))
 
 # Record the data entered inside the password entry box
@@ -84,24 +115,42 @@ def login_user():
     print("Keypress data:", keypress_data)
 
 # Create the login button
-login_button = tk.Button(root, text="Login",
+login_button = tk.Button(root, width=10,
+                                text="Login",
                                 font=("Nunito", 16),
                                 bg="#000000",
                                 fg="#1F1F1F",
                                 command=login_user)
 login_button.pack(pady=20)
 
-# Clear the text from the username and passphrase entry boxes
-def clear_text():
+# Clear the text from the username and passphrase entry boxes and reset
+def clear_and_reset():
+    global keypress_data
+
+    # Unbind the key press event from the passphrase entry box
+    passphrase_entry_box.unbind("<KeyPress>")
+
+    # Clear the text from the username and passphrase entry boxes
     username_entry_box.delete(0, tk.END)
     passphrase_entry_box.delete(0, tk.END)
 
+    # Reset the keypress_data list
+    keypress_data = []
+
+    # Bind the key press event to the passphrase entry box again
+    passphrase_entry_box.bind("<KeyPress>", log_key_press)
+
+    # Reset placeholders
+    show_placeholder(None, username_entry_box, username_placeholder)
+    show_placeholder(None, passphrase_entry_box, passphrase_placeholder)
+
 # Create the clear button
-clear_button = tk.Button(root, text="Clear",
-                                font=("Nunito", 16),
-                                bg="#000000",
-                                fg="#1F1F1F",
-                                command=clear_text)
+clear_button = tk.Button(root, width=10,
+                            text="Clear",
+                            font=("Nunito", 16),
+                            bg="#000000",
+                            fg="#1F1F1F",
+                            command=clear_and_reset)
 clear_button.pack(pady=0)
 
 # Start the GUI event loop
