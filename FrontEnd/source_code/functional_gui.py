@@ -70,9 +70,8 @@ passphrase_label = tk.Label(root, text="Passphrase",
                                     bg="#1F1F1F")
 passphrase_label.pack(pady=(10, 0))
 
-# Generate the passphrase from the list of possible words
-possible_words = ['hello', 'world']
-passphrase = ' '.join(possible_words)
+# Create the passphrase
+passphrase = "hello world"
 
 # Display the passphrase
 passphrase_text_label = tk.Label(root, text=f"{passphrase}",
