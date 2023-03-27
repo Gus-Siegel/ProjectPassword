@@ -7,7 +7,7 @@ Group Members: Taylor Nielsen, Eduardo De La Rosa, Alexander Siegel, Brock Heinz
 
 ## Introduction (Eddie)
 
-Provide a short paragraph that describes your system. This paragraph should contain the value proposition and the description of the main features of the software. At the end of the introduction, include links to your project on GitHub.
+TypeLock is a secure authentication system that identifies users by analyzing their typing behavior. The main value proposition of the TypeLock system is to provide a secure and convenient login method for users who are tired of managing multiple passwords. The software is designed to be user-friendly and easy to integrate into existing systems. The main features of the TypeLock system include identifying users based on how they type, ensuring account security, and providing an easy login process. The system also supports different devices, making it accessible to users on various platforms. Overall, the TypeLock system offers a secure and efficient alternative to traditional password-based login methods.
 
 Project repository: [https://github.com/Gus-Siegel/ProjectPassword](https://github.com/Gus-Siegel/ProjectPassword)
 
