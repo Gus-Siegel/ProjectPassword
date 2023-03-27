@@ -22,7 +22,7 @@ Order the requirements below by the name of the student who implemented them. Al
 - [Automated Unit Tests Folder](https://github.com/Gus-Siegel/ProjectPassword/tree/main/BackEnd/StringComparison)
 - Example testing the [TimeWeightType](https://github.com/Gus-Siegel/ProjectPassword/blob/main/BackEnd/StringComparison/compare_strings.cpp) class:\
 The time error [is being tested](https://github.com/Gus-Siegel/ProjectPassword/blob/main/BackEnd/StringComparison/compare_strings.cpp/automatedTest.cpp) by generating a randomized input, and comparing a manual error calculation to the error the class function gives. 
-![](/Deliverable4_Tests.png)
+![Deliverable Tests](/Deliverable4_Tests.png)
 
 ## Adopted technologies (Levi, Taylor, Michael)
 
