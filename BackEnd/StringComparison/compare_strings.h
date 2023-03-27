@@ -89,6 +89,7 @@ public:
     void operator=( const CharStateList &source );
     void printListForm( const std::string end = "\n" ) const;
     void setToDelay();
+    std::string toString() const;
 
     friend double weightTimeErrors( const CharStateList &oneStateList, 
                          const CharStateList &otherStateList );
