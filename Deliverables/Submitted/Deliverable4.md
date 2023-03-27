@@ -29,10 +29,21 @@ You should implement automated tests that aim to verify the correct behavior of 
 ## Adopted technologies (Levi, Taylor, Michael)
 
 List the adopted technologies with a brief description and justification for choosing them.
+<<<<<<< HEAD
 Project Password combines many different technologies to deliver an application that 
+=======
+
+Front End Technologies:
+Tkinter - We adopted this technology because we needed a GUI that our users could use
+          to help them input what they need to in the correct box.
+
+>>>>>>> a89fb6e96f4ce1c14cf462dcde9716cf5659c188
 ## Learning/training (Levi, Taylor, Michael)
 
 Describe the strategies employed by the team to learn the adopted technologies.
+
+In the front end portion we learned our adopted technology, tkinter, pretty quickly since there are a lot of comprehensive tutorials 
+on youtubeas well as a lot of helpful posts on stackoverflow.
 
 ## Deployment (Gus)
 
@@ -67,6 +78,18 @@ Your repository should contain a CONTRIBUTING.md file, a LICENSE file, and a COD
 ## Look & feel (Eddie, Levi)
 
 Describe the approach you adopted to design your user interface. Include some screenshots.
+
+The first thing we did was talk about what the logo was going to look like since we chose to work on the aesthetics first. The logo we chose ended up having a white font color so with that in mind we chose black as a background color for the screen
+
+![logo](https://user-images.githubusercontent.com/90239263/227803445-bf05812f-e666-408a-a5a0-11b12f1628ac.png)
+
+After we figured out the color scheme we decided on a central layout for the inputs and buttons, everything is put over one another in the center column of the interface.
+
+(Screenshot of layout of our interface)
+
+In the end we decided to go with two buttons for our interface. One button would take the data recorded from the keyboard and put it in a list with the times they were pushed and put it in a variable while the other button clears the text box for another phrase to be typed and recorded
+
+(Screenshot of textbox and both buttons)
 
 ## Lessons learned (Everyone)
 

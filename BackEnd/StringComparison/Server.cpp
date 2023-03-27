@@ -7,9 +7,15 @@
 #include <netdb.h>
 #include <type_traits>
 #include <unistd.h>
-
-
-
+#include "compare_strings.h"
+#include "pythonListToCharState.h"
+#include "verifyUser.h"
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <vector>
+#include <sstream>
+#include <cstring>
 
 
 
@@ -104,8 +110,18 @@ int main(int argc, char **argv) {
         
         char msg_buf[4096];
         char user_name[4096];
+        char *name;
+        char *pass;
         int bytes;
         int user_bytes;
+        std::ifstream db_file; 
+        db_file.open("testdb.txt");
+        std::string db_data;
+        std::string db_user;
+        std::string db_pass;
+        std::string deli = ":";
+        char output[5];
+        
         // While receiving - display & echo msg
         while (true) {
             bytes = recv(sock_client, &msg_buf, 4096, 0);
@@ -115,27 +131,57 @@ int main(int argc, char **argv) {
             user_bytes = recv(sock_client, &user_name, 4096, 0);
             std::cout << "user recived " << std::string(user_name, 0 ,user_bytes) << "\n";
             if (bytes == 0) {
-            std::cout << "[INFO] Client is disconnected.\n";
-            break;
+                std::cout << "[INFO] Client is disconnected.\n";
+                break;
             }
 
             // If something gone wrong
             else if (bytes < 0) {
-            std::cerr << "[ERROR] Something went wrong while receiving data!.\n";
-            break;
+                std::cerr << "[ERROR] Something went wrong while receiving data!.\n";
+                break;
             }
             // If there is some bytes
             else {
-            // Print message
-            std::cout << "client> " << std::string(msg_buf, 0, bytes) << "\n";
-            
-            //check if string matches string from file via micheals code
-            
-            //send back 
-            if (send(sock_client, &msg_buf, bytes, 0) < 0) {
-                std::cerr << "[ERROR] Message cannot be send, exiting...\n";
-                break;
-            }
+                // Print message
+                std::cout << "client> " << std::string(msg_buf, 0, bytes) << "\n";
+                
+                //read a line from the "data base"
+                getline(db_file, db_data);
+                //split it into username and password
+                std::cout << db_data << "\n";
+
+                db_user = db_data.substr(0, db_data.find(deli));
+                db_pass = db_data.substr(db_data.find(deli) + 1);
+                std::cout << "user namer " << db_user << "\n";
+                std::cout << "password "<< db_pass << "\n";
+
+                // while(strcmp(user_name, db_user) != 0 || db_file){
+                //     //read a line from the "data base"
+
+                //     //split it into username and password
+                // }
+                
+
+                const std::string wordOne = msg_buf;
+                const std::string wordTwo = db_pass;
+                std::string temp = "temp";
+                std::cout << "dataB> " << wordTwo << "\n";
+
+                //check if string matches string from file via micheals code
+                if(verifyUser(wordOne, wordTwo)){
+                    temp = "true";
+                }
+                else{
+                    temp = "fail";
+                }
+                //send back 
+
+                strcpy(output, temp.c_str());
+
+                if (send(sock_client, &output, sizeof(output), 0) < 0) {
+                    std::cerr << "[ERROR] Message cannot be send, exiting...\n";
+                    break;
+                }
             }
 
         }
