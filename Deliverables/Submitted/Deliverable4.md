@@ -22,7 +22,7 @@ Approved by: Gus Siegel\
 PrintScreen: N/A
 
 Requirement: As an elderly person, I want an easier way to login so I don’t have to remember so many passwords.\
-Issue: [Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/25\
+Issue: [Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/25)\
 Implemented by: Eddie, Levi \
 Approved by: Gus Siegel\
 PrintScreen: N/A
