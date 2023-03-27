@@ -14,7 +14,7 @@ class Client:
     def client_program(self):
         # get the hostname
         host = '108.174.198.179'
-        port = 6500 # initiate port no above 1024
+        port = 5500 # initiate port no above 1024
         print("Connecting to "+ host) # print IP
         client_socket = socket.socket() # get instance
         client_socket.connect((host,port)) # connect to the server
