@@ -30,7 +30,16 @@ List the adopted technologies with a brief description and justification for cho
 
 Front End Technologies: Tkinter - We adopted this technology because we needed a GUI that our users could use to help them input what they need to in the correct box.
 
-Client Server Technologies: PyCharm - We used PyCharm to run the front end and client because VSC required additional work arounds be implemented for pynput which was utilized on the Front End. PuTTY - PuTTY was vital for running our C++ Server in a remote environment. HostWinds - HostWinds is the host for our remote server where we run our C++ Server. FileZilla - FileZilla is our file transfer service that allows us to upload programs to our remote server.
+
+Client Server Technologies:
+
+PyCharm - We used PyCharm to run the front end and client because VSC required additional work arounds be implemented for pynput which was utilized on the Front End.
+
+PuTTY - PuTTY was vital for running our C++ Server in a remote environment.
+
+HostWinds - HostWinds is the host for our remote server where we run our C++ Server.
+
+FileZilla - FileZilla is our file transfer service that allows us to upload programs to our remote server.
 
 ## Learning/training (Levi, Taylor, Michael)
 
@@ -54,7 +63,7 @@ Provide a link for the system in production and describe how you are deploying y
 The deployment we researched was Docker. Upon implementing we found that part of Docker that allows for sharing, Docker Playground
 was down. We submitted an issue to the creators git repo and saw we weren't the only ones having this issue.
 If this issue persists we won't be able to utilize Docker and will have to find another method of distribution.
-
+![dockerError](https://raw.githubusercontent.com/Gus-Siegel/ProjectPassword/main/Deliverables/Submitted/DockerIssue.png)
 ## Licensing (Eddie)
 
 Inform the license you adopted for your source code (remember to configure GitHub accordingly). Explain why you adopted this license.
