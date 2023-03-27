@@ -11,13 +11,45 @@ TypeLock is a secure authentication system that identifies users by analyzing th
 
 **Project repository**: [https://github.com/Gus-Siegel/ProjectPassword](https://github.com/Gus-Siegel/ProjectPassword)
 
-## Implemented requirements (Gus, Eddie, Brock)
+## Implemented requirements 
 
 List in this section, the requirements and associated pull request that you implemented for this release, following the example below---include the description of the requirement, a link to the issue, a link to the pull request(s) that implement the requirement, who implemented the requirement, who approved it, and a print screen that depicts the implemented feature (if applicable). I expect that you implement the features you specified in your MVP (c.f. D.2 Requirements).
 
-Requirement: As a developer, I want to be able to switch keyboards and still log into my account.\
-Issue: [Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/23)\
-Implemented by: Micheal Vertin\
+Requirement: As a developer, I want to be able to switch keyboards and still log into my account\
+Issue: [Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/23) \
+Implemented by: Michael \
+Approved by: Gus Siegel\
+PrintScreen: N/A
+
+Requirement: As an elderly person, I want an easier way to login so I don’t have to remember so many passwords.\
+Issue: [Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/25)\
+Implemented by: Eddie, Levi \
+Approved by: Gus Siegel\
+PrintScreen: N/A
+
+Requirement: As a college student, I want a more secure login so I don’t have to constantly change my passwords.\
+Issue: [Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/26)\
+Implemented by: Taylor, Gus\
+Approved by: Michael\
+PrintScreen: N/A
+
+Requirement: As a busy person, I want a quick and consistent way to log in to my account, so that I do not need to spend excessive time logging in.\
+Issue: [Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/27)\
+Implemented by: Michael, Taylor, Gus\
+Approved by: Levi\
+PrintScreen: N/A
+
+
+Requirement: As a forgetful person, I want to not need to remember a password, so that I do not need to remember information to log in.\
+Issue: [Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/28)\
+Implemented by: Michael, Taylor, Gus\
+Approved by: Eddie\
+PrintScreen: N/A
+
+
+Requirement: As a novice tech user, I want to be able to use a more flexible login system so I don't get locked out of my accounts.\
+Issue: [Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/31)\
+Implemented by: Eddie, Levi\
 Approved by: Gus Siegel\
 PrintScreen: N/A
 
@@ -30,7 +62,9 @@ Order the requirements below by the name of the student who implemented them. Al
 - [Automated Unit Tests Folder](https://github.com/Gus-Siegel/ProjectPassword/tree/main/BackEnd/StringComparison)
 
 - Example testing the [TimeWeightType](https://github.com/Gus-Siegel/ProjectPassword/blob/main/BackEnd/StringComparison/compare_strings.cpp) class:\
-The time error [is being tested](https://github.com/Gus-Siegel/ProjectPassword/blob/main/BackEnd/StringComparison/automatedTest.cpp) by generating a randomized input, and comparing a manual error calculation to the error the class function gives.
+
+The time error [is being tested](https://github.com/Gus-Siegel/ProjectPassword/blob/main/BackEnd/StringComparison/compare_strings.cpp/automatedTest.cpp) by generating a randomized input, and comparing a manual error calculation to the error the class function gives. 
+![Deliverable Tests](Deliverable4_Tests.png)
 
 - ![Result of the execution of the automated tests](https://raw.githubusercontent.com/Gus-Siegel/ProjectPassword/main/Deliverables/Submitted/Deliverable4_Tests.png)
 
@@ -50,6 +84,13 @@ The time error [is being tested](https://github.com/Gus-Siegel/ProjectPassword/b
 
 - **FileZilla**: FileZilla was adopted as our file transfer service in order to allows us to upload programs to our remote server.
 
+Backend Technologies:
+
+g++ - The compiler for c++ is used to generate machine code to be used during run-time. 
+
+
+## Learning/training 
+
 ## Learning/training
 
 ### Frontend Team
@@ -57,6 +98,10 @@ The time error [is being tested](https://github.com/Gus-Siegel/ProjectPassword/b
 During the development of the frontend, Eduardo and Levi quickly mastered the adopted technology, tkinter, thanks to the comprehensive tutorials available on YouTube and the numerous helpful posts on Stack Overflow.
 
 ### Client/Server Team
+The backend continued working with g++. gcc was used in previous courses, and made learning g++ quick since the syntax of c and cpp are almost identical. 
+There were a few issues including modules, although an alternative method was found for those modules. 
+
+## Deployment 
 
 For establishing the client-server relationship, we needed to delve deeper into understanding classes and how to connect a Python client to a C++ server. We designed the Python client as a class for seamless integration with the frontend code, enabling the GUI to connect to the client directly.
 
@@ -69,6 +114,9 @@ was down. We submitted an issue to the creators git repo and saw we weren't the 
 If this issue persists we won't be able to utilize Docker and will have to find another method of distribution.
 
 ![dockerError](https://raw.githubusercontent.com/Gus-Siegel/ProjectPassword/main/Deliverables/Submitted/DockerIssue.png)
+
+Message Ana with this issue on Sunday at 2:15 pm.
+
 
 ## Licensing (Eddie)
 
@@ -111,4 +159,7 @@ which meant we didn't have to hound anyone to jump online and complete a step.
 
 ## Demo
 
-**Youtube Link:** [TypeLock Demo](https://youtu.be/H_fW2biRHsk)
+
+Include a link to a video showing the system working.
+Youtube Demo:
+https://youtu.be/H_fW2biRHsk
