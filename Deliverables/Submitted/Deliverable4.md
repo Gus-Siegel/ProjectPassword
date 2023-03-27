@@ -117,8 +117,13 @@ In the end we decided to go with two buttons for our interface. One button would
 
 In retrospective, describe what your team learned during this first release and what you are planning to change for the second release.
 
-Start early and often. We want to avoid crunch time in the future we need to get work done much earlier than we think we do. 
+Even for a minimum viable product, communication and collaboration are vital parts of completion. We had lots of last minute 
+issues we needed to fix before being able to take the final video. Each time we found an issue we had to reach out to the 
+team responsible for that code and ask for their help. Thankfully, everyone was expecting that might be the case this weekend,
+which meant we didn't have to hound anyone to jump online and complete a step.
 
 ## Demo
 
 Include a link to a video showing the system working.
+Youtube Demo:
+https://youtu.be/H_fW2biRHsk
