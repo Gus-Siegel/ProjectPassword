@@ -17,7 +17,37 @@ List in this section, the requirements and associated pull request that you impl
 
 Requirement: As a developer, I want to be able to switch keyboards and still log into my account
 Issue: [Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/23)
-Implemented by: Micheal Vertin 
+Implemented by: Michael  
+Approved by: Gus Siegel
+PrintScreen: N/A
+
+Requirement: As an elderly person, I want an easier way to login so I don’t have to remember so many passwords.
+Issue: [Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/25)
+Implemented by: Eddie, Levi 
+Approved by: Gus Siegel
+PrintScreen: N/A
+
+Requirement: As a college student, I want a more secure login so I don’t have to constantly change my passwords.
+Issue: [Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/26)
+Implemented by: Taylor, Gus
+Approved by: Michael
+PrintScreen: N/A
+
+Requirement: As a busy person, I want a quick and consistent way to log in to my account, so that I do not need to spend excessive time logging in.
+Issue: [Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/27)
+Implemented by: Michael, Taylor, Gus
+Approved by: Levi
+PrintScreen: N/A
+
+Requirement: As a forgetful person, I want to not need to remember a password, so that I do not need to remember information to log in.
+Issue: [Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/28)
+Implemented by: Michael, Taylor, Gus
+Approved by: Eddie
+PrintScreen: N/A
+
+Requirement: As a novice tech user, I want to be able to use a more flexible login system so I don't get locked out of my accounts.
+Issue: [Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/31)
+Implemented by: Eddie, Levi
 Approved by: Gus Siegel
 PrintScreen: N/A
 
@@ -86,6 +116,7 @@ The deployment we researched was Docker. Upon implementing we found that part of
 was down. We submitted an issue to the creators git repo and saw we weren't the only ones having this issue.
 If this issue persists we won't be able to utilize Docker and will have to find another method of distribution.
 ![dockerError](https://raw.githubusercontent.com/Gus-Siegel/ProjectPassword/main/Deliverables/Submitted/DockerIssue.png)
+
 Message Ana with this issue on Sunday at 2:15 pm.
 
 
