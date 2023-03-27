@@ -29,7 +29,7 @@ You should implement automated tests that aim to verify the correct behavior of 
 ## Adopted technologies (Levi, Taylor, Michael)
 
 List the adopted technologies with a brief description and justification for choosing them.
-
+Project Password combines many different technologies to deliver an application that 
 ## Learning/training (Levi, Taylor, Michael)
 
 Describe the strategies employed by the team to learn the adopted technologies.
