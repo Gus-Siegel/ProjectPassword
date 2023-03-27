@@ -15,6 +15,12 @@ TypeLock is a secure authentication system that identifies users by analyzing th
 
 List in this section, the requirements and associated pull request that you implemented for this release, following the example below---include the description of the requirement, a link to the issue, a link to the pull request(s) that implement the requirement, who implemented the requirement, who approved it, and a print screen that depicts the implemented feature (if applicable). I expect that you implement the features you specified in your MVP (c.f. D.2 Requirements).
 
+Requirement: As a developer, I want to be able to switch keyboards and still log into my account.\
+Issue: [Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/23)\
+Implemented by: Micheal Vertin\
+Approved by: Gus Siegel\
+PrintScreen: N/A
+
 Order the requirements below by the name of the student who implemented them. All the members of the group should have worked on implementation activities and submitted pull requests. Only stable code should be included in the release. The code that is still under development should be in branches.
 
 ## Tests
@@ -34,7 +40,7 @@ The time error [is being tested](https://github.com/Gus-Siegel/ProjectPassword/b
 
 - **Tkinter**: This technology was adopted because we needed a graphical user interface (GUI) that our users could use to help them input what they need to in the correct box.
 
-### Client/Server Technologies
+### Client Server Technologies
 
 - **PyCharm**: PyCharm was utilized to run the frontend and client because visual studio code (VSC) required additional work arounds to be implemented for the pynput module, used in the frontend GUI to work.
 
@@ -63,6 +69,8 @@ was down. We submitted an issue to the creators git repo and saw we weren't the 
 If this issue persists we won't be able to utilize Docker and will have to find another method of distribution.
 
 ![dockerError](https://raw.githubusercontent.com/Gus-Siegel/ProjectPassword/main/Deliverables/Submitted/DockerIssue.png)
+
+## Licensing (Eddie)
 
 ## Licensing
 
@@ -96,8 +104,11 @@ In the end we decided to go with two buttons for our interface. One button would
 
 ## Lessons learned
 
-In retrospective, describe what your team learned during this first release and what you are planning to change for the second release.
+Even for a minimum viable product, communication and collaboration are vital parts of completion. We had lots of last minute
+issues we needed to fix before being able to take the final video. Each time we found an issue we had to reach out to the
+team responsible for that code and ask for their help. Thankfully, everyone was expecting that might be the case this weekend,
+which meant we didn't have to hound anyone to jump online and complete a step.
 
 ## Demo
 
-Include a link to a video showing the system working.
+**Youtube Link:** [TypeLock Demo](https://youtu.be/H_fW2biRHsk)
