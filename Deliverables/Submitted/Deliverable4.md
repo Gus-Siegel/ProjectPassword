@@ -89,8 +89,6 @@ Backend Technologies:
 g++ - The compiler for c++ is used to generate machine code to be used during run-time. 
 
 
-## Learning/training 
-
 ## Learning/training
 
 ### Frontend Team
@@ -118,7 +116,6 @@ If this issue persists we won't be able to utilize Docker and will have to find 
 Message Ana with this issue on Sunday at 2:15 pm.
 
 
-## Licensing (Eddie)
 
 ## Licensing
 
