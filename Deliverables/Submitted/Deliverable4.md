@@ -18,13 +18,11 @@ List in this section, the requirements and associated pull request that you impl
 Order the requirements below by the name of the student who implemented them. All the members of the group should have worked on implementation activities and submitted pull requests. Only stable code should be included in the release. The code that is still under development should be in branches.
 
 ## Tests (Michael)
-
-You should implement automated tests that aim to verify the correct behavior of your code. Provide the following information:
-
-- Test framework you used to develop your tests (e.g., JUnit, unittest, pytest, etc.):
-- Link to your GitHub folder where your automated unit tests are located.
-- An example of a test case. Include in your answer a GitHub link to the class being tested and to the test.
-- A print screen showing the result of the execution of the automated tests.
+- gtest
+- [Automated Unit Tests Folder](https://github.com/Gus-Siegel/ProjectPassword/tree/main/BackEnd/StringComparison)
+- Example testing the [TimeWeightType](https://github.com/Gus-Siegel/ProjectPassword/blob/main/BackEnd/StringComparison/compare_strings.cpp) class:\
+The time error [is being tested](https://github.com/Gus-Siegel/ProjectPassword/blob/main/BackEnd/StringComparison/compare_strings.cpp/automatedTest.cpp) by generating a randomized input, and comparing a manual error calculation to the error the class function gives. 
+![](/Deliverable4_Tests.png)
 
 ## Adopted technologies (Levi, Taylor, Michael)
 
