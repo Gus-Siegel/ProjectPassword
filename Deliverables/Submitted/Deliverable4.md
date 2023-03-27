@@ -13,7 +13,7 @@ TypeLock is a secure authentication system that identifies users by analyzing th
 
 ## Implemented requirements
 
-Requirement: As a developer, I want to be able to switch keyboards and still log into my account\
+Requirement: As a developer, I want to be able to switch keyboards and still log into my account.\
 Issue: [Link to Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/23)\
 Implemented by: Michael Vertin\
 Approved by: Gus Siegel
@@ -98,7 +98,7 @@ If this issue persists we won't be able to utilize Docker and will have to find 
 
 ![dockerError](https://raw.githubusercontent.com/Gus-Siegel/ProjectPassword/main/Deliverables/Submitted/DockerIssue.png)
 
-Message Ana with this issue on Sunday at 2:15 pm.
+Note: Messaged Ana with this issue on Sunday at 2:15 pm.
 
 ## Licensing
 
