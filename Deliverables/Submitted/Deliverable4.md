@@ -18,24 +18,18 @@ List in this section, the requirements and associated pull request that you impl
 Order the requirements below by the name of the student who implemented them. All the members of the group should have worked on implementation activities and submitted pull requests. Only stable code should be included in the release. The code that is still under development should be in branches.
 
 ## Tests (Michael)
-
-You should implement automated tests that aim to verify the correct behavior of your code. Provide the following information:
-
-- Test framework you used to develop your tests (e.g., JUnit, unittest, pytest, etc.):
-- Link to your GitHub folder where your automated unit tests are located.
-- An example of a test case. Include in your answer a GitHub link to the class being tested and to the test.
-- A print screen showing the result of the execution of the automated tests.
+- gtest
+- [Automated Unit Tests Folder](https://github.com/Gus-Siegel/ProjectPassword/tree/main/BackEnd/StringComparison)
+- Example testing the [TimeWeightType](https://github.com/Gus-Siegel/ProjectPassword/blob/main/BackEnd/StringComparison/compare_strings.cpp) class:\
+The time error [is being tested](https://github.com/Gus-Siegel/ProjectPassword/blob/main/BackEnd/StringComparison/compare_strings.cpp/automatedTest.cpp) by generating a randomized input, and comparing a manual error calculation to the error the class function gives. 
+![](/Deliverable4_Tests.png)
 
 ## Adopted technologies (Levi, Taylor, Michael)
 
 List the adopted technologies with a brief description and justification for choosing them.
-<<<<<<< HEAD
-Project Password combines many different technologies to deliver an application that 
-=======
 
-Front End Technologies:
-Tkinter - We adopted this technology because we needed a GUI that our users could use
-          to help them input what they need to in the correct box.
+Front End Technologies: Tkinter - We adopted this technology because we needed a GUI that our users could use to help them input what they need to in the correct box.
+
 
 Client Server Technologies:
 
@@ -47,28 +41,27 @@ HostWinds - HostWinds is the host for our remote server where we run our C++ Ser
 
 FileZilla - FileZilla is our file transfer service that allows us to upload programs to our remote server.
 
->>>>>>> a89fb6e96f4ce1c14cf462dcde9716cf5659c188
 ## Learning/training (Levi, Taylor, Michael)
 
 Describe the strategies employed by the team to learn the adopted technologies.
 
-In the front end portion we learned our adopted technology, tkinter, pretty quickly since there are a lot of comprehensive tutorials 
+In the front end portion we learned our adopted technology, tkinter, pretty quickly since there are a lot of comprehensive tutorials
 on youtube as well as a lot of helpful posts on stackoverflow.
-For the Client Server relationship we needed to research classes, and how to connect a python client to a c++ Server. 
+For the Client Server relationship we needed to research classes, and how to connect a python client to a c++ Server.
 The python client was made into a class for easy connection to the front end code. This allows the gui to call the client directly.
 
-Gus and Taylor Worked on the Client Server portion of the project for the minimum viable product. Gus is knowledgeable in 
-object oriented programing and helped get Taylor up to speed when it came to writing classes and implementing object-oriented 
-practices on the client. Both students are taking CS460 Computer Networking, thus their experience in class helped them 
-to write Client Server programs with a TCP connection. Google was essential in teaching the students how to continuously 
-allow the server to run and accept connections.  
+Gus and Taylor Worked on the Client Server portion of the project for the minimum viable product. Gus is knowledgeable in
+object oriented programing and helped get Taylor up to speed when it came to writing classes and implementing object-oriented
+practices on the client. Both students are taking CS460 Computer Networking, thus their experience in class helped them
+to write Client Server programs with a TCP connection. Google was essential in teaching the students how to continuously
+allow the server to run and accept connections.
 
 ## Deployment (Gus)
 
 Provide a link for the system in production and describe how you are deploying your system.
 
 The deployment we researched was Docker. Upon implementing we found that part of Docker that allows for sharing, Docker Playground
-was down. We submitted an issue to the creators git repo and saw we weren't the only ones having this issue. 
+was down. We submitted an issue to the creators git repo and saw we weren't the only ones having this issue.
 If this issue persists we won't be able to utilize Docker and will have to find another method of distribution.
 ![dockerError](https://raw.githubusercontent.com/Gus-Siegel/ProjectPassword/main/Deliverables/Submitted/DockerIssue.png)
 ## Licensing (Eddie)
