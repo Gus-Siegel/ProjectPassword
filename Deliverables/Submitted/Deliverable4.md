@@ -17,6 +17,14 @@ List in this section, the requirements and associated pull request that you impl
 
 Order the requirements below by the name of the student who implemented them. All the members of the group should have worked on implementation activities and submitted pull requests. Only stable code should be included in the release. The code that is still under development should be in branches.
 
+Taylor
+- Wrote python client
+- Made python client a class
+- Encoded data from client
+- Connected Front End to Client
+- Client sends username and passphrase metrics to the server
+- Client sends close TCP request to server after sending all data
+- 
 ## Tests (Michael)
 - gtest
 - [Automated Unit Tests Folder](https://github.com/Gus-Siegel/ProjectPassword/tree/main/BackEnd/StringComparison)
@@ -63,6 +71,8 @@ The deployment we researched was Docker. Upon implementing we found that part of
 was down. We submitted an issue to the creators git repo and saw we weren't the only ones having this issue.
 If this issue persists we won't be able to utilize Docker and will have to find another method of distribution.
 ![dockerError](https://raw.githubusercontent.com/Gus-Siegel/ProjectPassword/main/Deliverables/Submitted/DockerIssue.png)
+Message Ana with this issue on Sunday at 2:15 pm.
+
 ## Licensing (Eddie)
 
 Inform the license you adopted for your source code (remember to configure GitHub accordingly). Explain why you adopted this license.
