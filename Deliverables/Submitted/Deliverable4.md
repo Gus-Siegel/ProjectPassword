@@ -118,15 +118,15 @@ We opted for the **MIT license** to allow maximum freedom for others to use and 
 
 ## Look & feel
 
-The first thing we did was talk about what the logo was going to look like since we chose to work on the aesthetics first. The logo we chose ended up having a white font color so with that in mind we chose black as a background color for the main window.
+Initially, we commenced our design process by deliberating on the logo's appearance, considering the visual appeal as a priority. Upon finalizing the logo, which prominently featured white font, we opted to compliment it with a black background color for the main window. This deliberate color choice was made with an intention to enhance the logo's visibility and lend a sleek, modern aesthetic to the overall design.
 
 ![logo](https://user-images.githubusercontent.com/90239263/227803445-bf05812f-e666-408a-a5a0-11b12f1628ac.png)
 
-After we figured out the color scheme we decided on a central layout for the inputs and buttons, everything is put over one another in the center column of the user interface.
+Once the color scheme was finalized, we proceeded to design a cohesive layout for the user interface. We opted for a centralized layout that positioned all the inputs and buttons over each other in the center column. This approach not only creates a clean and organized appearance, but also ensures easy accessibility and user-friendliness.
 
 ![userface layout](https://cdn.discordapp.com/attachments/1073663644589633536/1089779829446033438/Screen_Shot_2023-03-26_at_22.15.34_PM.png)
 
-In the end we decided to go with two buttons for our interface. The login button would take the data recorded from the keyboard and put it in a list with the times they were pushed and put it in a variable. While the other button clears the text box for another phrase to be typed and recorded.
+Ultimately, we concluded that a two-button interface would be ideal for our software. The login button functioned by capturing the user's keyboard input, recording the timing of each keystroke, and compiling the data into a list that was then assigned to a variable. On the other hand, the second button was responsible for clearing the text box, allowing for a new phrase to be entered and recorded.
 
 ![textbox and buttons](https://cdn.discordapp.com/attachments/1073663644589633536/1089779423466762291/Screen_Shot_2023-03-26_at_22.10.03_PM.png)
 
