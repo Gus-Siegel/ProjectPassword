@@ -30,7 +30,6 @@ List the adopted technologies with a brief description and justification for cho
 
 Front End Technologies: Tkinter - We adopted this technology because we needed a GUI that our users could use to help them input what they need to in the correct box.
 
-<<<<<<< HEAD
 Client Server Technologies:
 
 PyCharm - We used PyCharm to run the front end and client because VSC required additional work arounds be implemented for pynput which was utilized on the Front End.
@@ -40,9 +39,6 @@ PuTTY - PuTTY was vital for running our C++ Server in a remote environment.
 HostWinds - HostWinds is the host for our remote server where we run our C++ Server.
 
 FileZilla - FileZilla is our file transfer service that allows us to upload programs to our remote server.
-=======
-Client Server Technologies: PyCharm - We used PyCharm to run the front end and client because VSC required additional work arounds be implemented for pynput which was utilized on the Front End. PuTTY - PuTTY was vital for running our C++ Server in a remote environment. HostWinds - HostWinds is the host for our remote server where we run our C++ Server. FileZilla - FileZilla is our file transfer service that allows us to upload programs to our remote server.
->>>>>>> 7246a097171fef9aad25c30ed7447303d3a95d9f
 
 ## Learning/training (Levi, Taylor, Michael)
 
