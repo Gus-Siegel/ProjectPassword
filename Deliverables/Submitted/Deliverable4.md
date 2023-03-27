@@ -29,42 +29,32 @@ You should implement automated tests that aim to verify the correct behavior of 
 ## Adopted technologies (Levi, Taylor, Michael)
 
 List the adopted technologies with a brief description and justification for choosing them.
-<<<<<<< HEAD
-Project Password combines many different technologies to deliver an application that 
-=======
 
-Front End Technologies:
-Tkinter - We adopted this technology because we needed a GUI that our users could use
-          to help them input what they need to in the correct box.
+Front End Technologies: Tkinter - We adopted this technology because we needed a GUI that our users could use to help them input what they need to in the correct box.
 
-Client Server Technologies:
-PyCharm - We used PyCharm to run the front end and client because VSC required additional work arounds be implemented for pynput which was utilized on the Front End.
-PuTTY - PuTTY was vital for running our C++ Server in a remote environment.
-HostWinds - HostWinds is the host for our remote server where we run our C++ Server.
-FileZilla - FileZilla is our file transfer service that allows us to upload programs to our remote server.
+Client Server Technologies: PyCharm - We used PyCharm to run the front end and client because VSC required additional work arounds be implemented for pynput which was utilized on the Front End. PuTTY - PuTTY was vital for running our C++ Server in a remote environment. HostWinds - HostWinds is the host for our remote server where we run our C++ Server. FileZilla - FileZilla is our file transfer service that allows us to upload programs to our remote server.
 
->>>>>>> a89fb6e96f4ce1c14cf462dcde9716cf5659c188
 ## Learning/training (Levi, Taylor, Michael)
 
 Describe the strategies employed by the team to learn the adopted technologies.
 
-In the front end portion we learned our adopted technology, tkinter, pretty quickly since there are a lot of comprehensive tutorials 
+In the front end portion we learned our adopted technology, tkinter, pretty quickly since there are a lot of comprehensive tutorials
 on youtube as well as a lot of helpful posts on stackoverflow.
-For the Client Server relationship we needed to research classes, and how to connect a python client to a c++ Server. 
+For the Client Server relationship we needed to research classes, and how to connect a python client to a c++ Server.
 The python client was made into a class for easy connection to the front end code. This allows the gui to call the client directly.
 
-Gus and Taylor Worked on the Client Server portion of the project for the minimum viable product. Gus is knowledgeable in 
-object oriented programing and helped get Taylor up to speed when it came to writing classes and implementing object-oriented 
-practices on the client. Both students are taking CS460 Computer Networking, thus their experience in class helped them 
-to write Client Server programs with a TCP connection. Google was essential in teaching the students how to continuously 
-allow the server to run and accept connections.  
+Gus and Taylor Worked on the Client Server portion of the project for the minimum viable product. Gus is knowledgeable in
+object oriented programing and helped get Taylor up to speed when it came to writing classes and implementing object-oriented
+practices on the client. Both students are taking CS460 Computer Networking, thus their experience in class helped them
+to write Client Server programs with a TCP connection. Google was essential in teaching the students how to continuously
+allow the server to run and accept connections.
 
 ## Deployment (Gus)
 
 Provide a link for the system in production and describe how you are deploying your system.
 
 The deployment we researched was Docker. Upon implementing we found that part of Docker that allows for sharing, Docker Playground
-was down. We submitted an issue to the creators git repo and saw we weren't the only ones having this issue. 
+was down. We submitted an issue to the creators git repo and saw we weren't the only ones having this issue.
 If this issue persists we won't be able to utilize Docker and will have to find another method of distribution.
 
 ## Licensing (Eddie)
