@@ -37,7 +37,7 @@ Taylor
 - [Automated Unit Tests Folder](https://github.com/Gus-Siegel/ProjectPassword/tree/main/BackEnd/StringComparison)
 - Example testing the [TimeWeightType](https://github.com/Gus-Siegel/ProjectPassword/blob/main/BackEnd/StringComparison/compare_strings.cpp) class:\
 The time error [is being tested](https://github.com/Gus-Siegel/ProjectPassword/blob/main/BackEnd/StringComparison/compare_strings.cpp/automatedTest.cpp) by generating a randomized input, and comparing a manual error calculation to the error the class function gives. 
-![](/Deliverable4_Tests.png)
+![Deliverable Tests](Deliverable4_Tests.png)
 
 ## Adopted technologies (Levi, Taylor, Michael)
 
@@ -55,6 +55,11 @@ HostWinds - HostWinds is the host for our remote server where we run our C++ Ser
 
 FileZilla - FileZilla is our file transfer service that allows us to upload programs to our remote server.
 
+Backend Technologies:
+
+g++ - The compiler for c++ is used to generate machine code to be used during run-time. 
+
+
 ## Learning/training (Levi, Taylor, Michael)
 
 Describe the strategies employed by the team to learn the adopted technologies.
@@ -69,6 +74,9 @@ object oriented programing and helped get Taylor up to speed when it came to wri
 practices on the client. Both students are taking CS460 Computer Networking, thus their experience in class helped them
 to write Client Server programs with a TCP connection. Google was essential in teaching the students how to continuously
 allow the server to run and accept connections.
+
+The backend continued working with g++. gcc was used in previous courses, and made learning g++ quick since the syntax of c and cpp are almost identical. 
+There were a few issues including modules, although an alternative method was found for those modules. 
 
 ## Deployment (Gus)
 
