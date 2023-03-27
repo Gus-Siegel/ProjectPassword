@@ -14,33 +14,33 @@ TypeLock is a secure authentication system that identifies users by analyzing th
 ## Implemented requirements
 
 Requirement: As a developer, I want to be able to switch keyboards and still log into my account\
-Issue: [Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/23)\
-Implemented by: Michael\
+Issue: [Link to Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/23)\
+Implemented by: Michael Vertin\
 Approved by: Gus Siegel
 
 Requirement: As an elderly person, I want an easier way to login so I don’t have to remember so many passwords.\
-Issue: [Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/25)\
-Implemented by: Eduardo, Levi\
+Issue: [Link to Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/25)\
+Implemented by: Eduardo De La Rosa and Levi Watlington\
 Approved by: Gus Siegel
 
 Requirement: As a college student, I want a more secure login so I don’t have to constantly change my passwords.\
-Issue: [Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/26)\
-Implemented by: Taylor, Gus\
-Approved by: Michael
+Issue: [Link to Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/26)\
+Implemented by: Taylor Nielsen and Gus Siegel\
+Approved by: Michael Vertin
 
 Requirement: As a busy person, I want a quick and consistent way to log in to my account, so that I do not need to spend excessive time logging in.\
-Issue: [Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/27)\
-Implemented by: Michael, Taylor, Gus\
-Approved by: Levi
+Issue: [Link to Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/27)\
+Implemented by: Michael Vertin, Taylor Nielsen, and Gus Siegel\
+Approved by: Levi Watlington
 
 Requirement: As a forgetful person, I want to not need to remember a password, so that I do not need to remember information to log in.\
-Issue: [Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/28)\
-Implemented by: Michael, Taylor, Gus\
-Approved by: Eduardo
+Issue: [Link to Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/28)\
+Implemented by: Michael Vertin, Taylor Nielsen, and Gus Siegel\
+Approved by: Eduardo De La Rosa
 
 Requirement: As a novice tech user, I want to be able to use a more flexible login system so I don't get locked out of my accounts.\
-Issue: [Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/31)\
-Implemented by: Eduardo, Levi\
+Issue: [Link to Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/31)\
+Implemented by: Eduardo De La Rosa and Levi Watlington\
 Approved by: Gus Siegel
 
 ## Tests
