@@ -15,6 +15,13 @@ Project repository: [https://github.com/Gus-Siegel/ProjectPassword](https://gith
 
 List in this section, the requirements and associated pull request that you implemented for this release, following the example below---include the description of the requirement, a link to the issue, a link to the pull request(s) that implement the requirement, who implemented the requirement, who approved it, and a print screen that depicts the implemented feature (if applicable). I expect that you implement the features you specified in your MVP (c.f. D.2 Requirements).
 
+Requirement: As a developer, I want to be able to switch keyboards and still log into my account
+Issue: [Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/23)
+Implemented by: Micheal Vertin 
+Approved by: Gus Siegel
+PrintScreen: N/A
+
+
 Order the requirements below by the name of the student who implemented them. All the members of the group should have worked on implementation activities and submitted pull requests. Only stable code should be included in the release. The code that is still under development should be in branches.
 
 ## Tests (Michael)
@@ -63,6 +70,7 @@ The deployment we researched was Docker. Upon implementing we found that part of
 was down. We submitted an issue to the creators git repo and saw we weren't the only ones having this issue.
 If this issue persists we won't be able to utilize Docker and will have to find another method of distribution.
 ![dockerError](https://raw.githubusercontent.com/Gus-Siegel/ProjectPassword/main/Deliverables/Submitted/DockerIssue.png)
+
 ## Licensing (Eddie)
 
 Inform the license you adopted for your source code (remember to configure GitHub accordingly). Explain why you adopted this license.
