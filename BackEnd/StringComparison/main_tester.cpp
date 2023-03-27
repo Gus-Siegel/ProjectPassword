@@ -1,5 +1,5 @@
 // compiling from command line: 
-    // g++ -Wall compare_strings.cpp pythonListToCharState.cpp verifyUser.cpp main_tester.cpp-o outFile
+    // g++ -Wall compare_strings.cpp pythonListToCharState.cpp verifyUser.cpp main_tester.cpp -o outFile
 
 
 #include "compare_strings.h"
@@ -42,6 +42,9 @@ int main()
     std::cout << "Last Input: should return True: ";
     std::cout << verifyUser( "[[123654789.012,'h'], [123654789.029,'e'], [123654789.052,'l'], [123654789.092,'l'], [123654789.10313,'o'] ]", 
 			"[['h',321456987.018], ['e',321456987.0435], ['l',321456987.078], ['l',321456987.138], ['o',321456987.154695] ]" ) << "\n";
+
+    testVerifyUser( "[[428944.74934,'a'],[428944.83761,'a'],[428944.86697,'a'],[428944.88302,'a'],[428944.90400,'a'],[428944.93121,'a']]", 
+	"[[725894.04638,'a'],[725894.04970,'a'],[725894.06244,'a'],[725894.10041,'a'],[725894.11396,'a'],[725894.14625,'a']]" );
 
     std::cout << "\n\nProgram End\n";
     return 0;
@@ -137,7 +140,6 @@ CharStateList testPythonListConversion( const std::string pythonStr )
 
 	return listResult;
 }
-
 
 
 

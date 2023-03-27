@@ -18,13 +18,11 @@ List in this section, the requirements and associated pull request that you impl
 Order the requirements below by the name of the student who implemented them. All the members of the group should have worked on implementation activities and submitted pull requests. Only stable code should be included in the release. The code that is still under development should be in branches.
 
 ## Tests (Michael)
-
-You should implement automated tests that aim to verify the correct behavior of your code. Provide the following information:
-
-- Test framework you used to develop your tests (e.g., JUnit, unittest, pytest, etc.):
-- Link to your GitHub folder where your automated unit tests are located.
-- An example of a test case. Include in your answer a GitHub link to the class being tested and to the test.
-- A print screen showing the result of the execution of the automated tests.
+- gtest
+- [Automated Unit Tests Folder](https://github.com/Gus-Siegel/ProjectPassword/tree/main/BackEnd/StringComparison)
+- Example testing the [TimeWeightType](https://github.com/Gus-Siegel/ProjectPassword/blob/main/BackEnd/StringComparison/compare_strings.cpp) class:\
+The time error [is being tested](https://github.com/Gus-Siegel/ProjectPassword/blob/main/BackEnd/StringComparison/compare_strings.cpp/automatedTest.cpp) by generating a randomized input, and comparing a manual error calculation to the error the class function gives. 
+![](/Deliverable4_Tests.png)
 
 ## Adopted technologies (Levi, Taylor, Michael)
 
@@ -32,7 +30,16 @@ List the adopted technologies with a brief description and justification for cho
 
 Front End Technologies: Tkinter - We adopted this technology because we needed a GUI that our users could use to help them input what they need to in the correct box.
 
-Client Server Technologies: PyCharm - We used PyCharm to run the front end and client because VSC required additional work arounds be implemented for pynput which was utilized on the Front End. PuTTY - PuTTY was vital for running our C++ Server in a remote environment. HostWinds - HostWinds is the host for our remote server where we run our C++ Server. FileZilla - FileZilla is our file transfer service that allows us to upload programs to our remote server.
+
+Client Server Technologies:
+
+PyCharm - We used PyCharm to run the front end and client because VSC required additional work arounds be implemented for pynput which was utilized on the Front End.
+
+PuTTY - PuTTY was vital for running our C++ Server in a remote environment.
+
+HostWinds - HostWinds is the host for our remote server where we run our C++ Server.
+
+FileZilla - FileZilla is our file transfer service that allows us to upload programs to our remote server.
 
 ## Learning/training (Levi, Taylor, Michael)
 
@@ -56,7 +63,7 @@ Provide a link for the system in production and describe how you are deploying y
 The deployment we researched was Docker. Upon implementing we found that part of Docker that allows for sharing, Docker Playground
 was down. We submitted an issue to the creators git repo and saw we weren't the only ones having this issue.
 If this issue persists we won't be able to utilize Docker and will have to find another method of distribution.
-
+![dockerError](https://raw.githubusercontent.com/Gus-Siegel/ProjectPassword/main/Deliverables/Submitted/DockerIssue.png)
 ## Licensing (Eddie)
 
 Inform the license you adopted for your source code (remember to configure GitHub accordingly). Explain why you adopted this license.
