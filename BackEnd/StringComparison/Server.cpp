@@ -168,7 +168,7 @@ int main(int argc, char **argv) {
                 std::cout << "dataB> " << wordTwo << "\n";
 
                 //check if string matches string from file via micheals code
-                if(verifyUser(wordOne, wordTwo)){
+                if(verifyUser(wordOne, db_pass)){
                     temp = "true";
                 }
                 else{
