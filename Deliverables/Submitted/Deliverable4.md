@@ -17,7 +17,7 @@ List in this section, the requirements and associated pull request that you impl
 
 Requirement: As a developer, I want to be able to switch keyboards and still log into my account
 Issue: [Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/23)
-Implemented by: Micheal  
+Implemented by: Michael  
 Approved by: Gus Siegel
 PrintScreen: N/A
 
@@ -30,24 +30,26 @@ PrintScreen: N/A
 Requirement: As a college student, I want a more secure login so I don’t have to constantly change my passwords.
 Issue: [Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/26)
 Implemented by: Taylor, Gus
-Approved by: Gus Siegel
+Approved by: Michael
 PrintScreen: N/A
 
 Requirement: As a busy person, I want a quick and consistent way to log in to my account, so that I do not need to spend excessive time logging in.
 Issue: [Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/27)
-Implemented by: Micheal, Taylor, Gus
-Approved by: Gus Siegel
+Implemented by: Michael, Taylor, Gus
+Approved by: Levi
 PrintScreen: N/A
 
 Requirement: As a forgetful person, I want to not need to remember a password, so that I do not need to remember information to log in.
 Issue: [Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/28)
-Implemented by: Micheal, Taylor, Gus
-Approved by: Gus Siegel
+Implemented by: Michael, Taylor, Gus
+Approved by: Eddie
 PrintScreen: N/A
 
 Requirement: As a novice tech user, I want to be able to use a more flexible login system so I don't get locked out of my accounts.
 Issue: [Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/31)
 Implemented by: Eddie, Levi
+Approved by: Gus Siegel
+PrintScreen: N/A
 
 Order the requirements below by the name of the student who implemented them. All the members of the group should have worked on implementation activities and submitted pull requests. Only stable code should be included in the release. The code that is still under development should be in branches.
 
