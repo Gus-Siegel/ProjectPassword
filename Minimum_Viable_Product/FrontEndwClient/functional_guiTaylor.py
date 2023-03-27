@@ -58,7 +58,7 @@ def login():
     print(f"Passphrase Entered: {password}")
     print("Keypress data:", keypress_data)
     keyboard_listener.stop()
-    loginSuccess = Client(keypress_data, "stringlit")
+    loginSuccess = ClientV1(keypress_data, "stringlit")
 login_button = tk.Button(root, text="Login", font=("Nunito", 16), bg="#000000", fg="#1F1F1F", command=login)
 login_button.pack(pady=20)
 
