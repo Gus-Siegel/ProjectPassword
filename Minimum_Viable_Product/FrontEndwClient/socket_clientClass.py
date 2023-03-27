@@ -32,6 +32,9 @@ class Client:
             print("User sent")
             data = client_socket.recv(1024).decode() # receive response
 
+            #if data == True:
+
+
             print('Received from server: ' + data) # receive response
 
             message = "bye" # again take input
