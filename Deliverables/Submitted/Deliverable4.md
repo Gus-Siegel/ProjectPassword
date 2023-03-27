@@ -16,7 +16,7 @@ Project repository: [https://github.com/Gus-Siegel/ProjectPassword](https://gith
 List in this section, the requirements and associated pull request that you implemented for this release, following the example below---include the description of the requirement, a link to the issue, a link to the pull request(s) that implement the requirement, who implemented the requirement, who approved it, and a print screen that depicts the implemented feature (if applicable). I expect that you implement the features you specified in your MVP (c.f. D.2 Requirements).
 
 Requirement: As a developer, I want to be able to switch keyboards and still log into my account\
-Issue: [Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/23)\
+Issue: [Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/23) \
 Implemented by: Michael \
 Approved by: Gus Siegel\
 PrintScreen: N/A
