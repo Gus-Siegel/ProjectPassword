@@ -382,6 +382,27 @@ bool equalCharStateValues( const CharState &oneCharState,
 }
 
 
+std::string CharStateList::toString() const
+{
+	std::list<CharState>::const_iterator wkgState;
+	std::string resultStr = (std::string)"";
+
+	for( wkgState = chars.begin(); wkgState != chars.end(); wkgState++ )
+	{
+		if( wkgState->isBuffer )
+		{
+			resultStr += "_";
+		}
+		else
+		{
+			resultStr += wkgState->value;
+		}
+	}
+
+	return resultStr;
+}
+
+
 
 
 
@@ -409,7 +430,6 @@ Weights one list such that its average matches other
 Find sum of differences of each pair. 
 Divide differences by sum of array and size to get average key ratio
 */
-// undefined behavior if one of the delays is 0
 double TimeWeightType::getTimeErrorWeight() const
 {
     std::vector<double>::const_iterator wkgOne, wkgOther;
