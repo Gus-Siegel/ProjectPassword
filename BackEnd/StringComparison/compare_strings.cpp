@@ -70,8 +70,51 @@ void CharStateList::operator=( const CharStateList &source )
 }
 
 
+// for any CharState value equal to backspace, removes that state and the previous state
+	// consecutive backspaces deletes that many previous states
+// state delays are not modified
+// the first character as a backspace only removes itself
+// returns if all backspaces removed the previous character successfully
+	// (first character backspace returns false)
+bool CharStateList::applyBackspaces( bool APPLY_BACKSPACES_BEFORE_SET_DELAY )
+{
+	bool removedAll = true;
+	std::list<CharState>::iterator wkgIter, startRemove, endRemove;
+	// iterate over the list
+	for( wkgIter = chars.begin(); wkgIter != chars.end(); wkgIter++ )
+	{
+			// need while to allow repeated backspaces consecutive
+		// if the iterator's value is backspace
+		while( wkgIter->value == BACKSPACE )
+		{
+			// set start to wkgIter, previous is available
+			startRemove = wkgIter;
+			if( wkgIter != chars.begin() )
+			{
+				startRemove--;
+			}
+			else
+			{
+				removedAll = false;
+			}
+			// set endRemove to wkgIter + 1 (exclusive upper bound)
+			endRemove = wkgIter;
+			endRemove++;
+			// remove from startRemove to wkgIter, reassign
+			wkgIter = chars.erase( startRemove, endRemove );
 
-
+			// check the value is at the front and 
+				// delay was already found
+			if( wkgIter == chars.begin() && !APPLY_BACKSPACES_BEFORE_SET_DELAY )
+			{
+				// set the delay to 0
+				wkgIter->delay = 0;
+			}
+		}
+		// otherwise, do nothing
+	}
+	return removedAll;
+}
 
 // add toAppend to end of list
 void CharStateList::append( const CharState &toAppend )

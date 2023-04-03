@@ -7,7 +7,6 @@
 
 
 //#include "gtest/gtest.h"
-
 #include <string>
 #include <stdio.h>
 #include <iostream>
@@ -101,12 +100,56 @@ bool performTests()
 		"[[725894.04638,'a'],[725894.04970,'a'],[725894.06244,'b'],[725894.10041,'a'],[725894.11396,'a'],[725894.14625,'a']]", 
 		MISTYPE_WEIGHT, .432702 );
 
+/*
+	// testing backspace character with APPLY_BACKSPACES_AFTER_SET_DELAY = true
+	allTestsPassed &= testErrors( 
+	"[[987654321,'a'],[987654332,'a'],[987654333,'a'],[987654339,'a']]", 
+		"[[987655321,'a'],[987655325,'a'],[987655333,''],[987655343,'a'],[987655345,'a'],[987655357,'a']]", 
+		0, 0 );
+*/
+
+	// testing backspace character with APPLY_BACKSPACES_BEFORE_SET_DELAY = true
+	allTestsPassed &= testErrors( 
+	                                        /////////////////////////////////////
+	"[[428944.64934,'a'],[428944.73761,'a'],[428944.84000,'a'],[428944.83761,''],[428944.86697,'a'],[428944.88302,'a'],[428944.90400,'a'],[428944.93121,'a']]", 
+		"[[725894.04638,'a'],[725894.04970,'a'],[725894.06244,'a'],[725894.10041,'a'],[725894.11396,'a'],[725894.14625,'a']]", 
+		0, .432702 );
+
+	// testing backspace character in python string form
+	allTestsPassed &= testErrors( 
+
+	"[[428944.64934,'a'],[428944.73761,'a'],[428944.84000,'a'],[428944.83761,'\\x08'],[428944.86697,'a'],[428944.88302,'a'],[428944.90400,'a'],[428944.93121,'a']]", 
+		"[[725894.04638,'a'],[725894.04970,'a'],[725894.06244,'a'],[725894.10041,'a'],[725894.11396,'a'],[725894.14625,'a']]", 
+		0, .432702 );
+
+	// testing backspace at beginning
+	allTestsPassed &= testErrors( 
+		"[[428944.74934,'\\x08'],[428944.74934,'a'],[428944.83761,'a'],[428944.86697,'a'],[428944.88302,'a'],[428944.90400,'a'],[428944.93121,'a']]", 
+		"[[725894.04638,'a'],[725894.04970,'a'],[725894.06244,'a'],[725894.10041,'a'],[725894.11396,'a'],[725894.14625,'a']]", 
+		0, .432702 );
+
+	// testing consecutive backspaces
+	allTestsPassed &= testErrors( 
+	"[[428944.74934,'a'],[428944.83761,'a'],[428944.86697,'a'],[428944.88302,'a'],[428944.90400,'a'],[428944.93121,'a']]", 	"[[725894.04638,'a'],[725894.04970,'a'],[725894.06244,'a'],[725894.10041,'a'],[725894.11396,'a'],[725894.14625,'a'],[725894.14825,'a'],[725894.15625,'a'],[725894.15825,''],[725895.14625,'']]", 
+		0, .432702 );
+
+
+	// testing excessive backspaces
+	allTestsPassed &= testErrors( 
+		"[[428942.74934,'h'],[428942.83761,'a'],[428942.88302,'l'],[428942.90400,'o'],[253324133,''],[253324134,''],[253324135,''],[253324136,''],[253324137,''],[253324138,''],[253324139,''],[428944.74934,'h'],[428944.83761,'e'],[428944.86697,'l'],[428944.88302,'l'],[428944.90400,'o'],[428944.93121,'!']]", 
+	"[[725894.04638,'h'],[725894.04970,'e'],[725894.06244,'l'],[725894.10041,'l'],[725894.11396,'o'],[725894.14625,'!']]", 
+		0, .432702 );
+
+
+
 	// test testErrors
 	std::cout << "\nTest testErrors displays errors when incorrect values are given\n";
 	testErrors( 
 		"[[428944.74934,'a'],[428944.83761,'a'],[428944.86697,'a'],[428944.88302,'a'],[428944.90400,'a'],[428944.93121,'a']]", 
 		"[[725894.04638,'a'],[725894.04970,'a'],[725894.06244,'a'],[725894.10041,'a'],[725894.11396,'a'],[725894.14625,'a']]", 
 		2.5, .432802 );
+
+
 
 
 	// display test results
@@ -145,7 +188,6 @@ bool testErrors( const std::string strOne, const std::string strTwo,
 	bool passedTests = true;
 	oneList = readCharStateListFromString( strOne );
 	otherList = readCharStateListFromString( strTwo );
-
 	spellingError = alignChars( oneList, otherList );
 	timeError = getWeightTimeErrors( oneList, otherList );
 
@@ -166,7 +208,6 @@ bool testErrors( const std::string strOne, const std::string strTwo,
 			passedTests = false;
 		}
 	}
-
 	return passedTests;
 }
 
