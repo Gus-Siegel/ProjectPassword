@@ -31,9 +31,17 @@ CharStateList readCharStateListFromString( const std::string str, int &wkgInd )
 	// ignore list terminator
 	wkgInd++;
 
+	if( APPLY_BACKSPACES_BEFORE_SET_DELAY )
+	{
+		resultList.applyBackspaces( APPLY_BACKSPACES_BEFORE_SET_DELAY );
+	}
 	if( TIME_BASED_INPUT )
 	{
 		resultList.setToDelay();
+	}
+	if( APPLY_BACKSPACES_AFTER_SET_DELAY )
+	{
+		resultList.applyBackspaces( APPLY_BACKSPACES_BEFORE_SET_DELAY );
 	}
 
 	return resultList;
@@ -75,11 +83,64 @@ CharState readCharStateFromString( const std::string str, int &wkgInd )
 
 char readCharFromString( const std::string str, int &wkgInd )
 {
-	// increment wkgInd for each initializer, terminator, and character
-	wkgInd += CHAR_STRING_SIZE;
+	char charInit;
+	char charEnd;
+	char evaledChar;
+	std::string charAsString;
 
-	// return character from string
-	return str[ wkgInd - CHAR_STRING_SIZE + 1 ];
+	// read quotation initializer from string, store as charInit
+	charInit = str[ wkgInd ];
+	charEnd = charInit; // assume start and end are the same character
+	wkgInd++;
+
+	// read character being evaluated
+	evaledChar = str[ wkgInd ];
+
+	// case empty string
+	if( evaledChar == charEnd )
+	{
+		// avoid case evaluated character is equal to initializer
+			// next character is not end marker
+		if( str[ wkgInd + 1 ] != charEnd )
+		{
+			// return recognition of empty string
+			return EMPTY_STRING_CHAR;
+		}
+	}
+
+	// case evaluated char is more than one character
+	if( str[ wkgInd + 1 ] != charEnd )
+	{
+		// convert to string
+		charAsString = (std::string)""; // empty string
+			// iterate until character is end
+		while( str[ wkgInd ] != charEnd )
+		{
+			// read character, push onto evaluated character
+			charAsString.push_back( str[ wkgInd ] );
+			wkgInd++;
+		}
+		// skip charEnd
+		wkgInd++;
+
+			// not necessary if c++ evaluates python's backspace as 0x08
+		// check string equal to python's backspace string
+		if( charAsString == PYTHON_BACKSPACE_STR )
+		{
+			return BACKSPACE_CHAR;
+		}
+		// otherwise, unrecognized
+		return UNRECOGNIZED_CHAR;
+	}
+	// end case multiple character char, assume single
+
+	// skip evaluated character and charEnd
+	wkgInd += 2;
+
+	// return evaluated character
+	// if evaluated character is c++'s ascii backspace, 
+	// 		will return equivalent of BACK_SPACE_CHAR
+	return evaledChar;
 }
 
 double readDoubleFromString( const std::string str, int &wkgInd )
