@@ -1,6 +1,9 @@
 import tkinter as tk
 import time
-from socket_clientV2 import Client #connection to Client Program
+import os
+from socket_clientV3 import Client #connection to Client Program
+
+
 
 # Initialize the list of lists to store the keypress data
 keypress_data = []
@@ -20,8 +23,14 @@ root.geometry("500x400")
 # Set the window color
 root.configure(bg="#1F1F1F")
 
-# Create the TypeLock logo
-logo_image = tk.PhotoImage(file="logo.png")
+# Creating Typelock Logo
+    # Join the directory with the file name
+logo_path = os.path.join(os.getcwd(), "path/to/logo.png")
+
+image_path = os.path.join(os.getcwd(), "logo.png")
+
+    # Create the PhotoImage object
+logo_image = tk.PhotoImage(file=image_path)
 logo_label = tk.Label(root, image=logo_image, bg="#1F1F1F")
 logo_label.pack()
 

@@ -1,6 +1,5 @@
 # headers
 import socket
-import pdb # for debugging
 
 class Client:
     def __init__(self, passData, userData, IDphrase):
