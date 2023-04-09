@@ -30,7 +30,7 @@ The difference between this class diagram and the one that you presented in D.3 
 
 ## Sequence diagram (Michael)
 
-Present a sequence diagram that represents how the objects in your system interact for a specific use case. Also include the use case's description in this section. The sequence diagram should be consistent with the class diagram and architecture.
+![Sequence Diagram](https://cdn.discordapp.com/attachments/856622349516144665/1094706096297480302/CS386_GroupProject_SequenceDiagram.png)
 
 ## Design patterns (Taylor)
 
