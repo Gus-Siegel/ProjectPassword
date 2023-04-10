@@ -35,8 +35,19 @@ Split this section into 2 subsections. For each subsection, present a UML class 
 Your system may not be appropriate for any design pattern. In this case, for didactic purposes, be creative and extend a little bit the scope of your system to make the design patterns appropriate.
 
 Implement each design pattern in your system and provide GitHub links to the corresponding classes. Example (the links are just illustrative):
+The first UML diagram is based on the Strategy Design and roughly demonstrates the major moving pieces of our program.
 
-![exmaple](https://cdn.discordapp.com/attachments/1093988004302950531/1093988073316044971/Screenshot_2023-04-07_at_12.57.17_PM.jpg)
+Issue: [Link to image](https://github.com/Gus-Siegel/ProjectPassword/blob/main/Deliverables/Submitted/UMLStrategyDesign.png)\
+Class links:
+GUI: [Link to class](https://github.com/Gus-Siegel/ProjectPassword/blob/main/Minimum_Viable_Product/FrontEndwClient/gui_v3.0.py)\
+Client: [Link to class](https://github.com/Gus-Siegel/ProjectPassword/blob/main/Minimum_Viable_Product/FrontEndwClient/socket_clientV3.py)\
+Server: [Link to class](https://github.com/Gus-Siegel/ProjectPassword/blob/main/Client_Server/C%2B%2BServer/Server.cpp)\
+Database: Work in progress, not on github just yet.
+
+The second image only applies to the client program we wrote for implementation on the front end side and it utilizes Singleton UML Design. If you compare it to the Client in the previous image you can see we have to pair it down to fit the singleton design implementation.
+
+UML Singleton Design [Link to image](https://github.com/Gus-Siegel/ProjectPassword/blob/main/Deliverables/Submitted/UMLSingletonClient.png)\
+Client: [Link to class](https://github.com/Gus-Siegel/ProjectPassword/blob/main/Minimum_Viable_Product/FrontEndwClient/socket_clientV3.py)\
 
 ## Design principles (Levi)
 
