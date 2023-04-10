@@ -11,7 +11,7 @@ As internet usage diversifies and expands, many users face the challenge of reme
 
 The primary objective of the system is to establish a secure, reliable, and user-friendly login process that enhances account security. To achieve this, the system accurately and efficiently identifies users based on typing metrics like speed and accuracy, while also facilitating easy setup and management of typing style datasets. The system comprises three main components: Back-end, Front-end, and Client-Server relationship. The Back-end employs algorithms to accurately identify users by their typing style, ensuring secure account access and preventing unauthorized entry. The Back-end's algorithm compares two lists of keypresses along with their associated timings, identifying spelling errors and calculating the ratio of average time delay differences. Constants are employed to determine if the input matches the user's recorded typing style. The Front-end focuses on user interface design, creating a reference passphrase for users to enter and implementing the algorithm to capture user input for processing. The Client and Server act as the central elements that integrate the Front-end design and data with the Back-end algorithm. Notably, the Front-end is developed in Python, while the Back-end uses C++. The primary distinction between these languages is their approach to endianness. Both Python and C++ store integers based on the endianness of the processor running the program. To avoid issues when passing data between end hosts with different endian storage systems, conversions are performed on the client and server sides before transferring information through the Client-Server connection.
 
-## Architecture (Gus)
+## Architecture 
 
 Present a diagram of the high-level architecture of your system. Use a UML package diagram to describe the main modules and how they interrelate.
 See some examples at:
@@ -23,6 +23,9 @@ Make clear the layers of your architecture (if they exist) as described in:
 - [https://www.uml-diagrams.org/multi-layered-application-uml-model-diagram-example.html](https://www.uml-diagrams.org/multi-layered-application-uml-model-diagram-example.html)
 
 Provide a brief rationale of your architecture explaining why you designed it that way.
+
+The reason we went with this kind of architecture is so that we could future proof control and security into newer versions of our product. We wanted to have the user to have as little access as possible to our product. To do this we implemented a 3 layer design that was split into a user interface layer, a network layer, and a backend layer. The goal of the user interface layer was to clearly display what the user must do to use our product. The network layers goal was to seperate what was running on the users computer to give us more control of who was logging into our product. The goal of the backend layer was to verify that the user is who they said they were, and not some random person attempting to use the user's credentials. 
+
 
 ## Class diagram (Brock)
 
