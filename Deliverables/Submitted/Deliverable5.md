@@ -11,14 +11,13 @@ As internet usage diversifies and expands, many users face the challenge of reme
 
 The primary objective of the system is to establish a secure, reliable, and user-friendly login process that enhances account security. To achieve this, the system accurately and efficiently identifies users based on typing metrics like speed and accuracy, while also facilitating easy setup and management of typing style datasets. The system comprises three main components: Back-end, Front-end, and Client-Server relationship. The Back-end employs algorithms to accurately identify users by their typing style, ensuring secure account access and preventing unauthorized entry. The Back-end's algorithm compares two lists of keypresses along with their associated timings, identifying spelling errors and calculating the ratio of average time delay differences. Constants are employed to determine if the input matches the user's recorded typing style. The Front-end focuses on user interface design, creating a reference passphrase for users to enter and implementing the algorithm to capture user input for processing. The Client and Server act as the central elements that integrate the Front-end design and data with the Back-end algorithm. Notably, the Front-end is developed in Python, while the Back-end uses C++. The primary distinction between these languages is their approach to endianness. Both Python and C++ store integers based on the endianness of the processor running the program. To avoid issues when passing data between end hosts with different endian storage systems, conversions are performed on the client and server sides before transferring information through the Client-Server connection.
 
-## Architecture 
+## Architecture
 
-<img width="398" alt="Architecture-Diagram" src="https://user-images.githubusercontent.com/102486288/230805695-e46d5352-9ff0-4ce6-9e58-f0aa20644ca1.png">
+![Architecture-Diagram](https://user-images.githubusercontent.com/102486288/230805695-e46d5352-9ff0-4ce6-9e58-f0aa20644ca1.png)
 
-The reason we went with this kind of architecture is so that we could future proof control and security into newer versions of our product. We wanted to have the user to have as little access as possible to our product. To do this we implemented a 3 layer design that was split into a user interface layer, a network layer, and a backend layer. The goal of the user interface layer was to clearly display what the user must do to use our product. The network layers goal was to seperate what was running on the users computer to give us more control of who was logging into our product. The goal of the backend layer was to verify that the user is who they said they were, and not some random person attempting to use the user's credentials. 
+The reason we went with this kind of architecture is so that we could future proof control and security into newer versions of our product. We wanted to have the user to have as little access as possible to our product. To do this we implemented a 3 layer design that was split into a user interface layer, a network layer, and a backend layer. The goal of the user interface layer was to clearly display what the user must do to use our product. The network layers goal was to seperate what was running on the users computer to give us more control of who was logging into our product. The goal of the backend layer was to verify that the user is who they said they were, and not some random person attempting to use the user's credentials.
 
-
-## Class diagram (Brock)
+## Class diagram
 
 Present a refined class diagram of your system, including implementation details such as visibilities, attributes to represent associations, attribute types, return types, parameters, etc. The class diagram should match the code you have produced so far, but not be limited to it (e.g., it can contain classes not implemented yet).
 
@@ -28,30 +27,35 @@ The difference between this class diagram and the one that you presented in D.3 
 
 ![Sequence Diagram](https://cdn.discordapp.com/attachments/856622349516144665/1094706096297480302/CS386_GroupProject_SequenceDiagram.png)
 
-## Design patterns (Taylor)
+## Design patterns
 
-Split this section into 2 subsections. For each subsection, present a UML class diagram showing the application of a design pattern to your system (a different pattern for each section). Each class diagram should contain only the classes involved in the specific pattern (you don’t need to represent the whole system). Choose patterns from two different categories: Behavioral, Structural, and Creational. You are not limited to design patterns studied in class.
+### Design pattern 1
 
-Your system may not be appropriate for any design pattern. In this case, for didactic purposes, be creative and extend a little bit the scope of your system to make the design patterns appropriate.
-
-Implement each design pattern in your system and provide GitHub links to the corresponding classes. Example (the links are just illustrative):
 The first UML diagram is based on the Strategy Design and roughly demonstrates the major moving pieces of our program.
 
-Issue: [Link to image](https://github.com/Gus-Siegel/ProjectPassword/blob/main/Deliverables/Submitted/UMLStrategyDesign.png)\
-Class links:
-GUI: [Link to class](https://github.com/Gus-Siegel/ProjectPassword/blob/main/Minimum_Viable_Product/FrontEndwClient/gui_v3.0.py)\
-Client: [Link to class](https://github.com/Gus-Siegel/ProjectPassword/blob/main/Minimum_Viable_Product/FrontEndwClient/socket_clientV3.py)\
-Server: [Link to class](https://github.com/Gus-Siegel/ProjectPassword/blob/main/Client_Server/C%2B%2BServer/Server.cpp)\
-Database: Work in progress, not on github just yet.
+![UML Strategy Design](https://raw.githubusercontent.com/Gus-Siegel/ProjectPassword/main/Deliverables/Submitted/UMLStrategyDesign.png)
+
+#### Class links
+
+- GUI: [Link to class](https://github.com/Gus-Siegel/ProjectPassword/blob/main/Minimum_Viable_Product/FrontEndwClient/gui_v3.0.py)
+
+- Client: [Link to class](https://github.com/Gus-Siegel/ProjectPassword/blob/main/Minimum_Viable_Product/FrontEndwClient/socket_clientV3.py)
+
+- Server: [Link to class](https://github.com/Gus-Siegel/ProjectPassword/blob/main/Client_Server/C%2B%2BServer/Server.cpp)
+
+- Database: Work in progress, not on github just yet.
+
+### Design pattern 2
 
 The second image only applies to the client program we wrote for implementation on the front end side and it utilizes Singleton UML Design. If you compare it to the Client in the previous image you can see we have to pair it down to fit the singleton design implementation.
 
-UML Singleton Design [Link to image](https://github.com/Gus-Siegel/ProjectPassword/blob/main/Deliverables/Submitted/UMLSingletonClient.png)\
-Client: [Link to class](https://github.com/Gus-Siegel/ProjectPassword/blob/main/Minimum_Viable_Product/FrontEndwClient/socket_clientV3.py)\
+![UML Singleton Design](https://raw.githubusercontent.com/Gus-Siegel/ProjectPassword/main/Deliverables/Submitted/UMLSingletonClient.png)
 
-## Design principles (Levi)
+#### Class link
 
-How does your design observe the SOLID principles? Provide a short description of the following principles giving concrete examples from your classes.
+- Client: [Link to class](https://github.com/Gus-Siegel/ProjectPassword/blob/main/Minimum_Viable_Product/FrontEndwClient/socket_clientV3.py)
+
+## Design principles
 
 Our design follows the Single Responsibility Principle since when we are using classes in our code, such as ‘class Client’ from the python client server code ‘socket_clientClass.py’, they are made for a singular purpose. In this case that purpose is connecting the client to the server to login.
 
