@@ -10,6 +10,10 @@
 #include <math.h>
 #include <vector>
 
+// value constants
+#ifndef BACKSPACE
+#define BACKSPACE 0x08
+#endif // BACKSPACE
 
 // weight constants
 const double MISSING_CHAR_WEIGHT = 1.0;
@@ -17,7 +21,7 @@ const double MISTYPE_WEIGHT = 1.0;
 const double TIME_ERROR_WEIGHT = 1.0;
  
 // maximum error before recursion stops
-const int MAX_SPELLING_ERROR = 8; // INT_MAX
+const int MAX_SPELLING_ERROR = 8;
 
 // constants
 // buffer represents a position where no char is located, to keep alignment
@@ -59,7 +63,6 @@ class CharState
 {
 private:
 public:
-// TODO: make these values private
     char value;
     double delay;
     bool isBuffer;
@@ -90,6 +93,7 @@ public:
     void printListForm( const std::string end = "\n" ) const;
     void setToDelay();
     std::string toString() const;
+    bool applyBackspaces( bool APPLY_BACKSPACES_BEFORE_SET_DELAY );
 
     friend double weightTimeErrors( const CharStateList &oneStateList, 
                          const CharStateList &otherStateList );

@@ -26,6 +26,7 @@ root.configure(bg="#1F1F1F")
 # Creating Typelock Logo
     # Join the directory with the file name
 logo_path = os.path.join(os.getcwd(), "path/to/logo.png")
+print(logo_path)
 
 image_path = os.path.join(os.getcwd(), "logo.png")
 
