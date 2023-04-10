@@ -45,3 +45,13 @@ Implement each design pattern in your system and provide GitHub links to the cor
 ## Design principles (Levi)
 
 How does your design observe the SOLID principles? Provide a short description of the following principles giving concrete examples from your classes.
+
+Our design follows the Single Responsibility Principle since when we are using classes in our code, such as ‘class Client’ from the python client server code ‘socket_clientClass.py’, they are made for a singular purpose. In this case that purpose is connecting the client to the server to login.
+
+Our design doesn’t follow the Open-Closed Principle since although we do use a class there is no reason to extend it since there is only one type of information it works with so there is no need to extend the class since nothing needs to be done without modifying the code.
+
+Our design doesn’t follow the Liskov Substitution principle since we don’t use any subclasses or derived classes in the first place. We just have one class with no parent or child classes attached to it.
+
+Our design follows the Interface Segregation Principle since we only have one type of interface that clients using our program will be familiar with and doesn’t force any extra steps to be had in the program. Every client gives the same type of information to the interface so there is no difference in the processing of it all.
+
+Our design follows the Dependency Inversion Principle since our code only depends on the input of the user to work like it was designed to do. If the different aspects of our code have the right inputs given to them they will work regardless of if it was sent by another part of the code or not.
