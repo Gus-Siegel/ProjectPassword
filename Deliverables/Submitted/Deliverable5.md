@@ -19,9 +19,7 @@ The reason we went with this kind of architecture is so that we could future pro
 
 ## Class diagram
 
-Present a refined class diagram of your system, including implementation details such as visibilities, attributes to represent associations, attribute types, return types, parameters, etc. The class diagram should match the code you have produced so far, but not be limited to it (e.g., it can contain classes not implemented yet).
-
-The difference between this class diagram and the one that you presented in D.3 is that the last focuses on the conceptual model of the domain while the former reflects the implementation. Therefore, the implementation details are relevant in this case.
+![Class diagram](https://raw.githubusercontent.com/EduardoDeLaR/ProjectPassword/main/Deliverables/Submitted/d5ClassDiagram.png)
 
 ## Sequence diagram
 
