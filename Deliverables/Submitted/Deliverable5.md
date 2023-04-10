@@ -13,16 +13,7 @@ The primary objective of the system is to establish a secure, reliable, and user
 
 ## Architecture 
 
-Present a diagram of the high-level architecture of your system. Use a UML package diagram to describe the main modules and how they interrelate.
-See some examples at:
-
-- [https://www.uml-diagrams.org/package-diagrams-examples.html](https://www.uml-diagrams.org/package-diagrams-examples.html)
-
-Make clear the layers of your architecture (if they exist) as described in:
-
-- [https://www.uml-diagrams.org/multi-layered-application-uml-model-diagram-example.html](https://www.uml-diagrams.org/multi-layered-application-uml-model-diagram-example.html)
-
-Provide a brief rationale of your architecture explaining why you designed it that way.
+<img width="398" alt="Architecture-Diagram" src="https://user-images.githubusercontent.com/102486288/230805695-e46d5352-9ff0-4ce6-9e58-f0aa20644ca1.png">
 
 The reason we went with this kind of architecture is so that we could future proof control and security into newer versions of our product. We wanted to have the user to have as little access as possible to our product. To do this we implemented a 3 layer design that was split into a user interface layer, a network layer, and a backend layer. The goal of the user interface layer was to clearly display what the user must do to use our product. The network layers goal was to seperate what was running on the users computer to give us more control of who was logging into our product. The goal of the backend layer was to verify that the user is who they said they were, and not some random person attempting to use the user's credentials. 
 
