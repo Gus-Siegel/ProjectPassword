@@ -41,18 +41,11 @@ Approved by: Eduardo De La Rosa
 Requirement: As a novice tech user, I want to be able to use a more flexible login system so I don't get locked out of my accounts.\
 Issue: [Link to Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/31)\
 Implemented by: Eduardo De La Rosa and Levi Watlington\
-Approved by: Gus Siegel
+Approved by: Gus Siegel 
 
 ## Tests
-
-<<<<<<< HEAD
-- 
-## Tests (Michael)
-- gtest
-=======
 - The test framework, **gtest**, was used to develop the automated tests.
 
->>>>>>> b4b12a7d1bd184ef2cf9d20c7849e498b046288e
 - [Automated Unit Tests Folder](https://github.com/Gus-Siegel/ProjectPassword/tree/main/BackEnd/StringComparison)
 
 - Example testing the [TimeWeightType](https://github.com/Gus-Siegel/ProjectPassword/blob/main/BackEnd/StringComparison/compare_strings.cpp) class:\
