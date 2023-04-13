@@ -1,4 +1,4 @@
-# TypeLock
+# Project Password: TypeLock
 
 TypeLock is a convenient security protocol that replaces the standard password system. TypeLock allows you to log into your accounts using your own typing style instead of one of the hundreds of passwords you maintain and memorize.
 
