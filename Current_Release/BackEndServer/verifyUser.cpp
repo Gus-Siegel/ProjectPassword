@@ -15,6 +15,7 @@ bool verifyUser( CharStateList &one, CharStateList &other )
 
 	spellingError = alignChars( one, other );
 	timeError = getWeightTimeErrors( one, other );
-	return ( timeError + spellingError ) < MAX_ACCEPTABLE_USER_ERROR;
+	return spellingError <= MAX_ACCEPTABLE_SPELLING_ERROR && 
+             timeError <= MAX_ACCEPTABLE_TIME_ERROR;
 }
 

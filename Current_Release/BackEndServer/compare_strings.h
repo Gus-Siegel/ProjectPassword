@@ -9,20 +9,7 @@
 #include <limits.h>
 #include <math.h>
 #include <vector>
-
-
-// weight constants
-const double MISSING_CHAR_WEIGHT = 1.0;
-const double MISTYPE_WEIGHT = 1.0;
-const double TIME_ERROR_WEIGHT = 1.0;
- 
-// maximum error before recursion stops
-const int MAX_SPELLING_ERROR = 8; // INT_MAX
-
-// constants
-// buffer represents a position where no char is located, to keep alignment
-//    between multiple CharStateLists 
-const double BUFFER = -1001.0;
+#include "verifyUserConstants.h"
 
 // class definitions
 class TimeWeightType;
@@ -59,7 +46,6 @@ class CharState
 {
 private:
 public:
-// TODO: make these values private
     char value;
     double delay;
     bool isBuffer;
@@ -89,11 +75,41 @@ public:
     void operator=( const CharStateList &source );
     void printListForm( const std::string end = "\n" ) const;
     void setToDelay();
+    std::string toString() const;
+    bool applyBackspaces( bool APPLY_BACKSPACES_BEFORE_SET_DELAY );
+
+    // template functions
+    template <typename RemoveIterableType>
+    void removeInstances( RemoveIterableType removeIterable )
+    {
+        std::list<CharState>::iterator wkgState;
+
+        // start at beginning of chars
+        wkgState = chars.begin();
+
+        // until end of chars
+        while( wkgState != chars.end() )
+        {
+            // remove if in removeIterable
+            if( removeIterable.find( wkgState->value ) != removeIterable.end() )
+            {
+                wkgState = chars.erase( wkgState );
+            }
+
+            // otherwise, move to next character
+            else
+            {
+                wkgState++;
+            }
+        }
+    }
 
     friend double weightTimeErrors( const CharStateList &oneStateList, 
                          const CharStateList &otherStateList );
     friend double getWeightTimeErrors( const CharStateList &oneList, 
                                        const CharStateList &otherList );
+    friend double alignChars( CharStateList &oneCharStateArray, 
+                              CharStateList &otherCharStateArray );
 };
 
 
@@ -108,12 +124,14 @@ double alignCharsHelper( CharStateList &oneCharStateArray,
                  int wkgIndex, double wkgError, double &maxWkgError );
 
 // call alignCharsHelper with necessary parameters
-int alignChars( CharStateList &oneCharStateArray, 
-                 CharStateList &otherCharStateArray );
+double alignChars( CharStateList &oneCharStateArray, 
+                   CharStateList &otherCharStateArray );
 
 // returns if character values are equal, or both a buffer
 bool equalCharStateValues( const CharState &oneCharState, 
                            const CharState &otherCharState );
+
+
 
 
 ////////////////////////////////// TimeWeightType /////////////////////////////
@@ -203,10 +221,9 @@ ValueType max( const ValueType &one, const ValueType &other )
 
 
 
-// verifying functions
-bool verifyUser( CharStateList &one, CharStateList &other );
-bool verifyUser( const std::string strOne, const std::string strTwo );
+
 
 
 
 #endif // COMPARE_STRINGS_H
+
