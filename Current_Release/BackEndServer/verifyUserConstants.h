@@ -11,7 +11,6 @@ const std::string PYTHON_BACKSPACE_STR = (std::string)"\\x08";
 // weight constants
 const double MISSING_CHAR_WEIGHT = 1.0;
 const double MISTYPE_WEIGHT = 1.0;
-const double TIME_ERROR_WEIGHT = 1.0;
 
 // maximum error before recursion stops
 const int MAX_SPELLING_ERROR = 8;
