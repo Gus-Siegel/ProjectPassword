@@ -45,6 +45,27 @@ void CharState::printListForm( const std::string end ) const
 }
 
 
+// returns if character values are equal, or both a buffer
+bool equalCharStateValues( const CharState &oneCharState, 
+                           const CharState &otherCharState )
+{
+    // return false if exclusively are buffer
+    if( oneCharState.isBuffer ^ otherCharState.isBuffer )
+    {
+        return false;
+    }
+
+    // return success if both are buffer
+    if( oneCharState.isBuffer )
+    {
+        return true;
+    }
+
+    // return comparison of values
+    return oneCharState.value == otherCharState.value;
+}
+
+
 
 
 
@@ -70,8 +91,51 @@ void CharStateList::operator=( const CharStateList &source )
 }
 
 
+// for any CharState value equal to backspace, removes that state and the previous state
+	// consecutive backspaces deletes that many previous states
+// state delays are not modified
+// the first character as a backspace only removes itself
+// returns if all backspaces removed the previous character successfully
+	// (first character backspace returns false)
+bool CharStateList::applyBackspaces( bool APPLY_BACKSPACES_BEFORE_SET_DELAY )
+{
+	bool removedAll = true;
+	std::list<CharState>::iterator wkgIter, startRemove, endRemove;
+	// iterate over the list
+	for( wkgIter = chars.begin(); wkgIter != chars.end(); wkgIter++ )
+	{
+			// need while to allow repeated backspaces consecutive
+		// if the iterator's value is backspace
+		while( wkgIter->value == BACKSPACE )
+		{
+			// set start to wkgIter, previous is available
+			startRemove = wkgIter;
+			if( wkgIter != chars.begin() )
+			{
+				startRemove--;
+			}
+			else
+			{
+				removedAll = false;
+			}
+			// set endRemove to wkgIter + 1 (exclusive upper bound)
+			endRemove = wkgIter;
+			endRemove++;
+			// remove from startRemove to wkgIter, reassign
+			wkgIter = chars.erase( startRemove, endRemove );
 
-
+			// check the value is at the front and 
+				// delay was already found
+			if( wkgIter == chars.begin() && !APPLY_BACKSPACES_BEFORE_SET_DELAY )
+			{
+				// set the delay to 0
+				wkgIter->delay = 0;
+			}
+		}
+		// otherwise, do nothing
+	}
+	return removedAll;
+}
 
 // add toAppend to end of list
 void CharStateList::append( const CharState &toAppend )
@@ -195,15 +259,37 @@ int CharStateList::size() const
 
 
 // call alignCharsHelper with necessary parameters
-int alignChars( CharStateList &oneCharStateArray, 
+double alignChars( CharStateList &oneCharStateArray, 
                  CharStateList &otherCharStateArray )
 {
-    double maxWkgError = MAX_SPELLING_ERROR;
+    double maxWkgError = MAX_SPELLING_ERROR, rawSpellingError;
+    double weightedSpellingError;
     int wkgIndex = 0;
-    double wkgError = 0;
-    return alignCharsHelper( oneCharStateArray, 
+    int maxSize;
+    double wkgError = 0, maxElementWeight;
+
+    // find maximum size of either array (before inserting BUFFER)
+    maxSize = max( oneCharStateArray.chars.size(), 
+                   otherCharStateArray.chars.size() );
+
+    // return maximum error if both are 0
+    if( maxSize == 0 )
+    {
+        return 1;
+    }
+
+    // find raw error
+    rawSpellingError = alignCharsHelper( oneCharStateArray, 
                  otherCharStateArray, 
                  wkgIndex, wkgError, maxWkgError );
+
+    // maximum error weight (per error)
+    maxElementWeight = max( MISSING_CHAR_WEIGHT, MISTYPE_WEIGHT );
+
+    // weight the error between 0(good) and 1(bad) using maximum weight
+    weightedSpellingError = rawSpellingError / ( maxSize * maxElementWeight );
+
+    return weightedSpellingError;
 }
 
 // align characters in CharStateList such that the minimum
@@ -361,24 +447,24 @@ double alignCharsHelper( CharStateList &oneCharStateArray,
 }
 
 
-// returns if character values are equal, or both a buffer
-bool equalCharStateValues( const CharState &oneCharState, 
-                           const CharState &otherCharState )
+std::string CharStateList::toString() const
 {
-    // return false if exclusively are buffer
-    if( oneCharState.isBuffer ^ otherCharState.isBuffer )
-    {
-        return false;
-    }
+	std::list<CharState>::const_iterator wkgState;
+	std::string resultStr = (std::string)"";
 
-    // return success if both are buffer
-    if( oneCharState.isBuffer )
-    {
-        return true;
-    }
+	for( wkgState = chars.begin(); wkgState != chars.end(); wkgState++ )
+	{
+		if( wkgState->isBuffer )
+		{
+			resultStr += "_";
+		}
+		else
+		{
+			resultStr += wkgState->value;
+		}
+	}
 
-    // return comparison of values
-    return oneCharState.value == otherCharState.value;
+	return resultStr;
 }
 
 
@@ -409,7 +495,6 @@ Weights one list such that its average matches other
 Find sum of differences of each pair. 
 Divide differences by sum of array and size to get average key ratio
 */
-// undefined behavior if one of the delays is 0
 double TimeWeightType::getTimeErrorWeight() const
 {
     std::vector<double>::const_iterator wkgOne, wkgOther;

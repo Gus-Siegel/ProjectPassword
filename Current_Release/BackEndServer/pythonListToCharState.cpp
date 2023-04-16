@@ -31,9 +31,19 @@ CharStateList readCharStateListFromString( const std::string str, int &wkgInd )
 	// ignore list terminator
 	wkgInd++;
 
+	resultList.removeInstances( EXCLUDED_CHAR_STATE_CHARS );
+
+	if( APPLY_BACKSPACES_BEFORE_SET_DELAY )
+	{
+		resultList.applyBackspaces( APPLY_BACKSPACES_BEFORE_SET_DELAY );
+	}
 	if( TIME_BASED_INPUT )
 	{
 		resultList.setToDelay();
+	}
+	if( APPLY_BACKSPACES_AFTER_SET_DELAY )
+	{
+		resultList.applyBackspaces( APPLY_BACKSPACES_BEFORE_SET_DELAY );
 	}
 
 	return resultList;
@@ -75,12 +85,59 @@ CharState readCharStateFromString( const std::string str, int &wkgInd )
 
 char readCharFromString( const std::string str, int &wkgInd )
 {
-	// increment wkgInd for each initializer, terminator, and character
-	wkgInd += CHAR_STRING_SIZE;
+	std::string strVal;
+	// read character as a string
+	strVal = readStringFromString( str, wkgInd );
 
-	// return character from string
-	return str[ wkgInd - CHAR_STRING_SIZE + 1 ];
+	// case empty
+	if( strVal.size() == 0 )
+	{
+		// set to EMPTY_STRING_CHAR
+		return EMPTY_STRING_CHAR;
+	}
+
+	// case single character
+	if( strVal.size() == 1 )
+	{
+		// set to character value
+		return strVal[0];
+	}
+
+	// case PYTHON_BACKSPACE_STR
+	if( strVal == PYTHON_BACKSPACE_STR )
+	{
+		// set to BACKSPACE
+		return BACKSPACE;
+	}
+
+	// otherwise, unregonized
+	return UNRECOGNIZED_CHAR;
 }
+
+std::string readStringFromString( const std::string str, int &wkgInd )
+{
+	char initializer, terminator;
+	std::string resultStr;
+
+	// store first as string identifier
+	initializer = str[ wkgInd ];
+	wkgInd++;
+	terminator = initializer;
+
+	// iterate to terminator
+	while( str[ wkgInd ] != terminator )
+	{
+		// store character in resultStr
+		resultStr.push_back( str[ wkgInd ] );
+		wkgInd++;
+	}
+
+	// ignore terminator
+	wkgInd++;
+
+	return resultStr;
+}
+
 
 double readDoubleFromString( const std::string str, int &wkgInd )
 {
