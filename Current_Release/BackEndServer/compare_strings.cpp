@@ -29,7 +29,7 @@ CharState::CharState( const CharState &source )
     value = source.value;
 }
 
-
+// displays this in list form, where BUFFERs are represented by '_'
 void CharState::printListForm( const std::string end ) const
 {
 	std::cout << "{" << delay << ",'";
@@ -91,13 +91,21 @@ void CharStateList::operator=( const CharStateList &source )
 }
 
 
-// for any CharState value equal to backspace, removes that state and the previous state
-	// consecutive backspaces deletes that many previous states
-// state delays are not modified
-// the first character as a backspace only removes itself
-// returns if all backspaces removed the previous character successfully
-	// (first character backspace returns false)
-bool CharStateList::applyBackspaces( bool APPLY_BACKSPACES_BEFORE_SET_DELAY )
+
+/*
+Name: CharStateList::applyBackspace
+Process: for any CharState value equal to BACKSPACE, 
+         the BACKSPACE and the previous backspace is removed. 
+         if the first character is backspace, only that character is removed. 
+         delays are modified corresponding to APPLY_BACKSPACES_BEFORE_SET_DELAY
+         iteration is start->end such that a BACKSPACE will 
+         not delete another previous backspace
+Function input/parameters: none
+Function output/parameters: all backspaces successfully deleted an object
+                             - a backspace at the beginning of the list
+                               will return false
+*/
+bool CharStateList::applyBackspaces()
 {
 	bool removedAll = true;
 	std::list<CharState>::iterator wkgIter, startRemove, endRemove;
@@ -189,6 +197,8 @@ void CharStateList::printString() const
     }
 }
 
+// time and character value are displayed for each element in this->chars
+//    order is independent on how it was inputed into CharStateList
 void CharStateList::printListForm( const std::string end ) const
 {
     std::cout << "{";
@@ -223,8 +233,14 @@ void CharStateList::set_word( const std::string &toSet )
     }
 }
 
-// input: all delays are a time the character was pressed. 
-	// output: delays become time from previous press to current press
+/*
+Name: CharStateList::setToDelay
+Process: sets times to be relative to the previous value by 
+         subtracting each time by the previous time
+         the first time is set to 0
+Function input/parameters: none
+Function output/parameters: none
+*/
 void CharStateList::setToDelay()
 {
 	double prevTime, newTime;
@@ -259,6 +275,8 @@ int CharStateList::size() const
 
 
 // call alignCharsHelper with necessary parameters
+// returns ratio of errors to maximum error that could
+//    occur with the input parameter sizes
 double alignChars( CharStateList &oneCharStateArray, 
                  CharStateList &otherCharStateArray )
 {
@@ -292,8 +310,34 @@ double alignChars( CharStateList &oneCharStateArray,
     return weightedSpellingError;
 }
 
-// align characters in CharStateList such that the minimum
-// error weight occurs by implementing buffers between characters
+/*
+Name: alignCharsHelper
+Process: optimized brute-force recursion: 
+         stop recursion if end of both lists, no error at lowest depth
+         stop recursion if wkgError passed maxWkgError - optimization
+            return maxWkgError + 1 (represents invalid solution)
+         case 1/2: one of the lists has terminated, 
+            append a BUFFER to the terminated list
+         after case 1/2, both lists have remaining characters
+            use next character values
+         case 3: both characters are equal
+             move to next character on both
+         do not know which error occurred, try all of them
+         case 4: first character was mistyped
+             move to next character on both
+              - consider mistype
+         case 5/6: one of the lists is missing a character
+             move to the next character on one, append buffer to other
+              - consider missing character
+         returns lowest error of cases 4,5,6
+Function input/parameters: oneCharStateArray, otherCharStateArray (CharStateList)
+                           wkgIndex, wkgError, maxWkgError
+Function output/parameters: oneCharStateArray, otherCharStateArray (CharStateList)
+         * buffers are set in both lists as a placeholder for 
+         * a missing character
+Function output/returned: wkgError (double)
+         * weighted error of recursive steps from wkgIndex to end of both lists
+*/
 double alignCharsHelper( CharStateList &oneCharStateArray, 
                  CharStateList &otherCharStateArray, 
                  int wkgIndex, double wkgError, double &maxWkgError )
@@ -489,11 +533,20 @@ TimeWeightType::TimeWeightType()
 
 
 /* 
-    Current Algorithm:
-Input: two aligned lists of delays
-Weights one list such that its average matches other
-Find sum of differences of each pair. 
-Divide differences by sum of array and size to get average key ratio
+Name: TimeWeightType::getTimeErrorWeight
+Process: finds sums of first and second time vectors, 
+         multiplies each value in first such that the sums are equal
+         for each value in the lists, 
+             divides the smaller by the larger to get a value between 0 and 1
+             if both are 0, gets 1
+         the sum of all values from above is weighted between 0 and 1
+             as the average error ratio
+Function input/this: firstTimeVector, secondTimeVector (std::vector<double>)
+      * contains multiple time delays
+      * size of both vectors are equal, such that pairs can be analyzed
+Fucntion output/returned: averageErrorRatio (double)
+      * value between 0 and 1
+      * 1 is maximum possible error, 0 is minimum error
 */
 double TimeWeightType::getTimeErrorWeight() const
 {
@@ -546,9 +599,19 @@ double TimeWeightType::getTimeErrorWeight() const
 
     // find average error ratio
     averageRatioError = 1 - sumOfRatios / (double)firstTimeVector.size();
-    return averageRatioError * TIME_ERROR_WEIGHT;
+    return averageRatioError;
 }
 
+/*
+Name: TimeWeightType::insertComparison
+Process: adds CharState values to wkgTime, 
+         if both characters are not buffers, 
+            the delay values can be directly compared
+                 appends wkgTimes into timeVectors,
+                 resets the wkgTimes
+         otherwise, waits for next wkgTime
+Function Input/Parameters: firstChar, secondChar (CharState)
+*/
 void TimeWeightType::insertComparison( const CharState &firstChar, 
                                        const CharState &secondChar )
 {
@@ -595,8 +658,20 @@ void TimeWeightType::reset()
 
 
 	
-// get weighted error representing time differences in two CharStateLists
-    // state lists must be equal size, using alignChars if necessary
+/*
+Name: getWeightTimeErrors
+Process: iterates over CharStates in both lists, 
+         inserting the comparison for each
+         returns error weight using TimeWeightType
+Function input/parameters: oneStateList, otherStateList (CharStateList)
+      * both lists must have the same size
+      * if they do not have the same size,
+      *    apply alignChars()
+Function output/return: error (double)
+      * value between 0 and 1, 
+      *    1 is worst error, 0 is best error
+Dependencies: TimeWeightType
+*/
 double getWeightTimeErrors( const CharStateList &oneStateList, 
                             const CharStateList &otherStateList )
 {
