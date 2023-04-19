@@ -1,7 +1,7 @@
 import tkinter as tk
 import time
 import os
-from socket_clientV3 import Client #connection to Client Program
+from typelock_clientv2 import Signup, Login
 
 # Initialize the list of lists to store the keypress data
 keypress_data = []
@@ -197,9 +197,13 @@ class LoginPage(tk.Frame):
             print(f"Passphrase Entered: {passphrase_entered}")
             print("Keypress data:", keypress_data)
             #call client and send data
-            login = Client(keypress_data, username_entered, passphrase)
+                #Login needs to return result 
+            login = Login(keypress_data, username_entered, passphrase)
+            #check if login was successful
+            login_result = login.user_login()
+            print("Login value: "+ str(login_result))
             # Check if login was successful
-            if login:
+            if login_result:
                 # Redirect to success page
                 controller.show_frame(SuccessPage)
             # Otherwise, assume the login wasn't successful
@@ -481,12 +485,14 @@ class SignUpPage(tk.Frame):
             username_entered = username_entry_box.get()
             passphrase_entered = passphrase_entry_box.get()
             print(f"Name Entered: {name_entered}")
-            print(f"Username Entered: {username_entered}")
+            print(f"New Username Entered: {username_entered}")
             print(f"Passphrase Entered: {passphrase_entered}")
             print("Keypress data:", keypress_data)
             #call client and send data
-            signup = Client(keypress_data, name_entered, username_entered,
+            signup = Signup(keypress_data, name_entered, username_entered,
                             passphrase)
+            print(f"Signup value:  {signup}")
+            #this needs to wait for signup success
             controller.show_frame(LoginPage)
             clear_and_reset()
 
