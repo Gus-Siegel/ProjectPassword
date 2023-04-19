@@ -172,7 +172,7 @@ int main(int argc, char **argv) {
                     temp = "true";
                 }
                 else{
-                    temp = "fail";
+                    temp = "false";
                 }
                 //send back 
 
