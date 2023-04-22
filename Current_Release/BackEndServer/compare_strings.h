@@ -10,6 +10,7 @@
 #include <math.h>
 #include <vector>
 #include "verifyUserConstants.h"
+#include <sstream>
 
 // class definitions
 class TimeWeightType;
@@ -88,7 +89,9 @@ public:
     CharState();
     CharState( char charVal, double time );
     CharState( const CharState &source );
+    CharState( const string &stringInstance );
     void printListForm( const std::string end = "\n" ) const;
+    string toString();
 };
 
 
@@ -106,6 +109,7 @@ private:
 public:
     CharStateList();
     CharStateList( const CharStateList &source );
+    CharStateList( const &stringInstance);
     void set_word( const std::string &toSet );
     void printString() const;
     void append( const CharState &toAppend );
@@ -115,6 +119,8 @@ public:
     void insertBuffer( int insertIndex );
     void operator=( const CharStateList &source );
     void printListForm( const std::string end = "\n" ) const;
+    string toString();
+
 
     /*
     Name: CharStateList::setToDelay
