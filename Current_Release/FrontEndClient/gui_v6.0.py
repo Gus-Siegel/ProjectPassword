@@ -1,7 +1,7 @@
 import tkinter as tk
 import time
 import os
-from typelock_clientv3 import Signup, Login  # Connection to the Client Program
+from typelock_clientv3 import Signup, Login  #Connection to the Client Program
 
 # Initialize the list of lists to store the keypress data
 keypress_data = []
@@ -69,7 +69,7 @@ class GetStartedPage(tk.Frame):
         signup_button = tk.Button(self, width=20,
                                   text="Sign Up",
                                   font=("Nunito", 16),
-                                  bg="#000000",
+                                  bg="#FFFFFF",
                                   fg="#1F1F1F",
                                   command=lambda: controller.
                                   show_frame(SignUpPage))
