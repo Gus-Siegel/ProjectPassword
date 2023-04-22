@@ -29,6 +29,36 @@ CharState::CharState( const CharState &source )
     value = source.value;
 }
 
+// CharState string constructor for database serialization
+CharState::CharState( const string &stringInstance )
+{
+    vector<string> tokens;
+    stringstream ss(str);
+
+    // break up CharState's string form into tokens and store in a vector
+    while (ss.good())
+    {
+        string substr;
+        getline(ss, substr, ',');
+        tokens.push_back(substr);
+    }
+
+    // initialize variables with provided tokens
+    value = tokens[0];
+    delay = stod(tokens[1]);
+    // here we check the formatting of isBuffer in the string to be safe,
+    // but it's false by default
+    isBuffer = false;
+    if (tokens[2] == "0" || tokens[2] == "1")
+    {
+        istringstream("1") >> isBuffer;
+    }
+    else
+    {
+        istringstream("true") >> isBuffer;
+    }
+}
+
 // displays this in list form, where BUFFERs are represented by '_'
 void CharState::printListForm( const std::string end ) const
 {
@@ -66,7 +96,17 @@ bool equalCharStateValues( const CharState &oneCharState,
 }
 
 
-
+// returns CharState in string form for database serialization
+    // an output should look a little something like:
+    //   a,1.00321,0
+string CharState::toString()
+{
+    string out = "";
+    out << value << ",";
+    out << delay << ","; // <-- Might need to limit precision
+    out << isBuffer;
+    return out;
+}
 
 
 ////////////////////////////////// CharStateList //////////////////////////////
@@ -90,7 +130,57 @@ void CharStateList::operator=( const CharStateList &source )
     chars = source.chars;
 }
 
+// string serializer, converts object to string format for SQL database storage
+    /*
+    output will look something like this:
+    
+    {
+    h,1.1234,0
+    e,2.0012,0
+    l,1.6341,1
+    }
+    
+    */
+string CharStateList::toString()
+{
+    string obj = "";
 
+    obj << "{\n";
+
+    int listSize = chars.size();
+    for (int i = 0; i < listSize; i++)
+    {
+        // setting up access to index i in list
+        auto l_front = chars.begin();
+        std::advance(l_front, i);
+
+        // adding current charState to output
+        obj << *l_front.toString();
+
+        obj << "\n";
+    }
+
+    obj << "}";
+
+    return obj;
+}
+
+// string deserializer, constructs object from string format stored in database
+CharStateList::CharStateList( const string &stringInstance )
+{
+    // reads stringInstance line by line
+    std::istringstream objectString(stringInstance);
+    string line;
+    while (getLine(objectString, line))
+    {
+        // ignores the braces that indicate start and end
+        if (line != "{" || line != "}")
+        {
+            // create CharState from the current line and store in chars
+            chars.push_back( CharState(line) );
+        }
+    }
+}
 
 /*
 Name: CharStateList::applyBackspace
