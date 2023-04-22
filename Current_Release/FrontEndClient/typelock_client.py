@@ -10,7 +10,7 @@ class Client:
         self.IDphrase = IDphrase
         self.host = host 
         self.port = port
-        self.loginSuccess =self.client_program()
+        self.loginSuccess =self.connect()
 
     #Name: connect
     #Method: establish socket instance, connect to server, print message
@@ -65,7 +65,7 @@ class Client:
         passPhrase = self.IDphrase
 
         # loop message until given the close key
-        while message.lower().strip() != 'bye' ;
+        while message.lower().strip() != 'bye' :
             self.send_message(message)
             self.send_message(username)
             #set up passphrase key for future
@@ -87,5 +87,10 @@ class Client:
         self.close_connection()
         print("TCP socket connection closed")
 
+#TODO class login
+    #will call upon client
+
+#TODO class signUp
+    #will call upon client
 
 
