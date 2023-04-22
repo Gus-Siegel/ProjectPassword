@@ -491,9 +491,22 @@ class SignUpPage(tk.Frame):
             #call client and send data
             signup = Signup(keypress_data, name_entered, username_entered,
                             passphrase)
+            #get success/fail value from client
+            signup_result = signup.user_signup()
+            #if signup_result:
+            #{
+                #maybe success page first?
+                #controller.showframe(LoginPage)
+           #}
+            #else
+            #{
+                #need some kind of fail message so we can prompt user to try again
+                #controller.showframe()
+            #}
+
             print(f"Signup value:  {signup}")
             #this needs to wait for signup success
-            controller.show_frame(LoginPage)
+            #controller.show_frame(LoginPage)
             clear_and_reset()
 
         # Create the sign up button

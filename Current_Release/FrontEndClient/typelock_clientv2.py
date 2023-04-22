@@ -1,5 +1,6 @@
 #headers import socket
 import socket
+import time
 
 
 class Client:
@@ -29,6 +30,7 @@ class Client:
     #Dependencies: send, encode
     def send_message(self, message):
         self.client_socket.send(message.encode())
+        time.sleep(1)
 
     #Name: receive_message
     #Method: Receive messages from server side
@@ -55,6 +57,7 @@ class Login:
         self.loginPass = login_Pass
         self.loginUser = login_User
         self.IDphrase = ID_phrase
+        self.operation = 'login'
 
     # Name: user_login
     # Parameters: self, loginPass, loginUser, IDphrase, login_result
@@ -68,16 +71,22 @@ class Login:
         client.connect()
         print("Connecting to server")
 
+        #set operation command
+        ctrl_op = self.operation
+
         #set username
         username = self.loginUser
         #set message metrics
         message = f"{self.loginPass}"
+        control = self.operation
         passPhrase = self.IDphrase
 
         # loop message until given the close key
         while message.lower().strip() != 'bye' :
             client.send_message(message)
             client.send_message(username)
+            
+            client.send_message(ctrl_op)
             #set up passphrase key for future
             print("Username:" + username + " and login attempt sent.")
 
@@ -86,8 +95,8 @@ class Login:
             login_result = client.receive_message()
             
             print(type(login_result))
-            login_result = login_result.replace('\x00', '')
-            if login_result == "true":
+            #login_result = login_result.replace('\x00', '')
+            if bool(login_result):
                 print("In true statement")
                 print("Login attempt: " + login_result)
                 login_result = True
@@ -112,6 +121,7 @@ class Login:
 class Signup:
     def __init__(self, new_user_pass, new_user_name, 
                  new_user_username, passphrase_key):
+        self.operation = 'signup'
         self.new_user_pass = new_user_pass
         self.new_user_name = new_user_name
         self.new_user_username = new_user_username
@@ -124,7 +134,8 @@ class Signup:
             #function: connect
         client.connect()
         print("Connecting to server")
-
+        #set control string 
+        ctrl_op = self.operation
         #set username
         name = self.new_user_name
         username = self.new_user_username
@@ -136,15 +147,19 @@ class Signup:
         while message.lower().strip() != 'bye' :
             client.send_message(message)
             client.send_message(username)
+            client.send_message(ctrl_op)
             client.send_message(name)
+
             #set up passphrase key for future
             print("New user:" + username + " and data sent.")
 
             #retrieve login result and display
             signup_result = client.receive_message()
+            print(type(signup_result))
+            print(signup_result)
             if signup_result == 'true':
                 print("Signup attempt: Success")
-                singup_result = True
+                signup_result = True
 
             else:
                 print("Signup attempt: Fail")
@@ -163,6 +178,3 @@ class Signup:
 
         return signup_result 
     
-
-#better yet I may want to modify the messages being sent in classes instead of the whole connection
-#if that's the case then we need a var just to distinguish which function we are doing
