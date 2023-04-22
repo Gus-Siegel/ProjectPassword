@@ -1,7 +1,7 @@
 import tkinter as tk
 import time
 import os
-from typelock_clientv2 import Signup, Login  # Connection to the Client Program
+from typelock_clientv3 import Signup, Login  # Connection to the Client Program
 
 # Initialize the list of lists to store the keypress data
 keypress_data = []
