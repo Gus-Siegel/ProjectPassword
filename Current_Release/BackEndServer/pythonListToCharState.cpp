@@ -21,6 +21,12 @@ CharStateList readCharStateListFromString( const std::string str )
 	// read format from string
       resultList = readCharStateListFromString( str, wkgInd );
 
+	return resultList;
+}
+
+// formats charStateList for readCharStateListFromString
+CharStateList formatCharStateList( CharStateList resultList )
+{
 	// remove instances of EXCLUDED_CHAR_STATE_CHARS from resultList
 	resultList.removeInstances( EXCLUDED_CHAR_STATE_CHARS );
 
@@ -137,7 +143,7 @@ CharStateList readCharStateListFromString( const std::string str, int &wkgInd )
 	// ignore list terminator
 	wkgInd++;
 
-	return resultList;
+	return formatCharStateList( resultList );
 }
 
 CharState readCharStateFromString( const std::string str, int &wkgInd )

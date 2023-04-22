@@ -26,25 +26,31 @@ Function output/return: userVerified (bool)
 Dependencies: compare_strings.cpp, pythonListToCharState.cpp, 
               verifyUserContants.h
 */
-bool verifyUser( const std::string strOne, const std::string strTwo )
+bool verifyUser( const std::string strOne, const std::string strTwo, 
+                 double acceptableTimeError )
 {
 	CharStateList oneList, otherList;
 	oneList = readCharStateListFromString( strOne );
 	otherList = readCharStateListFromString( strTwo );
-	return verifyUser( oneList, otherList );
+	return verifyUser( oneList, otherList, 
+                         acceptableTimeError = acceptableTimeError );
 }
 
 
 // subprocess of verifyUser(std::string,std::string), described above
 // gets spelling and time errors, compares to acceptable error constants
 //    to determine if user will be verfied, returning result
-bool verifyUser( CharStateList &one, CharStateList &other )
+bool verifyUser( CharStateList &one, CharStateList &other, 
+                 double acceptableTimeError )
 {
 	double spellingError, timeError;
 
 	spellingError = alignChars( one, other );
 	timeError = getWeightTimeErrors( one, other );
 	return spellingError <= MAX_ACCEPTABLE_SPELLING_ERROR && 
-             timeError <= MAX_ACCEPTABLE_TIME_ERROR;
+             timeError <= acceptableTimeError;
 }
+
+
+
 
