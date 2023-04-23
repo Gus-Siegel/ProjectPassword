@@ -23,7 +23,7 @@ const double BUFFER = -1001.0;
 // acceptable error for user
 const double MAX_ACCEPTABLE_USER_ERROR = 0.5;
 const double MAX_ACCEPTABLE_SPELLING_ERROR = .1; // 10% spelling error allowed
-const double MAX_ACCEPTABLE_TIME_ERROR = .5; // 25% average time difference
+const double MAX_ACCEPTABLE_TIME_ERROR = .25; // 25% average time difference
 
 
 	// APPLY_BACKSPACES to remove characters before any backspace

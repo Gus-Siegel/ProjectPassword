@@ -1,12 +1,13 @@
 // compiling:
-//     g++ -Wall automatedTest.cpp compare_strings.cpp pythonListToCharState.cpp verifyUser.cpp -o outFile
+//     g++ -Wall compare_strings.cpp pythonListToCharState.cpp verifyUser.cpp automatedTest.cpp -o outFile
 #define CONFIG_CATCH_MAIN
 #include "pythonListToCharState.h"
 #include "compare_strings.h"
 #include "verifyUser.h"
 
 
-//#include "gtest/gtest.h"
+
+
 #include <string>
 #include <stdio.h>
 #include <iostream>
@@ -202,6 +203,15 @@ bool performTests()
 
 "[['', 1681415283.665579], ['H', 1681415283.7754946], ['e', 1681415283.916678], ['l', 1681415284.0266845], ['l', 1681415284.1577969], ['o', 1681415284.3182552]]" ) );
 
+    printf( "\ntesting excessive incorrect characters,\n" );
+    printf( "    need reasonable processing time:\n" );
+    allTestsPassed &= assertEquals( 
+        false, 
+        verifyUser( 
+"[['h', 1682000579.0561047], ['e', 1682000579.1364262], ['l', 1682000579.2768068], ['l', 1682000579.437289], ['o', 1682000579.5882292], [' ', 1682000579.6782236], ['\x08', 1682000580.0801368], [' ', 1682000580.700954], ['w', 1682000581.0809455], ['o', 1682000581.171554], ['r', 1682000581.2415357], ['l', 1682000581.3714507], ['d', 1682000581.4521375]]", 
+"[['a', 1682000868.3357854], ['a', 1682000868.9170344], ['a', 1682000868.947716], ['a', 1682000868.9777012], ['a', 1682000869.007734], ['a', 1682000869.0377486], ['a', 1682000869.0689647], ['a', 1682000869.1081364], ['a', 1682000869.138131], ['a', 1682000869.168122], ['a', 1682000869.1981087], ['a', 1682000869.2387128], ['a', 1682000869.2687027], ['a', 1682000869.2986834], ['a', 1682000869.3292542], ['a', 1682000869.3595815], ['a', 1682000869.4003181], ['a', 1682000869.430417], ['a', 1682000869.460519], ['a', 1682000869.490428], ['a', 1682000869.5209446], ['a', 1682000869.5613875], ['a', 1682000869.592179], ['a', 1682000869.622691], ['a', 1682000871.0126889], ['a', 1682000871.0427032], ['a', 1682000871.0727048], ['a', 1682000871.1134865], ['a', 1682000871.1432314], ['a', 1682000871.173589], ['a', 1682000871.213883], ['a', 1682000871.2438815], ['a', 1682000871.2742655], ['a', 1682000871.315014], ['a', 1682000871.345214], ['a', 1682000871.3754985], ['a', 1682000871.4058135], ['a', 1682000871.4363], ['a', 1682000871.4762733], ['a', 1682000871.5062912], ['a', 1682000871.5362914], ['a', 1682000871.5664477], ['a', 1682000871.5970142]]" ) );
+
+
 
     // test testErrors
     std::cout << "\nTest testErrors displays errors when incorrect values are given:";
@@ -215,7 +225,8 @@ bool performTests()
 
 
     // display test results
-    if( !allTestsPassed ) {
+    if( !allTestsPassed ) 
+    {
         std::cout << "\n\nAt least one test was not passed.\n";
     } else {
         std::cout << "\n\nAll tests passed.\n";
@@ -254,24 +265,20 @@ bool testErrors( const std::string strOne, const std::string strTwo,
     timeError = getWeightTimeErrors( oneList, otherList );
 
     printf( "testing spell error:\n" );
-    if( expectedSpellError != -1 )
+
+    if( !assertDoubleEquals( expectedSpellError, spellingError ) )
     {
-        if( !assertDoubleEquals( expectedSpellError, spellingError ) )
-        {
-            std::cout << " - Spelling Error is not expected\n";
-            passedTests = false;
-        }
+        std::cout << " - Spelling Error is not expected\n";
+        passedTests = false;
     }
 
     printf( "testing time error:\n" );
-    if( expectedTimeError != -1 )
+    if( !assertDoubleEquals( expectedTimeError, timeError ) )
     {
-        if( !assertDoubleEquals( expectedTimeError, timeError ) )
-        {
-            std::cout << " - Time Error is not expected\n";
-            passedTests = false;
-        }
+        std::cout << " - Time Error is not expected\n";
+        passedTests = false;
     }
+
     printf( "\n" );
     return passedTests;
 }
