@@ -86,7 +86,7 @@ class GetStartedPage(tk.Frame):
         login_button = tk.Button(self, width=20,
                                  text="Login",
                                  font=("Nunito", 16),
-                                 bg="#000000",
+                                 bg="#FFFFFF",
                                  fg="#1F1F1F",
                                  command=lambda: controller.
                                  show_frame(LoginPage))
