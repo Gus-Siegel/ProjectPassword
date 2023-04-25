@@ -266,6 +266,34 @@ class LoginPage(tk.Frame):
                                 show_frame(GetStartedPage))
         back_button.pack(pady=20)
 
+        # Create and format the "Need an account?" label
+        need_account_label = tk.Label(self, text="Need an account?",
+                                      font=("Nunito", 16),
+                                      fg="#FFFFFF",
+                                      bg="#1F1F1F")
+        need_account_label.pack(pady=(10, 0))
+
+        # Create and format the "SIGNUP" label
+        signup_label = tk.Label(self, text="SIGNUP",
+                                     font=("Nunito", 16, "underline"),
+                                     fg="#FFFFFF",
+                                     bg="#1F1F1F",
+                                     cursor="hand2")
+        signup_label.pack(pady=(0, 10))
+
+        # Bind the hover and click events to the "SIGNUP" label
+        signup_label.bind("<Enter>", self.on_signup_hover)
+        signup_label.bind("<Leave>", self.on_signup_leave)
+        signup_label.bind("<Button-1>", lambda event: controller.show_frame(SignUpPage))
+
+    # Change the "SIGNUP" text color when the mouse hovers over it
+    def on_signup_hover(self, event):
+        event.widget.config(fg="#F3AF4E")  # Change to the desired hover color
+
+    # Reset the "SIGNUP" text color when the mouse leaves it
+    def on_signup_leave(self, event):
+        event.widget.config(fg="#FFFFFF")  # Reset to the original color
+
 
 class LoginSuccessPage(tk.Frame):
     def __init__(self, parent, controller):
