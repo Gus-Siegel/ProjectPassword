@@ -277,14 +277,14 @@ class LoginPage(tk.Frame):
         signup_label = tk.Label(self, text="SIGNUP",
                                      font=("Nunito", 16, "underline"),
                                      fg="#FFFFFF",
-                                     bg="#1F1F1F",
-                                     cursor="hand2")
+                                     bg="#1F1F1F")
         signup_label.pack(pady=(0, 10))
 
         # Bind the hover and click events to the "SIGNUP" label
         signup_label.bind("<Enter>", self.on_signup_hover)
         signup_label.bind("<Leave>", self.on_signup_leave)
-        signup_label.bind("<Button-1>", lambda event: controller.show_frame(SignUpPage))
+        signup_label.bind("<Button-1>",
+                          lambda event: controller.show_frame(SignUpPage))
 
     # Change the "SIGNUP" text color when the mouse hovers over it
     def on_signup_hover(self, event):
@@ -574,6 +574,34 @@ class SignUpPage(tk.Frame):
                                 show_frame(GetStartedPage))
         back_button.pack(pady=20)
 
+        # Create and format the "Already a User?" label
+        already_user_label = tk.Label(self, text="Already a User?",
+                                      font=("Nunito", 16),
+                                      fg="#FFFFFF",
+                                      bg="#1F1F1F")
+        already_user_label.pack(pady=(10, 0))
+
+        # Create and format the "LOGIN" label
+        login_label = tk.Label(self, text="LOGIN",
+                                     font=("Nunito", 16, "underline"),
+                                     fg="#FFFFFF",
+                                     bg="#1F1F1F")
+        login_label.pack(pady=(0, 10))
+
+        # Bind the hover and click events to the "LOGIN" label
+        login_label.bind("<Enter>", self.on_login_hover)
+        login_label.bind("<Leave>", self.on_login_leave)
+        login_label.bind("<Button-1>",
+                         lambda event: controller.show_frame(LoginPage))
+
+    # Change the "LOGIN" text color when the mouse hovers over it
+    def on_login_hover(self, event):
+        event.widget.config(fg="#F3AF4E")  # Change to the desired hover color
+
+    # Reset the "LOGIN" text color when the mouse leaves it
+    def on_login_leave(self, event):
+        event.widget.config(fg="#FFFFFF")  # Reset to the original color
+
 
 class SignUpFailurePage(tk.Frame):
     def __init__(self, parent, controller):
@@ -604,6 +632,6 @@ class SignUpFailurePage(tk.Frame):
 
 app = TypeLock()
 app.title("TypeLock")
-app.geometry("600x700")
+app.geometry("600x800")
 app.configure
 app.mainloop()
