@@ -405,23 +405,23 @@ class SignUpPage(tk.Frame):
         practice_label.pack(anchor=tk.W, pady=(10, 0), padx=191)
 
         practice_placeholder = "Practice typing passphrase"
-        practice_box = tk.Entry(self, width=20,
+        practice_entry_box = tk.Entry(self, width=20,
                                 font=("Nunito", 16),
                                 bg="#FFFFFF",
                                 fg="#808080",
                                 insertbackground="#FFFFFF")
-        practice_box.insert(0, practice_placeholder)
-        practice_box.bind("<FocusIn>",
+        practice_entry_box.insert(0, practice_placeholder)
+        practice_entry_box.bind("<FocusIn>",
                           lambda event: hide_placeholder(
                               event,
-                              practice_box,
+                              practice_entry_box,
                               practice_placeholder))
-        practice_box.bind("<FocusOut>",
+        practice_entry_box.bind("<FocusOut>",
                           lambda event: show_placeholder(
                               event,
-                              practice_box,
+                              practice_entry_box,
                               practice_placeholder))
-        practice_box.pack(pady=(0, 10))
+        practice_entry_box.pack(pady=(0, 10))
 
         # Create and format the passphrase label
         passphrase_label = tk.Label(self, text="Passphrase",
@@ -514,7 +514,7 @@ class SignUpPage(tk.Frame):
             name_entry_box.delete(0, tk.END)
             username_entry_box.delete(0, tk.END)
             passphrase_entry_box.delete(0, tk.END)
-            practice_box.delete(0, tk.END)
+            practice_entry_box.delete(0, tk.END)
 
             # Reset the keypress_data list
             keypress_data = []
