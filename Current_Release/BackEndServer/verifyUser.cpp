@@ -44,6 +44,7 @@ bool verifyUser( CharStateList &one, CharStateList &other )
 
 	spellingError = alignChars( one, other );
 	timeError = getWeightTimeErrors( one, other );
+       std::cout << "Time error is :"<<timeError << "\n";
 	return spellingError <= MAX_ACCEPTABLE_SPELLING_ERROR && 
              timeError <= MAX_ACCEPTABLE_TIME_ERROR;
 }

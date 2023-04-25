@@ -38,7 +38,7 @@ Session startSession(string host, int port, string& user, string& password) {
 }
 
 /*
-    name: logUser
+    name: logUser - signs up a user if not there
     parameters: Session userDB, String username, __ keyData
     summary: Searches the database for an entry matching the provided username.
              If found, logs the attempt as an existing user with function
