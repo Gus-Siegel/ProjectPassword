@@ -28,6 +28,8 @@ Dependencies: compare_strings.cpp, verifyUserConstants.h
 */
 CharStateList readCharStateListFromString( const std::string str, int &wkgInd );
 
+CharStateList formatCharStateList( CharStateList resultList );
+
 /*
 Name: readCharStateListFromString(std::string,int)
 Process: iterates over the string, reading a CharState whenever a
