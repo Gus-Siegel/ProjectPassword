@@ -1,7 +1,7 @@
 import tkinter as tk
 import time
 import os
-from typelock_clientv3 import Signup, Login  #Connection to the Client Program
+from typelock_clientv3 import Signup, Login  # Connection to the Client Program
 
 # Initialize the list of lists to store the keypress data
 keypress_data = []
@@ -53,9 +53,9 @@ class GetStartedPage(tk.Frame):
 
         # Create and format the welcome label
         welcome_label = tk.Label(self, text="Welcome to TypeLock",
-                                  font=("Nunito", 18),
-                                  fg="#FFFFFF",
-                                  bg="#1F1F1F")
+                                 font=("Nunito", 18),
+                                 fg="#FFFFFF",
+                                 bg="#1F1F1F")
         welcome_label.pack(pady=(10, 5))
 
         # Create and format the "user new?" label
@@ -77,9 +77,9 @@ class GetStartedPage(tk.Frame):
 
         # Create and format the "Have an account?" label
         existing_user_label = tk.Label(self, text="Have an account?",
-                                  font=("Nunito", 16),
-                                  fg="#FFFFFF",
-                                  bg="#1F1F1F")
+                                       font=("Nunito", 16),
+                                       fg="#FFFFFF",
+                                       bg="#1F1F1F")
         existing_user_label.pack(anchor=tk.W, pady=(10, 0), padx=179)
 
         # Create the login button and redirect to the login page
@@ -118,9 +118,9 @@ class LoginPage(tk.Frame):
 
         # Create and format the LOGIN label
         login_label = tk.Label(self, text="Login",
-                                  font=("Nunito", 18),
-                                  fg="#FFFFFF",
-                                  bg="#1F1F1F")
+                               font=("Nunito", 18),
+                               fg="#FFFFFF",
+                               bg="#1F1F1F")
         login_label.pack(pady=(10, 5))
 
         # Create and format the username label
@@ -221,7 +221,7 @@ class LoginPage(tk.Frame):
         login_button = tk.Button(self, width=10,
                                  text="Login",
                                  font=("Nunito", 16),
-                                 bg="#000000",
+                                 bg="#FFFFFF",
                                  fg="#1F1F1F",
                                  command=login_user)
         login_button.pack(pady=20)
@@ -252,7 +252,7 @@ class LoginPage(tk.Frame):
         clear_button = tk.Button(self, width=10,
                                  text="Clear",
                                  font=("Nunito", 16),
-                                 bg="#000000",
+                                 bg="#FFFFFF",
                                  fg="#1F1F1F",
                                  command=clear_and_reset)
         clear_button.pack(pady=0)
@@ -260,7 +260,7 @@ class LoginPage(tk.Frame):
         back_button = tk.Button(self, width=10,
                                 text="Back",
                                 font=("Nunito", 16),
-                                bg="#000000",
+                                bg="#FFFFFF",
                                 fg="#1F1F1F",
                                 command=lambda: controller.
                                 show_frame(GetStartedPage))
@@ -305,12 +305,12 @@ class LoginFailurePage(tk.Frame):
         failure_message.pack(pady=(10, 0))
 
         try_again_button = tk.Button(self, width=10,
-                                text="Try Again",
-                                font=("Nunito", 16),
-                                bg="#000000",
-                                fg="#1F1F1F",
-                                command=lambda: controller.
-                                show_frame(LoginPage))
+                                     text="Try Again",
+                                     font=("Nunito", 16),
+                                     bg="#FFFFFF",
+                                     fg="#1F1F1F",
+                                     command=lambda: controller.
+                                     show_frame(LoginPage))
         try_again_button.pack(pady=20)
 
 
@@ -339,9 +339,9 @@ class SignUpPage(tk.Frame):
 
         # Create and format the sign_up_label label
         sign_up_label = tk.Label(self, text="Create an Account",
-                                  font=("Nunito", 18),
-                                  fg="#FFFFFF",
-                                  bg="#1F1F1F")
+                                 font=("Nunito", 18),
+                                 fg="#FFFFFF",
+                                 bg="#1F1F1F")
         sign_up_label.pack(pady=(10, 5))
 
         # Create and format the name label
@@ -497,7 +497,7 @@ class SignUpPage(tk.Frame):
         sign_up_button = tk.Button(self, width=10,
                                    text="Sign Up",
                                    font=("Nunito", 16),
-                                   bg="#000000",
+                                   bg="#FFFFFF",
                                    fg="#1F1F1F",
                                    command=sign_up_user)
         sign_up_button.pack(pady=20)
@@ -532,7 +532,7 @@ class SignUpPage(tk.Frame):
         clear_button = tk.Button(self, width=10,
                                  text="Clear",
                                  font=("Nunito", 16),
-                                 bg="#000000",
+                                 bg="#FFFFFF",
                                  fg="#1F1F1F",
                                  command=clear_and_reset)
         clear_button.pack(pady=0)
@@ -540,7 +540,7 @@ class SignUpPage(tk.Frame):
         back_button = tk.Button(self, width=10,
                                 text="Back",
                                 font=("Nunito", 16),
-                                bg="#000000",
+                                bg="#FFFFFF",
                                 fg="#1F1F1F",
                                 command=lambda: controller.
                                 show_frame(GetStartedPage))
@@ -565,13 +565,14 @@ class SignUpFailurePage(tk.Frame):
         failure_message.pack(pady=(10, 0))
 
         try_again_button = tk.Button(self, width=10,
-                                text="Try Again",
-                                font=("Nunito", 16),
-                                bg="#000000",
-                                fg="#1F1F1F",
-                                command=lambda: controller.
-                                show_frame(LoginPage))
+                                     text="Try Again",
+                                     font=("Nunito", 16),
+                                     bg="#FFFFFF",
+                                     fg="#1F1F1F",
+                                     command=lambda: controller.
+                                     show_frame(LoginPage))
         try_again_button.pack(pady=20)
+
 
 app = TypeLock()
 app.title("TypeLock")
