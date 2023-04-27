@@ -467,6 +467,19 @@ class SignUpPage(tk.Frame):
                                          fg="#FFFFFF", bg="#1F1F1F")
         passphrase_text_label.pack(pady=(0, 10))
 
+        # Create the progress bar
+        self.progress_bar = tk.Canvas(self,
+                                      width=208,
+                                      height=15,
+                                      bg="#FFFFFF",
+                                      highlightthickness=0)
+        self.progress_bar.pack(pady=(0, 10))
+        self.progress_fill = self.progress_bar.create_rectangle(0,
+                                                                0,
+                                                                0,
+                                                                20,
+                                                                fill="")
+
         # Create and format the passphrase entry box with placeholder text
         passphrase_placeholder = "Type the passphrase"
         passphrase_entry_box = tk.Entry(self, width=20,
@@ -489,6 +502,12 @@ class SignUpPage(tk.Frame):
 
         # Record the data entered inside the password entry box
         passphrase_entry_box.bind("<KeyPress>", log_key_press)
+
+        # Bind the key press event to the passphrase entry box
+        passphrase_entry_box.bind("<KeyRelease>",
+            lambda event: self.update_progress_bar(event,
+                                                   passphrase,
+                                                   passphrase_entry_box))
 
         # Sign up the user and output the data entered
         def sign_up_user():
@@ -602,6 +621,29 @@ class SignUpPage(tk.Frame):
     def on_login_leave(self, event):
         event.widget.config(fg="#FFFFFF")  # Reset to the original color
 
+    def update_progress_bar(self, event, passphrase, entry_box):
+        entered_text = entry_box.get()
+        total_length = len(passphrase)
+        current_length = len(entered_text)
+
+        if entered_text == passphrase[:current_length]:
+            # Correct input, fill progress bar with green color
+            fill_percentage = (current_length / total_length) * 100
+            self.progress_bar.itemconfig(self.progress_fill, fill="#339933")
+            self.progress_bar.coords(self.progress_fill,
+                                     0,
+                                     0,
+                                     fill_percentage * 208 / 100,
+                                     20)
+        else:
+            # Incorrect input, fill progress bar with red color
+            fill_percentage = (current_length / total_length) * 100
+            self.progress_bar.itemconfig(self.progress_fill, fill="#CC3300")
+            self.progress_bar.coords(self.progress_fill,
+                                     0,
+                                     0,
+                                     fill_percentage * 208 / 100,
+                                     20)
 
 class SignUpFailurePage(tk.Frame):
     def __init__(self, parent, controller):
