@@ -1,4 +1,4 @@
-#include <mysqlx/xdevapi.h>
+#include <mysql/mysql.h>
 #include "pythonListToCharState.h"
 #include "compare_strings.h"
 #include <iostream>
@@ -6,7 +6,7 @@
 #include <vector>
 
 
-int main() {
+/* int main() {
     // Start a session with the MySQL database
     Session userDB = startSession("localhost", 3306, "username", "password");
 
@@ -19,7 +19,7 @@ int main() {
     //TODO: Get in touch w/ server team and ask about event handling
 
     return 0;
-}
+} */
 
 /*
     name: startSession

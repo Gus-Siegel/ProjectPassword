@@ -158,11 +158,13 @@ class Signup:
             signup_result = client.receive_message()
             print(type(signup_result))
             print(signup_result)
-            if signup_result == 'true':
+            if ord(signup_result):
+                print("In true")
                 print("Signup attempt: Success")
                 signup_result = True
 
             else:
+                print("In else statement")
                 print("Signup attempt: Fail")
                 signup_result = False
 
@@ -175,7 +177,7 @@ class Signup:
         print("TCP socket connection closed") 
 
         #my var for clarification
-        print("Value of signup_result: " + signup_result )
+        print("Signup socket closed" )
 
         return signup_result 
     

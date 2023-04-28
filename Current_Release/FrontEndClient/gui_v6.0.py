@@ -2,6 +2,7 @@ import tkinter as tk
 import time
 import os
 from typelock_clientv3 import Signup, Login  # Connection to the Client Program
+from typelock_clientv3 import Signup, Login  # Connection to the Client Program
 
 # Initialize the list of lists to store the keypress data
 keypress_data = []
@@ -56,6 +57,9 @@ class GetStartedPage(tk.Frame):
                                  font=("Nunito", 18),
                                  fg="#FFFFFF",
                                  bg="#1F1F1F")
+                                 font=("Nunito", 18),
+                                 fg="#FFFFFF",
+                                 bg="#1F1F1F")
         welcome_label.pack(pady=(10, 5))
 
         # Create and format the "user new?" label
@@ -80,12 +84,16 @@ class GetStartedPage(tk.Frame):
                                        font=("Nunito", 16),
                                        fg="#FFFFFF",
                                        bg="#1F1F1F")
+                                       font=("Nunito", 16),
+                                       fg="#FFFFFF",
+                                       bg="#1F1F1F")
         existing_user_label.pack(anchor=tk.W, pady=(10, 0), padx=179)
 
         # Create the login button and redirect to the login page
         login_button = tk.Button(self, width=20,
                                  text="Login",
                                  font=("Nunito", 16),
+                                 bg="#FFFFFF",
                                  bg="#FFFFFF",
                                  fg="#1F1F1F",
                                  command=lambda: controller.
@@ -118,6 +126,9 @@ class LoginPage(tk.Frame):
 
         # Create and format the LOGIN label
         login_label = tk.Label(self, text="Login",
+                               font=("Nunito", 18),
+                               fg="#FFFFFF",
+                               bg="#1F1F1F")
                                font=("Nunito", 18),
                                fg="#FFFFFF",
                                bg="#1F1F1F")
@@ -222,6 +233,7 @@ class LoginPage(tk.Frame):
                                  text="Login",
                                  font=("Nunito", 16),
                                  bg="#FFFFFF",
+                                 bg="#FFFFFF",
                                  fg="#1F1F1F",
                                  command=login_user)
         login_button.pack(pady=20)
@@ -253,6 +265,7 @@ class LoginPage(tk.Frame):
                                  text="Clear",
                                  font=("Nunito", 16),
                                  bg="#FFFFFF",
+                                 bg="#FFFFFF",
                                  fg="#1F1F1F",
                                  command=clear_and_reset)
         clear_button.pack(pady=0)
@@ -265,6 +278,34 @@ class LoginPage(tk.Frame):
                                 command=lambda: controller.
                                 show_frame(GetStartedPage))
         back_button.pack(pady=20)
+
+        # Create and format the "Need an account?" label
+        need_account_label = tk.Label(self, text="Need an account?",
+                                      font=("Nunito", 16),
+                                      fg="#FFFFFF",
+                                      bg="#1F1F1F")
+        need_account_label.pack(pady=(10, 0))
+
+        # Create and format the "SIGNUP" label
+        signup_label = tk.Label(self, text="SIGNUP",
+                                     font=("Nunito", 16, "underline"),
+                                     fg="#FFFFFF",
+                                     bg="#1F1F1F")
+        signup_label.pack(pady=(0, 10))
+
+        # Bind the hover and click events to the "SIGNUP" label
+        signup_label.bind("<Enter>", self.on_signup_hover)
+        signup_label.bind("<Leave>", self.on_signup_leave)
+        signup_label.bind("<Button-1>",
+                          lambda event: controller.show_frame(SignUpPage))
+
+    # Change the "SIGNUP" text color when the mouse hovers over it
+    def on_signup_hover(self, event):
+        event.widget.config(fg="#F3AF4E")  # Change to the desired hover color
+
+    # Reset the "SIGNUP" text color when the mouse leaves it
+    def on_signup_leave(self, event):
+        event.widget.config(fg="#FFFFFF")  # Reset to the original color
 
         # Create and format the "Need an account?" label
         need_account_label = tk.Label(self, text="Need an account?",
@@ -339,6 +380,12 @@ class LoginFailurePage(tk.Frame):
                                      fg="#1F1F1F",
                                      command=lambda: controller.
                                      show_frame(LoginPage))
+                                     text="Try Again",
+                                     font=("Nunito", 16),
+                                     bg="#FFFFFF",
+                                     fg="#1F1F1F",
+                                     command=lambda: controller.
+                                     show_frame(LoginPage))
         try_again_button.pack(pady=20)
 
 
@@ -367,6 +414,9 @@ class SignUpPage(tk.Frame):
 
         # Create and format the sign_up_label label
         sign_up_label = tk.Label(self, text="Create an Account",
+                                 font=("Nunito", 18),
+                                 fg="#FFFFFF",
+                                 bg="#1F1F1F")
                                  font=("Nunito", 18),
                                  fg="#FFFFFF",
                                  bg="#1F1F1F")
@@ -434,21 +484,28 @@ class SignUpPage(tk.Frame):
 
         practice_placeholder = "Practice typing passphrase"
         practice_entry_box = tk.Entry(self, width=20,
+        practice_entry_box = tk.Entry(self, width=20,
                                 font=("Nunito", 16),
                                 bg="#FFFFFF",
                                 fg="#808080",
                                 insertbackground="#FFFFFF")
         practice_entry_box.insert(0, practice_placeholder)
         practice_entry_box.bind("<FocusIn>",
+        practice_entry_box.insert(0, practice_placeholder)
+        practice_entry_box.bind("<FocusIn>",
                           lambda event: hide_placeholder(
                               event,
                               practice_entry_box,
+                              practice_entry_box,
                               practice_placeholder))
+        practice_entry_box.bind("<FocusOut>",
         practice_entry_box.bind("<FocusOut>",
                           lambda event: show_placeholder(
                               event,
                               practice_entry_box,
+                              practice_entry_box,
                               practice_placeholder))
+        practice_entry_box.pack(pady=(0, 10))
         practice_entry_box.pack(pady=(0, 10))
 
         # Create and format the passphrase label
@@ -466,6 +523,19 @@ class SignUpPage(tk.Frame):
                                          font=("Nunito", 16, "bold"),
                                          fg="#FFFFFF", bg="#1F1F1F")
         passphrase_text_label.pack(pady=(0, 10))
+
+        # Create the progress bar
+        self.progress_bar = tk.Canvas(self,
+                                      width=208,
+                                      height=15,
+                                      bg="#FFFFFF",
+                                      highlightthickness=0)
+        self.progress_bar.pack(pady=(0, 10))
+        self.progress_fill = self.progress_bar.create_rectangle(0,
+                                                                0,
+                                                                0,
+                                                                20,
+                                                                fill="")
 
         # Create the progress bar
         self.progress_bar = tk.Canvas(self,
@@ -509,6 +579,12 @@ class SignUpPage(tk.Frame):
                                                    passphrase,
                                                    passphrase_entry_box))
 
+        # Bind the key press event to the passphrase entry box
+        passphrase_entry_box.bind("<KeyRelease>",
+            lambda event: self.update_progress_bar(event,
+                                                   passphrase,
+                                                   passphrase_entry_box))
+
         # Sign up the user and output the data entered
         def sign_up_user():
             name_entered = name_entry_box.get()
@@ -544,7 +620,7 @@ class SignUpPage(tk.Frame):
         sign_up_button = tk.Button(self, width=10,
                                    text="Sign Up",
                                    font=("Nunito", 16),
-                                   bg="#FFFFFF",
+                                   bg="#F3AF4E",
                                    fg="#1F1F1F",
                                    command=sign_up_user)
         sign_up_button.pack(pady=20)
@@ -561,6 +637,7 @@ class SignUpPage(tk.Frame):
             name_entry_box.delete(0, tk.END)
             username_entry_box.delete(0, tk.END)
             passphrase_entry_box.delete(0, tk.END)
+            practice_entry_box.delete(0, tk.END)
             practice_entry_box.delete(0, tk.END)
 
             # Reset the keypress_data list
@@ -580,6 +657,7 @@ class SignUpPage(tk.Frame):
                                  text="Clear",
                                  font=("Nunito", 16),
                                  bg="#FFFFFF",
+                                 bg="#FFFFFF",
                                  fg="#1F1F1F",
                                  command=clear_and_reset)
         clear_button.pack(pady=0)
@@ -588,11 +666,63 @@ class SignUpPage(tk.Frame):
                                 text="Back",
                                 font=("Nunito", 16),
                                 bg="#FFFFFF",
+                                bg="#FFFFFF",
                                 fg="#1F1F1F",
                                 command=lambda: controller.
                                 show_frame(GetStartedPage))
         back_button.pack(pady=20)
 
+        # Create and format the "Already a User?" label
+        already_user_label = tk.Label(self, text="Already a User?",
+                                      font=("Nunito", 16),
+                                      fg="#FFFFFF",
+                                      bg="#1F1F1F")
+        already_user_label.pack(pady=(10, 0))
+
+        # Create and format the "LOGIN" label
+        login_label = tk.Label(self, text="LOGIN",
+                                     font=("Nunito", 16, "underline"),
+                                     fg="#FFFFFF",
+                                     bg="#1F1F1F")
+        login_label.pack(pady=(0, 10))
+
+        # Bind the hover and click events to the "LOGIN" label
+        login_label.bind("<Enter>", self.on_login_hover)
+        login_label.bind("<Leave>", self.on_login_leave)
+        login_label.bind("<Button-1>",
+                         lambda event: controller.show_frame(LoginPage))
+
+    # Change the "LOGIN" text color when the mouse hovers over it
+    def on_login_hover(self, event):
+        event.widget.config(fg="#F3AF4E")  # Change to the desired hover color
+
+    # Reset the "LOGIN" text color when the mouse leaves it
+    def on_login_leave(self, event):
+        event.widget.config(fg="#FFFFFF")  # Reset to the original color
+
+    def update_progress_bar(self, event, passphrase, entry_box):
+        entered_text = entry_box.get()
+        total_length = len(passphrase)
+        current_length = len(entered_text)
+
+        if entered_text == passphrase[:current_length]:
+            # Correct input, fill progress bar with green color
+            fill_percentage = (current_length / total_length) * 100
+            self.progress_bar.itemconfig(self.progress_fill, fill="#339933")
+            self.progress_bar.coords(self.progress_fill,
+                                     0,
+                                     0,
+                                     fill_percentage * 208 / 100,
+                                     20)
+        else:
+            # Incorrect input, fill progress bar with red color
+            fill_percentage = (current_length / total_length) * 100
+            self.progress_bar.itemconfig(self.progress_fill, fill="#CC3300")
+            self.progress_bar.coords(self.progress_fill,
+                                     0,
+                                     0,
+                                     fill_percentage * 208 / 100,
+                                     20)
         # Create and format the "Already a User?" label
         already_user_label = tk.Label(self, text="Already a User?",
                                       font=("Nunito", 16),
@@ -669,11 +799,19 @@ class SignUpFailurePage(tk.Frame):
                                      fg="#1F1F1F",
                                      command=lambda: controller.
                                      show_frame(LoginPage))
+                                     text="Try Again",
+                                     font=("Nunito", 16),
+                                     bg="#FFFFFF",
+                                     fg="#1F1F1F",
+                                     command=lambda: controller.
+                                     show_frame(LoginPage))
         try_again_button.pack(pady=20)
+
 
 
 app = TypeLock()
 app.title("TypeLock")
+app.geometry("600x800")
 app.geometry("600x800")
 app.configure
 app.mainloop()
