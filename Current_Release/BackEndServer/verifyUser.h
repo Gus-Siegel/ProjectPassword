@@ -10,7 +10,8 @@
 // subprocess of verifyUser(std::string,std::string), described above
 // gets spelling and time errors, compares to acceptable error constants
 //    to determine if user will be verfied, returning result
-bool verifyUser( CharStateList &one, CharStateList &other );
+bool verifyUser( CharStateList &one, CharStateList &other, 
+                 double acceptableError = MAX_ACCEPTABLE_TIME_ERROR );
 
 /*
 Name: verifyUser
@@ -38,5 +39,6 @@ Function output/return: userVerified (bool)
 Dependencies: compare_strings.cpp, pythonListToCharState.cpp, 
               verifyUserContants.h
 */
-bool verifyUser( const std::string strOne, const std::string strTwo );
+bool verifyUser( const std::string strOne, const std::string strTwo, 
+                 double acceptableTimeError = MAX_ACCEPTABLE_TIME_ERROR );
 #endif // VERIFY_USER_H

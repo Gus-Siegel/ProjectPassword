@@ -80,25 +80,23 @@ class User:
         # - initialize the db variable to be the "airline_db" database
         con = Connection(user=user, pwd=pwd, db="typelock_db")
         # - check if the pilot's identification number exists in the table airline_db.Pilot
-        sql = "select * from pilot where identification = %s"
-        values = [self.get_id()]
+        sql = "select * from user_data where username = %s"
+        values = [self.get_username()]
         result = list(con.run_select(sql, values))
         # if the length of my result list is greater than zero, pilot exists in the Pilot table
         if len(result) > 0:
             # the pilot exists
             # use the appropriate function from Connection to update*** the existing
             #     tuple with the current values for this Pilot.
-            sql = "update pilot set identification = %s, pilot_name = %s, \
-            salary = %s, gratification = %s, airline = %s, country = %s \
-            where identification = %s"
-            values = [str(self.get_id()), str(self.get_name()), str(self.get_salary()), str(self.get_bonus()),
-                      str(self.get_airline()), str(self.get_country()), str(self.get_id())]
+            sql = "update user_data set username = %s, name = %s, \
+            passphrase = %s \
+            where username = %s"
+            values = [str(self.get_username()), str(self.get_name()), str(self.get_passphrase())]
+        
         else:
-            # the pilot does NOT exist in the Pilot table
-            sql = "insert into pilot(identification, pilot_name, salary, gratification, \
-            airline, country) values (%s, %s, %s, %s, %s, %s)"
-            values = [str(self.get_id()), str(self.get_name()), str(self.get_salary()), str(self.get_bonus()),
-                      str(self.get_airline()), str(self.get_country())]
+            # the user does NOT exist in the user_data table
+            sql = "insert into user_data(username, name, passphrase) values (%s, %s, %s)"
+            values = [str(self.get_id()), str(self.get_name()), str(self.get_salary())]
         # call run_change from Connection with the sql and values I created in the if/else statement
         result = con.run_change(sql, values)
         if result == 1:
