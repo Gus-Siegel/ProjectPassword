@@ -164,7 +164,7 @@ int main(int argc, char **argv) {
                 break;
             }
             
-            if( strcmp(control_string, "login") != 0)
+            if( strcmp(control_string, "login") != 0)//check if creating new user
             {
                 std::cout << "Seaching database if user exists"
                 //add to database
