@@ -224,7 +224,7 @@ class LoginPage(tk.Frame):
                                  bg="#FFFFFF",
                                  fg="#1F1F1F",
                                  command=login_user)
-        login_button.pack(pady=20)
+        login_button.pack(pady=10)
 
         # Clear the text from the username and passphrase entry boxes and reset
         def clear_and_reset():
@@ -252,26 +252,17 @@ class LoginPage(tk.Frame):
         clear_button = tk.Button(self, width=10,
                                  text="Clear",
                                  font=("Nunito", 16),
-                                 bg="#FFFFFF",
+                                 bg="#000000",
                                  fg="#1F1F1F",
                                  command=clear_and_reset)
         clear_button.pack(pady=0)
-
-        back_button = tk.Button(self, width=10,
-                                text="Back",
-                                font=("Nunito", 16),
-                                bg="#FFFFFF",
-                                fg="#1F1F1F",
-                                command=lambda: controller.
-                                show_frame(GetStartedPage))
-        back_button.pack(pady=20)
 
         # Create and format the "Need an account?" label
         need_account_label = tk.Label(self, text="Need an account?",
                                       font=("Nunito", 16),
                                       fg="#FFFFFF",
                                       bg="#1F1F1F")
-        need_account_label.pack(pady=(10, 0))
+        need_account_label.pack(pady=(0))
 
         # Create and format the "SIGNUP" label
         signup_label = tk.Label(self, text="SIGNUP",
@@ -547,7 +538,7 @@ class SignUpPage(tk.Frame):
                                    bg="#FFFFFF",
                                    fg="#1F1F1F",
                                    command=sign_up_user)
-        sign_up_button.pack(pady=20)
+        sign_up_button.pack(pady=10)
 
         # Clear the text from the name, username and passphrase entry boxes
         # and reset
@@ -579,26 +570,17 @@ class SignUpPage(tk.Frame):
         clear_button = tk.Button(self, width=10,
                                  text="Clear",
                                  font=("Nunito", 16),
-                                 bg="#FFFFFF",
+                                 bg="#000000",
                                  fg="#1F1F1F",
                                  command=clear_and_reset)
         clear_button.pack(pady=0)
-
-        back_button = tk.Button(self, width=10,
-                                text="Back",
-                                font=("Nunito", 16),
-                                bg="#FFFFFF",
-                                fg="#1F1F1F",
-                                command=lambda: controller.
-                                show_frame(GetStartedPage))
-        back_button.pack(pady=20)
 
         # Create and format the "Already a User?" label
         already_user_label = tk.Label(self, text="Already a User?",
                                       font=("Nunito", 16),
                                       fg="#FFFFFF",
                                       bg="#1F1F1F")
-        already_user_label.pack(pady=(10, 0))
+        already_user_label.pack(pady=0)
 
         # Create and format the "LOGIN" label
         login_label = tk.Label(self, text="LOGIN",
