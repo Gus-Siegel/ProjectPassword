@@ -5,7 +5,7 @@ import time
 
 
 class Client:
-    def __init__(self, host = '108.174.198.179', port = 5500):
+    def __init__(self, host = '108.174.198.179', port = 6500):
         self.host = host
         self.port = port
 
