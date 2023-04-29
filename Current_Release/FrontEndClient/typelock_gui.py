@@ -68,7 +68,7 @@ class GetStartedPage(tk.Frame):
         signup_button = tk.Button(self, width=20,
                                   text="Sign Up",
                                   font=("Nunito", 16),
-                                  bg="#F3AF4E",
+                                  bg="#FFFFFF",
                                   fg="#1F1F1F",
                                   command=lambda: controller.
                                   show_frame(SignUpPage))
@@ -90,24 +90,6 @@ class GetStartedPage(tk.Frame):
                                  command=lambda: controller.
                                  show_frame(LoginPage))
         login_button.pack(pady=(0, 10))
-        
-        # Create the value propositions
-        val_propositions_label = tk.Label(self,
-text="""One of the foremost innovators
-of sign up and login processes:
-
-   - User friendly design
-   - An effortless login experience
-   - Has cross-platform compatibility
-   - Maintains security by recognizing
-     typing patterns
-   - No more remembering long passwords
-     with multiple special characters
-     and numbers""",
-                                       font=("Nunito", 16),
-                                       fg="#FFFFFF",
-                                       bg="#1F1F1F")
-        val_propositions_label.pack(anchor=tk.W, pady=(10, 0), padx=138)
 
 
 class LoginPage(tk.Frame):
@@ -241,7 +223,7 @@ class LoginPage(tk.Frame):
                                  bg="#FFFFFF",
                                  fg="#1F1F1F",
                                  command=login_user)
-        login_button.pack(pady=20)
+        login_button.pack(pady=10)
 
         # Clear the text from the username and passphrase entry boxes and reset
         def clear_and_reset():
@@ -273,15 +255,6 @@ class LoginPage(tk.Frame):
                                  fg="#1F1F1F",
                                  command=clear_and_reset)
         clear_button.pack(pady=0)
-
-        back_button = tk.Button(self, width=10,
-                                text="Back",
-                                font=("Nunito", 16),
-                                bg="#FFFFFF",
-                                fg="#1F1F1F",
-                                command=lambda: controller.
-                                show_frame(GetStartedPage))
-        back_button.pack(pady=20)
 
         # Create and format the "Need an account?" label
         need_account_label = tk.Label(self, text="Need an account?",
@@ -324,11 +297,20 @@ class LoginSuccessPage(tk.Frame):
         logo_label.pack(pady=10)
 
         # Display successful login message
-        success_message = tk.Label(self, text="""Authentication Sucessful""",
+        success_message = tk.Label(self, text="Authentication Successful ✅",
                                    font=("Nunito", 16),
                                    fg="#FFFFFF",
                                    bg="#1F1F1F")
-        success_message.pack(anchor=tk.W, pady=(10, 0), padx=191)
+        success_message.pack(pady=(10, 0))
+
+        home_button = tk.Button(self, width=10,
+                                     text="Home",
+                                     font=("Nunito", 16),
+                                     bg="#FFFFFF",
+                                     fg="#1F1F1F",
+                                     command=lambda: controller.
+                                     show_frame(GetStartedPage))
+        home_button.pack(pady=20)
 
 
 class LoginFailurePage(tk.Frame):
@@ -343,7 +325,7 @@ class LoginFailurePage(tk.Frame):
         logo_label.pack(pady=10)
 
         # Display failed login message
-        failure_message = tk.Label(self, text="""Authentication Failed""",
+        failure_message = tk.Label(self, text="""Authentication Failed ❌""",
                                    font=("Nunito", 16),
                                    fg="#FFFFFF",
                                    bg="#1F1F1F")
@@ -564,7 +546,7 @@ class SignUpPage(tk.Frame):
                                    bg="#FFFFFF",
                                    fg="#1F1F1F",
                                    command=sign_up_user)
-        sign_up_button.pack(pady=20)
+        sign_up_button.pack(pady=10)
 
         # Clear the text from the name, username and passphrase entry boxes
         # and reset
@@ -600,15 +582,6 @@ class SignUpPage(tk.Frame):
                                  fg="#1F1F1F",
                                  command=clear_and_reset)
         clear_button.pack(pady=0)
-
-        back_button = tk.Button(self, width=10,
-                                text="Back",
-                                font=("Nunito", 16),
-                                bg="#FFFFFF",
-                                fg="#1F1F1F",
-                                command=lambda: controller.
-                                show_frame(GetStartedPage))
-        back_button.pack(pady=20)
 
         # Create and format the "Already a User?" label
         already_user_label = tk.Label(self, text="Already a User?",
@@ -673,7 +646,7 @@ class SignUpFailurePage(tk.Frame):
         logo_label.image = logo_image
         logo_label.pack(pady=10)
 
-        failure_message = tk.Label(self, text="""Sign up Unsuccessful""",
+        failure_message = tk.Label(self, text="Sign up Unsuccessful",
                                    font=("Nunito", 16),
                                    fg="#FFFFFF",
                                    bg="#1F1F1F")
