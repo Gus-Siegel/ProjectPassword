@@ -1,11 +1,10 @@
 import tkinter as tk
 import time
 import os
-from typelock_clientv3 import Signup, Login  # Connection to the Client Program
+from typelock_client import Signup, Login  # Connection to the Client Program
 
 # Initialize the list of lists to store the keypress data
 keypress_data = []
-
 
 # Log the character entered by the user and the time it was pressed
 def log_key_press(event):
@@ -69,7 +68,7 @@ class GetStartedPage(tk.Frame):
         signup_button = tk.Button(self, width=20,
                                   text="Sign Up",
                                   font=("Nunito", 16),
-                                  bg="#FFFFFF",
+                                  bg="#F3AF4E",
                                   fg="#1F1F1F",
                                   command=lambda: controller.
                                   show_frame(SignUpPage))
@@ -91,6 +90,24 @@ class GetStartedPage(tk.Frame):
                                  command=lambda: controller.
                                  show_frame(LoginPage))
         login_button.pack(pady=(0, 10))
+        
+        # Create the value propositions
+        val_propositions_label = tk.Label(self,
+text="""One of the foremost innovators
+of sign up and login processes:
+
+   - User friendly design
+   - An effortless login experience
+   - Has cross-platform compatibility
+   - Maintains security by recognizing
+     typing patterns
+   - No more remembering long passwords
+     with multiple special characters
+     and numbers""",
+                                       font=("Nunito", 16),
+                                       fg="#FFFFFF",
+                                       bg="#1F1F1F")
+        val_propositions_label.pack(anchor=tk.W, pady=(10, 0), padx=138)
 
 
 class LoginPage(tk.Frame):
@@ -224,7 +241,7 @@ class LoginPage(tk.Frame):
                                  bg="#FFFFFF",
                                  fg="#1F1F1F",
                                  command=login_user)
-        login_button.pack(pady=10)
+        login_button.pack(pady=20)
 
         # Clear the text from the username and passphrase entry boxes and reset
         def clear_and_reset():
@@ -257,12 +274,21 @@ class LoginPage(tk.Frame):
                                  command=clear_and_reset)
         clear_button.pack(pady=0)
 
+        back_button = tk.Button(self, width=10,
+                                text="Back",
+                                font=("Nunito", 16),
+                                bg="#FFFFFF",
+                                fg="#1F1F1F",
+                                command=lambda: controller.
+                                show_frame(GetStartedPage))
+        back_button.pack(pady=20)
+
         # Create and format the "Need an account?" label
         need_account_label = tk.Label(self, text="Need an account?",
                                       font=("Nunito", 16),
                                       fg="#FFFFFF",
                                       bg="#1F1F1F")
-        need_account_label.pack(pady=(0))
+        need_account_label.pack(pady=(10, 0))
 
         # Create and format the "SIGNUP" label
         signup_label = tk.Label(self, text="SIGNUP",
@@ -538,7 +564,7 @@ class SignUpPage(tk.Frame):
                                    bg="#FFFFFF",
                                    fg="#1F1F1F",
                                    command=sign_up_user)
-        sign_up_button.pack(pady=10)
+        sign_up_button.pack(pady=20)
 
         # Clear the text from the name, username and passphrase entry boxes
         # and reset
@@ -575,12 +601,21 @@ class SignUpPage(tk.Frame):
                                  command=clear_and_reset)
         clear_button.pack(pady=0)
 
+        back_button = tk.Button(self, width=10,
+                                text="Back",
+                                font=("Nunito", 16),
+                                bg="#FFFFFF",
+                                fg="#1F1F1F",
+                                command=lambda: controller.
+                                show_frame(GetStartedPage))
+        back_button.pack(pady=20)
+
         # Create and format the "Already a User?" label
         already_user_label = tk.Label(self, text="Already a User?",
                                       font=("Nunito", 16),
                                       fg="#FFFFFF",
                                       bg="#1F1F1F")
-        already_user_label.pack(pady=0)
+        already_user_label.pack(pady=(10, 0))
 
         # Create and format the "LOGIN" label
         login_label = tk.Label(self, text="LOGIN",
