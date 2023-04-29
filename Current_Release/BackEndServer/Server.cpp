@@ -119,7 +119,6 @@ int main(int argc, char **argv) {
         int user_bytes;
         int control_bytes;
         std::fstream db_file; 
-        db_file.open("testdb.txt");
         std::string db_data;
         std::string db_user;
         std::string db_pass;
@@ -130,6 +129,8 @@ int main(int argc, char **argv) {
     // While receiving - display & echo msg
         while(true)
         {
+            db_file.open("testdb.txt");
+
             bytes = recv(sock_client, &msg_buf, 4096, 0);
             std::cout << "Message recieved\n";
             // Check how many bytes recieved
@@ -163,11 +164,13 @@ int main(int argc, char **argv) {
                 std::cerr << "[ERROR] Something went wrong while receiving data!.\n";
                 break;
             }
-            
+            std::cout << control_string;
             if( strcmp(control_string, "login") != 0)//check if creating new user
             {
-                std::cout << "Seaching database if user exists"
+                std::cout << "Seaching database if user exists\n";
                 //add to database
+                getline(db_file, db_data);
+
                 while(!db_file.eof() && db_user != user_string)
                 {
                     //split it into username and password
@@ -182,10 +185,19 @@ int main(int argc, char **argv) {
                 }
                 if(db_file.eof())
                 {
-                    std::cout << "Adding new user"
+                    std::ofstream testing;
+                    testing.open("testdb.txt", std::ios_base::app);
+                    std::cout << "Adding new user\n";
+                    
                     //send back true to the client
+                    std::cout << "to be added to the " << user_name << ":" << msg_buf << "\n";
+                    // while(!testing.eof)
+                    // {
+                    //     getline(testing, db_data);
+                    // }
+                    testing << user_name << ":" << msg_buf << "\n";
+                    testing.close();
 
-                    db_file << user_name << ":" << msg_buf << "\n";
                     bool True = true;
                     if (send(sock_client, &True, sizeof(true), 0) < 0) {
                         std::cerr << "[ERROR] Message cannot be send, exiting...\n";
@@ -200,65 +212,69 @@ int main(int argc, char **argv) {
                         break;
                     }
                 }
+                db_file.close();
 
 
             }
-            // If there is some bytes
-            
-            // Print message
-            std::cout << "client> " << std::string(msg_buf, 0, bytes) << "\n";
-            
-            //read a line from the "data base"
-            getline(db_file, db_data);
-            while(!db_file.eof() && db_user != user_string)
+            else
             {
-                //split it into username and password
-                std::cout << db_data << "\n";
-                // get user data from database
-                db_user = db_data.substr(0, db_data.find(deli));
-                db_pass = db_data.substr(db_data.find(deli) + 1);
-                std::cout << "user namer " << db_user << "\n";
-                std::cout << "password "<< db_pass << "\n";
+                // If there is some bytes
+                
+                // Print message
+                std::cout << "client> " << std::string(msg_buf, 0, bytes) << "\n";
+                
+                //read a line from the "data base"
                 getline(db_file, db_data);
+                while(!db_file.eof() && db_user != user_string)
+                {
+                    //split it into username and password
+                    std::cout << db_data << "\n";
+                    // get user data from database
+                    db_user = db_data.substr(0, db_data.find(deli));
+                    db_pass = db_data.substr(db_data.find(deli) + 1);
+                    std::cout << "user namer " << db_user << "\n";
+                    std::cout << "password "<< db_pass << "\n";
+                    getline(db_file, db_data);
 
-            }
-            if(db_user != user_string)
-            {
-                bool False = false;
-                send(sock_client, &False, sizeof(False), 0);
-                std::cout << "User name not found, aborting \n";
-                break;
-            }
-          
-
-            // while(strcmp(user_name, db_user) != 0 || db_file){
-            //     //read a line from the "data base"
-
-            //     //split it into username and password
-            // }
+                }
+                if(db_user != user_string)
+                {
+                    bool False = false;
+                    send(sock_client, &False, sizeof(False), 0);
+                    std::cout << "User name not found, aborting \n";
+                    break;
+                }
             
 
-            const std::string wordOne = msg_buf;
-            const std::string wordTwo = db_pass;
-            bool temp;
-            std::cout << "dataB> " << wordTwo << "\n";
+                // while(strcmp(user_name, db_user) != 0 || db_file){
+                //     //read a line from the "data base"
 
-            //check if string matches string from file via micheals code
-            if(verifyUser(wordOne, wordTwo)){
-                temp = true;
-                std::cout << "User Verified \n";
-            }
-            else{
-                temp = false;
-                std::cout << "User Fail \n";
-            }
-            //send back 
+                //     //split it into username and password
+                // }
+                
 
-            // strcpy(output, temp.c_str());    
+                const std::string wordOne = msg_buf;
+                const std::string wordTwo = db_pass;
+                bool temp;
+                std::cout << "dataB> " << wordTwo << "\n";
 
-            if (send(sock_client, &temp, sizeof(temp), 0) < 0) {
-                std::cerr << "[ERROR] Message cannot be send, exiting...\n";
-                break;
+                //check if string matches string from file via micheals code
+                if(verifyUser(wordOne, wordTwo)){
+                    temp = true;
+                    std::cout << "User Verified \n";
+                }
+                else{
+                    temp = false;
+                    std::cout << "User Fail \n";
+                }
+                //send back 
+
+                // strcpy(output, temp.c_str());    
+
+                if (send(sock_client, &temp, sizeof(temp), 0) < 0) {
+                    std::cerr << "[ERROR] Message cannot be send, exiting...\n";
+                    break;
+                }
             }
     
 
