@@ -1,6 +1,7 @@
 #headers import socket
 import socket
 import time
+import pdb
 
 
 class Client:
@@ -20,7 +21,7 @@ class Client:
         #connect to server
         self.client_socket.connect((self.host, self.port))
         # print connection message
-        print("Connecting to" + self.host)
+        print("Connecting to " + self.host)
 
     #Name: send_message
     #Method: Send message via connection
@@ -96,7 +97,7 @@ class Login:
             
             print(type(login_result))
             #login_result = login_result.replace('\x00', '')
-            if bool(login_result):
+            if login_result:
                 print("In true statement")
                 print("Login attempt: " + login_result)
                 login_result = True

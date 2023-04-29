@@ -10,6 +10,7 @@
 #include "compare_strings.h"
 #include "pythonListToCharState.h"
 #include "verifyUser.h"
+//#include "database.cpp"
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -110,50 +111,140 @@ int main(int argc, char **argv) {
         
         char msg_buf[4096];
         char user_name[4096];
-        char *name;
-        char *pass;
+        char control_string[4096];
+        //Session userDB = startSession("localhost", 3306, "username", "password");
+        //userDB.sql("CREATE TABLE IF NOT EXISTS users (username VARCHAR(255) PRIMARY KEY, keyData JSON)").execute();
+        //userDB.sql("USE users").execute();
         int bytes;
         int user_bytes;
-        std::ifstream db_file; 
-        db_file.open("testdb.txt");
+        int control_bytes;
+        std::fstream db_file; 
         std::string db_data;
         std::string db_user;
         std::string db_pass;
         std::string deli = ":";
-        char output[5];
+
         
-        // While receiving - display & echo msg
-        while (true) {
+        
+    // While receiving - display & echo msg
+        while(true)
+        {
+            db_file.open("testdb.txt");
+
             bytes = recv(sock_client, &msg_buf, 4096, 0);
             std::cout << "Message recieved\n";
             // Check how many bytes recieved
-            // If there is no data, it means server is disconnected
-            user_bytes = recv(sock_client, &user_name, 4096, 0);
-            std::cout << "user recived " << std::string(user_name, 0 ,user_bytes) << "\n";
             if (bytes == 0) {
                 std::cout << "[INFO] Client is disconnected.\n";
                 break;
             }
-
-            // If something gone wrong
             else if (bytes < 0) {
                 std::cerr << "[ERROR] Something went wrong while receiving data!.\n";
                 break;
             }
-            // If there is some bytes
-            else {
+            // If there is no data, it means server is disconnected
+            user_bytes = recv(sock_client, &user_name, 4096, 0);
+            std::string user_string = user_name;
+            std::cout << "user recived " << std::string(user_name, 0 ,user_bytes) << "\n";
+            if (user_bytes == 0) {
+                std::cout << "[INFO] Client is disconnected.\n";
+                break;
+            }
+            else if (user_bytes < 0) {
+                std::cerr << "[ERROR] Something went wrong while receiving data!.\n";
+                break;
+            }
+            control_bytes = recv(sock_client, &control_string, 4096, 0);
+            // If something gone wrong
+            if (control_bytes == 0) {
+                std::cout << "[INFO] Client is disconnected.\n";
+                break;
+            }
+            else if (control_bytes < 0) {
+                std::cerr << "[ERROR] Something went wrong while receiving data!.\n";
+                break;
+            }
+            std::cout << control_string;
+            if( strcmp(control_string, "login") != 0)//check if creating new user
+            {
+                std::cout << "Seaching database if user exists\n";
+                //add to database
+                getline(db_file, db_data);
+
+                while(!db_file.eof() && db_user != user_string)
+                {
+                    //split it into username and password
+                    std::cout << db_data << "\n";
+                    // get user data from database
+                    db_user = db_data.substr(0, db_data.find(deli));
+                    db_pass = db_data.substr(db_data.find(deli) + 1);
+                    std::cout << "user namer " << db_user << "\n";
+                    std::cout << "password "<< db_pass << "\n";
+                    getline(db_file, db_data);
+
+                }
+                if(db_file.eof())
+                {
+                    std::ofstream testing;
+                    testing.open("testdb.txt", std::ios_base::app);
+                    std::cout << "Adding new user\n";
+                    
+                    //send back true to the client
+                    std::cout << "to be added to the " << user_name << ":" << msg_buf << "\n";
+                    // while(!testing.eof)
+                    // {
+                    //     getline(testing, db_data);
+                    // }
+                    testing << user_name << ":" << msg_buf << "\n";
+                    testing.close();
+
+                    bool True = true;
+                    if (send(sock_client, &True, sizeof(true), 0) < 0) {
+                        std::cerr << "[ERROR] Message cannot be send, exiting...\n";
+                        break;
+                    }
+                }
+                else
+                {
+                    bool True = false;
+                    if (send(sock_client, &True, sizeof(True), 0) < 0) {
+                        std::cerr << "[ERROR] Message cannot be send, exiting...\n";
+                        break;
+                    }
+                }
+                db_file.close();
+
+
+            }
+            else
+            {
+                // If there is some bytes
+                
                 // Print message
                 std::cout << "client> " << std::string(msg_buf, 0, bytes) << "\n";
                 
                 //read a line from the "data base"
                 getline(db_file, db_data);
-                //split it into username and password
-                std::cout << db_data << "\n";
+                while(!db_file.eof() && db_user != user_string)
+                {
+                    //split it into username and password
+                    std::cout << db_data << "\n";
+                    // get user data from database
+                    db_user = db_data.substr(0, db_data.find(deli));
+                    db_pass = db_data.substr(db_data.find(deli) + 1);
+                    std::cout << "user namer " << db_user << "\n";
+                    std::cout << "password "<< db_pass << "\n";
+                    getline(db_file, db_data);
 
-                db_user = db_data.substr(0, db_data.find(deli));
-                db_pass = db_data.substr(db_data.find(deli) + 1);
-                std::cout << "user namer " << db_user << "\n";
-                std::cout << "password "<< db_pass << "\n";
+                }
+                if(db_user != user_string)
+                {
+                    bool False = false;
+                    send(sock_client, &False, sizeof(False), 0);
+                    std::cout << "User name not found, aborting \n";
+                    break;
+                }
+            
 
                 // while(strcmp(user_name, db_user) != 0 || db_file){
                 //     //read a line from the "data base"
@@ -164,31 +255,34 @@ int main(int argc, char **argv) {
 
                 const std::string wordOne = msg_buf;
                 const std::string wordTwo = db_pass;
-                std::string temp = "temp";
+                bool temp;
                 std::cout << "dataB> " << wordTwo << "\n";
 
                 //check if string matches string from file via micheals code
                 if(verifyUser(wordOne, wordTwo)){
-                    temp = "true";
+                    temp = true;
+                    std::cout << "User Verified \n";
                 }
                 else{
-                    temp = "false";
+                    temp = false;
+                    std::cout << "User Fail \n";
                 }
                 //send back 
 
-                strcpy(output, temp.c_str());
+                // strcpy(output, temp.c_str());    
 
-                if (send(sock_client, &output, sizeof(output), 0) < 0) {
+                if (send(sock_client, &temp, sizeof(temp), 0) < 0) {
                     std::cerr << "[ERROR] Message cannot be send, exiting...\n";
                     break;
                 }
             }
+    
 
         }
 
-        // Close client socket
-        close(sock_client);
-        std::cout << "[INFO] Client socket is closed.\n";
+    // Close client socket
+    close(sock_client);
+    std::cout << "[INFO] Client socket is closed.\n";
     }
     return 0;
 }
