@@ -546,11 +546,11 @@ class SignUpPage(tk.Frame):
             # Check if the sign up was successful
             if signup_result:
                 # Redirect to the Login Page
-                controller.showframe(LoginPage)
+                controller.show_frame(LoginPage)
             # Otherwise, assume the sign up wasn't successful
             else:
                 # Prompt the user to try again
-                controller.showframe(SignUpFailurePage)
+                controller.show_frame(SignUpFailurePage)
 
             print(f"Signup value:  {signup}")
 
