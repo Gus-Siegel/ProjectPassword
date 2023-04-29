@@ -36,7 +36,7 @@ With Typelock, you can use your personal typing style to authenicate and log int
 - C++
 - C
 - SQL (MySQL)
-- Docker
+- PyInstaller
 
 ## Setup
 
