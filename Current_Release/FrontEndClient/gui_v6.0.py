@@ -252,7 +252,7 @@ class LoginPage(tk.Frame):
         clear_button = tk.Button(self, width=10,
                                  text="Clear",
                                  font=("Nunito", 16),
-                                 bg="#000000",
+                                 bg="#FFFFFF",
                                  fg="#1F1F1F",
                                  command=clear_and_reset)
         clear_button.pack(pady=0)
@@ -570,7 +570,7 @@ class SignUpPage(tk.Frame):
         clear_button = tk.Button(self, width=10,
                                  text="Clear",
                                  font=("Nunito", 16),
-                                 bg="#000000",
+                                 bg="#FFFFFF",
                                  fg="#1F1F1F",
                                  command=clear_and_reset)
         clear_button.pack(pady=0)
