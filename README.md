@@ -1,4 +1,4 @@
-# Project Password: TypeLock
+# TypeLock
 
 TypeLock is a convenient security protocol that replaces the standard password system. TypeLock allows you to log into your accounts using your own typing style instead of one of the hundreds of passwords you maintain and memorize.
 
@@ -40,7 +40,7 @@ With Typelock, you can use your personal typing style to authenicate and log int
 
 ## Setup
 
-The TypeLock security protocol is implemented on the server side of a web application. To use TypeLock, you must have an account on a website that supports the TypeLock security protocol.
+The TypeLock application is implemented on the server side of a web application. To use TypeLock, you must have an account on a website that supports the TypeLock security protocol.
 
 ## Getting Started
 
