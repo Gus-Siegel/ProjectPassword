@@ -43,7 +43,7 @@ class GetStartedPage(tk.Frame):
         self.configure(bg="#1F1F1F")
         self.controller = controller
 
-        image_path = os.path.join(os.getcwd(), "logo.png")
+        image_path = os.path.join(os.getcwd(), "TypeLock-Logo.png")
 
         logo_image = tk.PhotoImage(file=image_path)
         logo_label = tk.Label(self, image=logo_image, bg="#1F1F1F")
@@ -98,7 +98,7 @@ class LoginPage(tk.Frame):
         self.configure(bg="#1F1F1F")
         self.controller = controller
 
-        logo_image = tk.PhotoImage(file="logo.png")
+        logo_image = tk.PhotoImage(file="TypeLock-Logo.png")
         logo_label = tk.Label(self, image=logo_image, bg="#1F1F1F")
         logo_label.image = logo_image
         logo_label.pack(pady=10)
@@ -291,7 +291,7 @@ class LoginSuccessPage(tk.Frame):
         self.configure(bg="#1F1F1F")
         self.controller = controller
 
-        logo_image = tk.PhotoImage(file="logo.png")
+        logo_image = tk.PhotoImage(file="TypeLock-Logo.png")
         logo_label = tk.Label(self, image=logo_image, bg="#1F1F1F")
         logo_label.image = logo_image
         logo_label.pack(pady=10)
@@ -319,7 +319,7 @@ class LoginFailurePage(tk.Frame):
         self.configure(bg="#1F1F1F")
         self.controller = controller
 
-        logo_image = tk.PhotoImage(file="logo.png")
+        logo_image = tk.PhotoImage(file="TypeLock-Logo.png")
         logo_label = tk.Label(self, image=logo_image, bg="#1F1F1F")
         logo_label.image = logo_image
         logo_label.pack(pady=10)
@@ -347,7 +347,7 @@ class SignUpPage(tk.Frame):
         self.configure(bg="#1F1F1F")
         self.controller = controller
 
-        logo_image = tk.PhotoImage(file="logo.png")
+        logo_image = tk.PhotoImage(file="TypeLock-Logo.png")
         logo_label = tk.Label(self, image=logo_image, bg="#1F1F1F")
         logo_label.image = logo_image
         logo_label.pack(pady=10)
@@ -641,7 +641,7 @@ class SignUpFailurePage(tk.Frame):
         self.configure(bg="#1F1F1F")
         self.controller = controller
 
-        logo_image = tk.PhotoImage(file="logo.png")
+        logo_image = tk.PhotoImage(file="TypeLock-Logo.png")
         logo_label = tk.Label(self, image=logo_image, bg="#1F1F1F")
         logo_label.image = logo_image
         logo_label.pack(pady=10)
