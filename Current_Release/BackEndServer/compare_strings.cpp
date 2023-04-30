@@ -182,6 +182,32 @@ CharStateList::CharStateList( const string &stringInstance )
     }
 }
 
+// String deserializer, constructs list of charStateLists from format stored
+// in database
+std::list<charStateList> convertList(string &storedDataStr)
+{
+    vector<string> tokens;
+    stringstream ss(dataString);
+
+    // breaks up the data string according to placement of the '~' delimiters
+    while (ss.good())
+    {
+        string substr;
+        getline(ss, substr, '~');
+        tokens.push_back(substr);
+    }
+
+    List<CharStateList> convertedList;
+    for (i = 0; i < tokens.size(); i++)
+    {
+        // Converts individual charStateList w/ string constructor and
+        //    stores it in the list
+        convertedList.push_back( CharStateList(tokens[i]) )
+    }
+
+    return convertedList;
+}
+
 /*
 Name: CharStateList::applyBackspace
 Process: for any CharState value equal to BACKSPACE, 
