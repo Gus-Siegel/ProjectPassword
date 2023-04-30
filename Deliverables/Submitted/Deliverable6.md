@@ -63,4 +63,6 @@ The comments in the snippet explain exactly what is going on in the function, ev
 
 In retrospect, describe what your team learned during this second release and what would you change if you would continue developing the project.
 
+I learned how to use TKInter pretty well during this project, and because of that I learned that a lot of premade gui’s have small incompatibilities when using different devices such as the inability to change the background color of buttons when using it with a MacOS.
+
 Grading criteria (2 points): Adequate reflection about problems and solutions, clear description with adequate use of language.
