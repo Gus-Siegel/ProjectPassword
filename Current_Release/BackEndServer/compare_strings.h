@@ -120,6 +120,7 @@ public:
     void operator=( const CharStateList &source );
     void printListForm( const std::string end = "\n" ) const;
     string toString();
+    std::list<CharStateList> convertList( const std::string &storedDataStr );
 
 
     /*
