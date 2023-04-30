@@ -44,7 +44,7 @@ Grading criteria (3 points): You should have an adequate number of automated tes
 
 TypeLock Demo: [Link to Demo](https://youtu.be/C2s3oM5v9yE)
 
-## Code quality (Eddie, Levi)
+## Code quality (Brock, Levi)
 
 Describe how your team managed code quality. What were your policies, conventions, adopted best practices, etc. to foster high-quality code?
 
