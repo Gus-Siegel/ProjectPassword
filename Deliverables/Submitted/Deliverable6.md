@@ -48,7 +48,16 @@ TypeLock Demo: [Link to Demo](https://youtu.be/C2s3oM5v9yE)
 
 Describe how your team managed code quality. What were your policies, conventions, adopted best practices, etc. to foster high-quality code?
 
-Grading criteria (4 points): Adequate list of practices that were adopted to improve code quality and clear description with adequate use of language.
+Our team has used a few conventions to help us in the engineering of our program. We us a lot of comments to explain what is going on so that if our other team members need to do something that calls a function from a different file, or if they need to know what type of information is being returned to their portion as a success or failure signal, they can go to that file and read the comments for that function. We also used a naming convention to make sure everything made sense. We didn’t have specific names that we needed to use for certain things, we just wanted to have the names of variables make sense so that the whole team knows what they are used for. A good example of both conventions being used is shown in this code snippet:
+
+    # Log the character entered by the user and the time it was pressed\n
+    def log_key_press(event):
+        # Record the current time (in seconds)
+        current_time = time.time()
+        # Append the key event name (letter) and the time it was pressed
+        keypress_data.append([event.char, current_time])
+
+The comments in the snippet explain exactly what is going on in the function, even listing the specific unit of time being used for the function. The names of the variables are also very self explanatory, being current_time for what time a key was pressed and keypress_data for all of the keys that were pressed and recorded.
 
 ## Lessons learned (All members)
 
