@@ -64,6 +64,8 @@ The comments in the snippet explain exactly what is going on in the function, ev
 
 In retrospect, describe what your team learned during this second release and what would you change if you would continue developing the project.
 
+I learned that managing a group requires constant and constant communication for group members. I looking back having more communication between the teams would have lead to a more streamlined development cycle.
+
 I learned how to use TKInter pretty well during this project, and because of that I learned that a lot of premade gui’s have small incompatibilities when using different devices such as the inability to change the background color of buttons when using it with a MacOS.
 
 Python and C++ were used to develop this project. During several intervals of the project, our team spent a lot of time attempting to combine C++ code with Python code. Our team would have had more time to work on other sections of the project if we had minimized the number of languages used. 
