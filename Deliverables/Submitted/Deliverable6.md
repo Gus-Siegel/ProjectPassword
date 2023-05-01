@@ -13,35 +13,35 @@ TypeLock is a secure authentication system that identifies users by analyzing th
 
 ## Implemented requirements
 
-**Requirement**: As a user, I want to be able to login so I can access my information through a database.\
+**Requirement**: As a user, I want to be able to login so that I can access my account.\
 **Issue**: [Link to Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/91)\
 **Pull Request**: [Link to Pull request](https://github.com/Gus-Siegel/ProjectPassword/pull/143)\
 **Implemented by**: Taylor Nielsen, Eduardo De La Rosa, Alexander Siegel, Brock Heinz, Levi Watlington, and Michael Vertin\
 **Approved by**: Alexander Siegel\
-**Print Screen**: Not applicable
+**Print Screen**: ![LoginPage]()
 
-**Requirement**: As a user, I want a robust user interface so I can interact with the application with ease.\
+**Requirement**: As a user, I want an intuitive user interface so I can interact with the application comfortably.\
 **Issue**: [Link to Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/180)\
 **Pull Request**: [Link to Pull request](https://github.com/Gus-Siegel/ProjectPassword/issues/180)\
 **Implemented by**: Taylor Nielsen and Eduardo De La Rosa\
 **Approved by**: Alexander Siegel\
 **Print Screen**: Not applicable
 
-**Requirement**: As a user, I want to be able to able to access the appliction on my computer so I can run it on any computer.\
+**Requirement**: As a user, I want to be able to run the appliction on any operating system so that I can access the application any computer.\
 **Issue**: [Link to Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/116)\
 **Pull Request**: [Link to Pull request](https://github.com/Gus-Siegel/ProjectPassword/pull/172)\
 **Implemented by**: Taylor Nielsen and Eduardo De La Rosa\
 **Approved by**: Taylor Nielsen\
 **Print Screen**: Not applicable
 
-**Requirement**: As a user, I want to be able to sign up so I can access my account.\
+**Requirement**: As a user, I want to be able to sign up so that I can access my account.\
 **Issue**: [Link to Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/179)\
 **Pull Request**: [Link to Pull request](https://github.com/Gus-Siegel/ProjectPassword/pull/154)\
 **Implemented by**: Taylor Nielsen, Eduardo De La Rosa, Alexander Siegel, Levi Watlington, and Michael Vertin\
 **Approved by**: Taylor Nielsen\
-**Print Screen**: Not applicable
+**Print Screen**: ![SignupPage]()
 
-**Requirement**: As a user, I want to have ease of mind logging in so I know that my account is secure.\
+**Requirement**: As a user, I want to know that my account is secure so that I have peace of mind that my infromation is safe.\
 **Issue**: [Link to Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/181)\
 **Pull Request**: [Link to Pull request](https://github.com/Gus-Siegel/ProjectPassword/pull/143)\
 **Implemented by**: Alexander Siegel and Michael Vertin\
