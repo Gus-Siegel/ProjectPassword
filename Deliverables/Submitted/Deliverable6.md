@@ -74,6 +74,8 @@ In retrospect, our team learned the importance of effective communication and pl
 
 I learned that managing a group requires constant and constant communication for group members. I looking back having more communication between the teams would have lead to a more streamlined development cycle.
 
+I learned that test-driven development may be an effective way to ensure steady and quick deployment of new features, and one that we should consider in the future. Although we had automated integration testing implemented for new builds, we hadn't updated that framework to cover some of our later-implemented features. As such, we unfortunately lost a significant amount of time in the last leg of development when attempting to make the backend functional. In hindsight, unit tests for the database and its communication with other backend files are something I should have invested in personally.
+
 I learned how to use TKInter pretty well during this project, and because of that I learned that a lot of premade gui’s have small incompatibilities when using different devices such as the inability to change the background color of buttons when using it with a MacOS.
 
 Python and C++ were used to develop this project. During several intervals of the project, our team spent a lot of time attempting to combine C++ code with Python code. Our team would have had more time to work on other sections of the project if we had minimized the number of languages used.
