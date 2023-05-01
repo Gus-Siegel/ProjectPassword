@@ -5,11 +5,11 @@ Date: April 30, 2023\
 Location: Flagstaff, Arizona\
 Group Members: Taylor Nielsen, Eduardo De La Rosa, Alexander Siegel, Brock Heinz, Levi Watlington, Michael Vertin
 
-## Introduction (Eddie)
+## Introduction
 
-Provide 1-2 paragraphs to describe your system. This description should contain the value proposition and the main features. At the end of the introduction, include a link to your project on GitHub.
+TypeLock is a secure authentication system that identifies users by analyzing their typing behavior, offering a convenient and reliable alternative to traditional password-based login methods. The system's main value proposition lies in providing an effortless login experience for internet users who struggle with managing multiple passwords. Featuring seamless integration with existing systems, user-friendly design, and cross-platform compatibility, TypeLock ensures account security by recognizing unique typing patterns. By leveraging advanced typing metrics analysis, TypeLock allows users to effortlessly log in to their accounts without the need to memorize individual passwords. This innovative approach grants access to accounts based on users' typing behavior, making it an ideal solution for those who find it challenging to keep track of their passwords and login credentials. With its cutting-edge technology and ease of use, TypeLock streamlines the authentication process, enhancing security and convenience for its users.
 
-Grading criteria (1 point): This section will be evaluated in terms of correctness, completeness, thoroughness, consistency, coherence, and adequate use of language. The description should be consistent with the current state of the project. You should include the link to GitHub.
+**Project repository**: [https://github.com/Gus-Siegel/ProjectPassword](https://github.com/Gus-Siegel/ProjectPassword)
 
 ## Implemented requirements (Gus)
 
@@ -31,26 +31,34 @@ Grading criteria (20 points): This section will be evaluated in terms of correct
 
 ## Tests
 
-- 3.1.1. Gtest was chosen for testing. 
-- 3.1.2. [Automated Unit Tests](https://github.com/Gus-Siegel/ProjectPassword/blob/main/Current_Release/BackEndServer/automatedTest.cpp)
-- 3.1.3. The following is a test case where the input contains more backspaces than there are characters preceding the backspaces, followed by the intended input. This [tests](https://github.com/Gus-Siegel/ProjectPassword/blob/main/Current_Release/BackEndServer/automatedTest.cpp) 
- the [CharStateList](https://github.com/Gus-Siegel/ProjectPassword/blob/main/Current_Release/BackEndServer/compare_strings.h) class. \
+- The test framework **Gtest** was used to develop the automated tests.
+
+- [Automated Unit Tests](https://github.com/Gus-Siegel/ProjectPassword/blob/main/Current_Release/BackEndServer/automatedTest.cpp)
+
+- The following is a test case where the input contains more backspaces than there are characters preceding the backspaces, followed by the intended input. This [tests](https://github.com/Gus-Siegel/ProjectPassword/blob/main/Current_Release/BackEndServer/automatedTest.cpp) the [CharStateList](https://github.com/Gus-Siegel/ProjectPassword/blob/main/Current_Release/BackEndServer/compare_strings.h) class. \
 ![Excessive Characters Code](https://cdn.discordapp.com/attachments/856622349516144665/1102317933008539708/CS386_ExcessiveBackspace_TestCode.png)
-- 3.1.4. Test Results: \
+
+- Automated Unit Test Results: \
 ![Test Output](https://cdn.discordapp.com/attachments/856622349516144665/1102323906876031058/CS386_GroupProject_D6.1_TestScreenshot.png)
 
 ## Demo
 
-TypeLock Demo: [Link to Demo](https://youtu.be/C2s3oM5v9yE)
+TypeLock Demo: [Youtube Link to Demo](https://youtu.be/C2s3oM5v9yE)
 
-## Code quality (Brock, Levi)
+## Code quality
 
-Describe how your team managed code quality. What were your policies, conventions, adopted best practices, etc. to foster high-quality code?
+Our team was committed to maintaining high code quality throughout our project. We implemented several policies, conventions, and best practices to ensure that our code was clean, efficient, and easily understood by all team members. Some of the key measures we took included:
 
-Our team has used a few conventions to help us in the engineering of our program. We use a lot of comments to explain what is going on so that if our other team members need to do something that calls a function from a different file, or if they need to know what type of information is being returned to their portion as a success or failure signal, they can go to that file and read the comments for that function. We also used a naming convention to make sure everything made sense. We didn’t have specific names that we needed to use for certain things, we just wanted to have the names of variables make sense so that the whole team knows what they are used for. A good example of both conventions being used is shown in this code snippet:
+1. **Code Reviews**: We established a practice of performing code reviews, where every team member would review another member's code before it was merged into the main branch. This helped us catch errors, ensure consistency, and share knowledge among team members.
+
+2. **Version Control**: We used Git for version control, which allowed us to track changes, collaborate effectively, and maintain a clean codebase. We also adopted a feature-branch workflow, where each team member would work on their own branch and then merge it into the main branch after a successful review.
+
+3. **Documentation**: We documented our code with comments allowing team members to understand the purpose and functionality of different sections, making it easier for them to work with functions from different files or interpret the information being returned. Through documentation, our team was able to create clean, easily understood code that facilitated effective collaboration and development.
+
+4. **Coding Standards**: We employed a naming convention to ensure that variables and functions had meaningful and descriptive names. This allowed the whole team to quickly grasp the purpose of different elements in the code. A good example of both our documentation and naming conventions being used effectively can be seen in the following code below. The comments in the snippet explain exactly what is going on in the function, including the specific unit of time being used. The variable names, such as current_time and keypress_data, are self-explanatory and clearly indicate their purpose.
 
 ```Python
-    # Log the character entered by the user and the time it was pressed\n
+    # Log the character entered by the user and the time it was pressed
     def log_key_press(event):
         # Record the current time (in seconds)
         current_time = time.time()
@@ -58,16 +66,14 @@ Our team has used a few conventions to help us in the engineering of our program
         keypress_data.append([event.char, current_time])
 ```
 
-The comments in the snippet explain exactly what is going on in the function, even listing the specific unit of time being used for the function. The names of the variables are also very self explanatory, being current_time for what time a key was pressed and keypress_data for all of the keys that were pressed and recorded.
+By implementing these policies, conventions, and best practices, our team was able to maintain a high level of code quality throughout the project. This, in turn, facilitated better collaboration, easier debugging, and a more robust final product.
 
-## Lessons learned (All members)
+## Lessons learned
 
-In retrospect, describe what your team learned during this second release and what would you change if you would continue developing the project.
+In retrospect, our team learned the importance of effective communication and planning during the second release of our project. We realized that by setting clear milestones and prioritizing tasks, we could better manage our time and resources. If we were to continue developing the project, we would invest more in automated testing and continuous integration to catch issues early and improve code quality. Additionally, we would focus on refining our documentation process to ensure it remains up-to-date and comprehensive, making it easier for new team members to get up to speed quickly.
 
 I learned that managing a group requires constant and constant communication for group members. I looking back having more communication between the teams would have lead to a more streamlined development cycle.
 
 I learned how to use TKInter pretty well during this project, and because of that I learned that a lot of premade gui’s have small incompatibilities when using different devices such as the inability to change the background color of buttons when using it with a MacOS.
 
-Python and C++ were used to develop this project. During several intervals of the project, our team spent a lot of time attempting to combine C++ code with Python code. Our team would have had more time to work on other sections of the project if we had minimized the number of languages used. 
-
-Grading criteria (2 points): Adequate reflection about problems and solutions, clear description with adequate use of language.
+Python and C++ were used to develop this project. During several intervals of the project, our team spent a lot of time attempting to combine C++ code with Python code. Our team would have had more time to work on other sections of the project if we had minimized the number of languages used.
