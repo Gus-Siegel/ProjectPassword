@@ -11,37 +11,42 @@ TypeLock is a secure authentication system that identifies users by analyzing th
 
 **Project repository**: [https://github.com/Gus-Siegel/ProjectPassword](https://github.com/Gus-Siegel/ProjectPassword)
 
-## Implemented requirements 
+## Implemented requirements
 
-[Database](https://github.com/Gus-Siegel/ProjectPassword/issues/91)\
-In the first release we were unable to create a database that worked, but in this release we were able to develop a working database\
-Implemented by Everyone\
-[Pull request](https://github.com/Gus-Siegel/ProjectPassword/pull/143)
+**Requirement**: As a user, I want to be able to login so I can access my information through a database.\
+**Issue**: [Link to Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/91)\
+**Pull Request**: [Link to Pull request](https://github.com/Gus-Siegel/ProjectPassword/pull/143)\
+**Implemented by**: Taylor Nielsen, Eduardo De La Rosa, Alexander Siegel, Brock Heinz, Levi Watlington, and Michael Vertin\
+**Approved by**: Alexander Siegel\
+**Print Screen**: Not applicable
 
-[UI Update](https://github.com/Gus-Siegel/ProjectPassword/issues/180) \
-We felt that our UI could be updated after the first implementation so we changed the look of our program\
-Implemented by Eddie, Taylor\
-[Pull request](https://github.com/Gus-Siegel/ProjectPassword/issues/180)
+**Requirement**: As a user, I want a robust user interface so I can interact with the application with ease.\
+**Issue**: [Link to Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/180)\
+**Pull Request**: [Link to Pull request](https://github.com/Gus-Siegel/ProjectPassword/issues/180)\
+**Implemented by**: Taylor Nielsen and Eduardo De La Rosa\
+**Approved by**: Alexander Siegel\
+**Print Screen**: Not applicable
 
+**Requirement**: As a user, I want to be able to able to access the appliction on my computer so I can run it on any computer.\
+**Issue**: [Link to Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/116)\
+**Pull Request**: [Link to Pull request](https://github.com/Gus-Siegel/ProjectPassword/pull/172)\
+**Implemented by**: Taylor Nielsen and Eduardo De La Rosa\
+**Approved by**: Taylor Nielsen\
+**Print Screen**: Not applicable
 
-[Deployable](https://github.com/Gus-Siegel/ProjectPassword/issues/116) \
-In the first implementation, we were unable to create a true deliverable product. In this version we created a executeable to run the product.\
-Implemented by: Taylor, Eddie\
-[Pull request](https://github.com/Gus-Siegel/ProjectPassword/pull/172)
+**Requirement**: As a user, I want to be able to sign up so I can access my account.\
+**Issue**: [Link to Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/179)\
+**Pull Request**: [Link to Pull request](https://github.com/Gus-Siegel/ProjectPassword/pull/154)\
+**Implemented by**: Taylor Nielsen, Eduardo De La Rosa, Alexander Siegel, Levi Watlington, and Michael Vertin\
+**Approved by**: Taylor Nielsen\
+**Print Screen**: Not applicable
 
-[Sign up page](https://github.com/Gus-Siegel/ProjectPassword/issues/179) \
-In order to use our product, users need to be able to sign up to access their account.\
-Implemented in 2 parts, Frontend: Eddie, Levi, Taylor Backend: Michael, Gus\
-[Pull request](https://github.com/Gus-Siegel/ProjectPassword/pull/154)
-
-[Backend reliability](https://github.com/Gus-Siegel/ProjectPassword/issues/181)\
-In our first release, we found it was too easy to log in. To fix this we changed the algorithm for logging in to be more strict.\
-Implemented by Michael, Gus\
-[Pull request](https://github.com/Gus-Siegel/ProjectPassword/pull/143)
-
-
-
-
+**Requirement**: As a user, I want to have ease of mind logging in so I know that my account is secure.\
+**Issue**: [Link to Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/181)\
+**Pull Request**: [Link to Pull request](https://github.com/Gus-Siegel/ProjectPassword/pull/143)\
+**Implemented by**: Alexander Siegel and Michael Vertin\
+**Approved by**: Alexander Siegel\
+**Print Screen**: Not applicable
 
 ## Tests
 
@@ -84,13 +89,4 @@ By implementing these policies, conventions, and best practices, our team was ab
 
 ## Lessons learned
 
-
-In retrospect, our team learned the importance of effective communication and planning during the second release of our project. We realized that by setting clear milestones and prioritizing tasks, we could better manage our time and resources. If we were to continue developing the project, we would invest more in automated testing and continuous integration to catch issues early and improve code quality. Additionally, we would focus on refining our documentation process to ensure it remains up-to-date and comprehensive, making it easier for new team members to get up to speed quickly.
-
-I learned that managing a group requires constant and constant communication for group members. I looking back having more communication between the teams would have lead to a more streamlined development cycle.
-
-I learned that test-driven development may be an effective way to ensure steady and quick deployment of new features, and one that we should consider in the future. Although we had automated integration testing implemented for new builds, we hadn't updated that framework to cover some of our later-implemented features. As such, we unfortunately lost a significant amount of time in the last leg of development when attempting to make the backend functional. In hindsight, unit tests for the database and its communication with other backend files are something I should have invested in personally.
-
-I learned how to use TKInter pretty well during this project, and because of that I learned that a lot of premade gui’s have small incompatibilities when using different devices such as the inability to change the background color of buttons when using it with a MacOS.
-
-Python and C++ were used to develop this project. During several intervals of the project, our team spent a lot of time attempting to combine C++ code with Python code. Our team would have had more time to work on other sections of the project if we had minimized the number of languages used.
+In retrospect, our team learned valuable lessons during the second release of our project, with a strong emphasis on effective communication and planning. We discovered that setting clear milestones, prioritizing tasks, and fostering constant communication between team members led to a more streamlined development cycle. One challenge we faced was integrating Python and C++ code, which consumed a significant amount of time. If we were to continue developing the project, we would consider minimizing the number of languages used to save time and resources. By doing so, we could allocate more time to address other aspects of the project, improving overall efficiency. We also learned that test-driven development may be an effective way to ensure steady and quick deployment of new features, and one that we should consider in the future. Although we had automated integration testing implemented for new builds, we hadn't updated that framework to cover some of our later-implemented features. As such, we unfortunately lost a significant amount of time in the last leg of development when attempting to make the backend functional. In hindsight, unit tests for the database and its communication with other backend files are something we should have invested more in. Furthermore, we recognized the importance of regularly reassessing our progress and adjusting our strategies accordingly. By conducting frequent retrospectives, we could identify areas for improvement and implement necessary changes more effectively. This iterative approach would enable our team to learn from our experiences and continuously refine our development process. In addition to refining our technical skills, we also learned the value of fostering a supportive and inclusive team environment. Encouraging open dialogue, sharing knowledge, and providing constructive feedback not only enhanced collaboration but also contributed to individual growth and development. Our experiences during the second release reinforced the value of effective communication, proper planning, and a strong focus on best practices in software development. Moving forward, our team would concentrate on these lessons to enhance collaboration and ensure the successful execution of future project releases.
