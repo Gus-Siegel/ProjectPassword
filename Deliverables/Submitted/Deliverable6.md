@@ -13,7 +13,7 @@ TypeLock is a secure authentication system that identifies users by analyzing th
 
 ## Implemented requirements
 
-**Requirement**: As a user, I want to be able to login so that I can access my account.\
+**Requirement**: As a user, I want to be able to login so that I can access my account securely.\
 **Issue**: [Link to Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/91)\
 **Pull Request**: [Link to Pull request](https://github.com/Gus-Siegel/ProjectPassword/pull/143)\
 **Implemented by**: Taylor Nielsen, Eduardo De La Rosa, Alexander Siegel, Brock Heinz, Levi Watlington, and Michael Vertin\
@@ -28,7 +28,7 @@ TypeLock is a secure authentication system that identifies users by analyzing th
 **Approved by**: Alexander Siegel\
 **Print Screen**: Not applicable
 
-**Requirement**: As a user, I want to be able to run the appliction on any operating system so that I can access the application any computer.\
+**Requirement**: As a user, I want to be able to run the appliction on any operating system so that I can access the application on any computer.\
 **Issue**: [Link to Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/116)\
 **Pull Request**: [Link to Pull request](https://github.com/Gus-Siegel/ProjectPassword/pull/172)\
 **Implemented by**: Taylor Nielsen and Eduardo De La Rosa\
