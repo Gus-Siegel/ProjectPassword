@@ -18,7 +18,7 @@ TypeLock is a secure authentication system that identifies users by analyzing th
 **Pull Request**: [Link to Pull request](https://github.com/Gus-Siegel/ProjectPassword/pull/143)\
 **Implemented by**: Taylor Nielsen, Eduardo De La Rosa, Alexander Siegel, Brock Heinz, Levi Watlington, and Michael Vertin\
 **Approved by**: Alexander Siegel\
-**Print Screen**: ![LoginPage]()
+**Print Screen**: ![LoginPage](https://cdn.discordapp.com/attachments/1073663644589633536/1102498998012629022/LoginPage.png)
 
 **Requirement**: As a user, I want an intuitive user interface so I can interact with the application comfortably.\
 **Issue**: [Link to Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/180)\
@@ -34,14 +34,14 @@ TypeLock is a secure authentication system that identifies users by analyzing th
 **Approved by**: Taylor Nielsen\
 **Print Screen**: Not applicable
 
-**Requirement**: As a user, I want to be able to sign up so that I can access my account.\
+**Requirement**: As a user, I want to be able to sign up so that I can access my account securely.\
 **Issue**: [Link to Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/179)\
 **Pull Request**: [Link to Pull request](https://github.com/Gus-Siegel/ProjectPassword/pull/154)\
 **Implemented by**: Taylor Nielsen, Eduardo De La Rosa, Alexander Siegel, Levi Watlington, and Michael Vertin\
 **Approved by**: Taylor Nielsen\
-**Print Screen**: ![SignupPage]()
+**Print Screen**: ![SignupPage](https://cdn.discordapp.com/attachments/1073663644589633536/1102499027213369384/SignupPage.png)
 
-**Requirement**: As a user, I want to know that my account is secure so that I have peace of mind that my infromation is safe.\
+**Requirement**: As a user, I want to know that my account is secure so that I have peace of mind that my information is safe.\
 **Issue**: [Link to Issue](https://github.com/Gus-Siegel/ProjectPassword/issues/181)\
 **Pull Request**: [Link to Pull request](https://github.com/Gus-Siegel/ProjectPassword/pull/143)\
 **Implemented by**: Alexander Siegel and Michael Vertin\
