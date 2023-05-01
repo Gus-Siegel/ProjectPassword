@@ -11,23 +11,37 @@ TypeLock is a secure authentication system that identifies users by analyzing th
 
 **Project repository**: [https://github.com/Gus-Siegel/ProjectPassword](https://github.com/Gus-Siegel/ProjectPassword)
 
-## Implemented requirements (Gus)
+## Implemented requirements 
 
-List in this section, the requirements and associated pull request that you implemented for this release, following the example below---include the description of the requirement, a link to the issue,  a link to the pull request(s) that implement the requirement, who implemented the requirement, who approved it, and a print screen that depicts the implemented feature (if applicable). Order the requirements by the name of the student who implemented them.
+[Database](https://github.com/Gus-Siegel/ProjectPassword/issues/91)\
+In the first release we were unable to create a database that worked, but in this release we were able to develop a working database\
+Implemented by Everyone\
+[Pull request](https://github.com/Gus-Siegel/ProjectPassword/pull/143)
 
-We expect that you implement/prototype the features you specified in your MVP (c.f. D.2 Requirements). We expect that all the members of the group have been involved in some programming activities and report here several pull requests.
+[UI Update](https://github.com/Gus-Siegel/ProjectPassword/issues/180) \
+We felt that our UI could be updated after the first implementation so we changed the look of our program\
+Implemented by Eddie, Taylor\
+[Pull request](https://github.com/Gus-Siegel/ProjectPassword/issues/180)
 
-Example:
-Requirement: As a Student, I want to add a homework assignment so that I can organize my ToDo list.\
-Issue:\
-Pull request:\
-Implemented by: Martin Fowler\
-Approved by: Ada Lovelace\
-Print screen: A print screen that depicts the implemented feature (if applicable)
 
-Remember that all source code should be submitted by means of pull requests and the quality assurance person in the team should review and approve each pull request.
+[Deployable](https://github.com/Gus-Siegel/ProjectPassword/issues/116) \
+In the first implementation, we were unable to create a true deliverable product. In this version we created a executeable to run the product.\
+Implemented by: Taylor, Eddie\
+[Pull request](https://github.com/Gus-Siegel/ProjectPassword/pull/172)
 
-Grading criteria (20 points): This section will be evaluated in terms of correctness, completeness, thoroughness, consistency, coherence, adequate use of language, and amount of work put into the implementation. Students can receive different grades depending on their involvement. It is expected that all members contribute with non-trivial implementation. All pull requests should be approved and integrated by the quality assurance person. You should follow an adequate workflow (description of the requirement on the issue tracker, submission of the implemented requirement as a pull request, and review of the pull request by another developer).
+[Sign up page](https://github.com/Gus-Siegel/ProjectPassword/issues/179) \
+In order to use our product, users need to be able to sign up to access their account.\
+Implemented in 2 parts, Frontend: Eddie, Levi, Taylor Backend: Michael, Gus\
+[Pull request](https://github.com/Gus-Siegel/ProjectPassword/pull/154)
+
+[Backend reliability](https://github.com/Gus-Siegel/ProjectPassword/issues/181)\
+In our first release, we found it was too easy to log in. To fix this we changed the algorithm for logging in to be more strict.\
+Implemented by Michael, Gus\
+[Pull request](https://github.com/Gus-Siegel/ProjectPassword/pull/143)
+
+
+
+
 
 ## Tests
 
@@ -70,4 +84,13 @@ By implementing these policies, conventions, and best practices, our team was ab
 
 ## Lessons learned
 
-In retrospect, our team learned valuable lessons during the second release of our project, with a strong emphasis on effective communication and planning. We discovered that setting clear milestones, prioritizing tasks, and fostering constant communication between team members led to a more streamlined development cycle. One challenge we faced was integrating Python and C++ code, which consumed a significant amount of time. If we were to continue developing the project, we would consider minimizing the number of languages used to save time and resources. By doing so, we could allocate more time to address other aspects of the project, improving overall efficiency. Furthermore, we recognized the importance of regularly reassessing our progress and adjusting our strategies accordingly. By conducting frequent retrospectives, we could identify areas for improvement and implement necessary changes more effectively. This iterative approach helped enable our team to learn from our experiences and continuously refine our development process. In addition to refining our technical skills, we also learned the value of fostering a supportive team environment. Encouraging open dialogue, sharing knowledge, and providing constructive feedback not only enhanced collaboration but also contributed to individual growth and development. Our experiences during the second release reinforced the value of effective communication, proper planning, and a strong focus on best practices in software development. Moving forward, our team would concentrate on these lessons to enhance collaboration and ensure the successful execution of future project releases.
+
+In retrospect, our team learned the importance of effective communication and planning during the second release of our project. We realized that by setting clear milestones and prioritizing tasks, we could better manage our time and resources. If we were to continue developing the project, we would invest more in automated testing and continuous integration to catch issues early and improve code quality. Additionally, we would focus on refining our documentation process to ensure it remains up-to-date and comprehensive, making it easier for new team members to get up to speed quickly.
+
+I learned that managing a group requires constant and constant communication for group members. I looking back having more communication between the teams would have lead to a more streamlined development cycle.
+
+I learned that test-driven development may be an effective way to ensure steady and quick deployment of new features, and one that we should consider in the future. Although we had automated integration testing implemented for new builds, we hadn't updated that framework to cover some of our later-implemented features. As such, we unfortunately lost a significant amount of time in the last leg of development when attempting to make the backend functional. In hindsight, unit tests for the database and its communication with other backend files are something I should have invested in personally.
+
+I learned how to use TKInter pretty well during this project, and because of that I learned that a lot of premade gui’s have small incompatibilities when using different devices such as the inability to change the background color of buttons when using it with a MacOS.
+
+Python and C++ were used to develop this project. During several intervals of the project, our team spent a lot of time attempting to combine C++ code with Python code. Our team would have had more time to work on other sections of the project if we had minimized the number of languages used.
