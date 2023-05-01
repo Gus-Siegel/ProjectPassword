@@ -84,6 +84,7 @@ By implementing these policies, conventions, and best practices, our team was ab
 
 ## Lessons learned
 
+
 In retrospect, our team learned the importance of effective communication and planning during the second release of our project. We realized that by setting clear milestones and prioritizing tasks, we could better manage our time and resources. If we were to continue developing the project, we would invest more in automated testing and continuous integration to catch issues early and improve code quality. Additionally, we would focus on refining our documentation process to ensure it remains up-to-date and comprehensive, making it easier for new team members to get up to speed quickly.
 
 I learned that managing a group requires constant and constant communication for group members. I looking back having more communication between the teams would have lead to a more streamlined development cycle.
