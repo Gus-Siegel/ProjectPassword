@@ -94,16 +94,12 @@ class Login:
             #retrieve login result and display
             #cpp booleans are not capitalized so we need to convert
             login_result = client.receive_message()
-            
-            print(type(login_result))
 
             if ord(login_result):
-                print("In true statement")
                 print("Login attempt: " + login_result)
                 login_result = True
 
             else:
-                print("In else statement")
                 print("Login attempt: " + login_result)
                 login_result = False
 
@@ -156,15 +152,12 @@ class Signup:
 
             #retrieve login result and display
             signup_result = client.receive_message()
-            print(type(signup_result))
             print(signup_result)
             if ord(signup_result):
-                print("In true")
                 print("Signup attempt: Success")
                 signup_result = True
 
             else:
-                print("In else statement")
                 print("Signup attempt: Fail")
                 signup_result = False
 
