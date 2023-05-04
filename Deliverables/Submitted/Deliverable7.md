@@ -67,7 +67,7 @@ The primary objective of the system is to establish a secure, reliable, and user
 - What do you think of the product?
   - Looks interesting enough to continue work.
 - Do you prefer the biometric login to regular password login?
-  - No
+  - No.
 - How easy was it to navigate through the product?
   - It was intuitive to use. 
 - Was it clear to you what you had to do in each section?
@@ -75,7 +75,7 @@ The primary objective of the system is to establish a secure, reliable, and user
 - If it wasn’t clear enough what would you suggest we add to fix that?
   - Maybe put optional somewhere on there.
 - Did you encounter any problems with the product? If so, how did you encounter them?
-  - No problems, everything seemed to wrok
+  - No problems, everything seemed to work.
 - Is the aesthetics of our product good? If not then why do you think so?
   - It had a clean look to it. I liked how it looked.
 - How does the product compare to other sign up and login systems?
@@ -88,7 +88,7 @@ The primary objective of the system is to establish a secure, reliable, and user
 **User 2:**
 
 - What do you think of the product?
-  - Could be integrated into 
+  - Could be integrated into other products.
 - Do you prefer the biometric login to regular password login?
   - Regular is comfy to use, but this could grow on me.
 - How easy was it to navigate through the product?
