@@ -33,11 +33,17 @@ An acceptance test is a test that verifies the correct implementation of a featu
 
 - Test framework you used to develop your tests (e.g., Selenium, Katalon Studio, Espresso2, Cucumber, etc.):
 
+Unittest - Python testing library
+
 - Link to your GitHub folder where your automated acceptance tests are located.
+
+![AcceptanceTestLocation](https://github.com/Gus-Siegel/ProjectPassword/tree/main/Current_Release/FrontEndClient)
 
 - An example of an acceptance test. Include in your answer a GitHub link to the test and an explanation about the tested feature.
 
-- A print screen/video showing the acceptance test execution.
+![AcceptanceTestResults](https://github.com/Gus-Siegel/ProjectPassword/blob/main/Deliverables/Submitted/AcceptanceTest.png)
+
+The above test performs 3 different tests. The first is a signup test to make sure that we can add a new user. The second test, tests that the user can log in. The third test checks that the user will not be able to sign in if the speed of the passphrase is incorrect. The fourth test checks for a fail if the passphrase has spellcheck mistakes that are abnormal to the user. 
 
 ## Validation (user evaluation) (Gus)
 
