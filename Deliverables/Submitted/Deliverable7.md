@@ -65,71 +65,71 @@ The primary objective of the system is to establish a secure, reliable, and user
 **User 1:**
 
 - What do you think of the product?
-  - put response here
+  - Looks interesting enough to continue work.
 - Do you prefer the biometric login to regular password login?
-  - put response here
+  - No
 - How easy was it to navigate through the product?
-  - put response here
+  - It was intuitive to use. 
 - Was it clear to you what you had to do in each section?
-  - put response here
+  - It was expect for the "practice field".
 - If it wasn’t clear enough what would you suggest we add to fix that?
-  - put response here
+  - Maybe put optional somewhere on there.
 - Did you encounter any problems with the product? If so, how did you encounter them?
-  - put response here
+  - No problems, everything seemed to wrok
 - Is the aesthetics of our product good? If not then why do you think so?
-  - put response here
+  - It had a clean look to it. I liked how it looked.
 - How does the product compare to other sign up and login systems?
-  - put response here
+  - Easier, but without knowing the magic behind the scenes I don't trust it.
 - Overall, what did you think of the product?
-  - put response here
+  - Intresting and worth keeping an eye on.
 - Do you have anything that you would like to add?
-  - put response here
+  - N/A
 
 **User 2:**
 
 - What do you think of the product?
-  - put response here
+  - Could be integrated into 
 - Do you prefer the biometric login to regular password login?
-  - put response here
+  - Regular is comfy to use, but this could grow on me.
 - How easy was it to navigate through the product?
-  - put response here
+  - Fairly easy, I was confused going between signing up and logging in.
 - Was it clear to you what you had to do in each section?
-  - put response here
+  - Yes, the practice field was a bit strange to include, but after attempting to log in it made more sense.
 - If it wasn’t clear enough what would you suggest we add to fix that?
-  - put response here
+  - N/A
 - Did you encounter any problems with the product? If so, how did you encounter them?
-  - put response here
+  - I purposefully typed like a psycopath to test if it works. Turns out it does and now I cannot access that account.
 - Is the aesthetics of our product good? If not then why do you think so?
-  - put response here
+  - I liked it. It looked really clean.
 - How does the product compare to other sign up and login systems?
-  - put response here
+  - Its much easier to login on your system than other systems.
 - Overall, what did you think of the product?
-  - put response here
+  - I liked it, once my account was sset up properly I was able to easily login.
 - Do you have anything that you would like to add?
-  - put response here
+  - A way to reset the password. 
 
 **User 3:**
 
 - What do you think of the product?
-  - put response here
+  - Honestly interesting but doesn't seem to be useful.
 - Do you prefer the biometric login to regular password login?
-  - put response here
+  - Regular passwords work just fine.
 - How easy was it to navigate through the product?
-  - put response here
+  - Easy to use, no complaints from me.
 - Was it clear to you what you had to do in each section?
-  - put response here
+  - Yes.
 - If it wasn’t clear enough what would you suggest we add to fix that?
-  - put response here
+  - N/A
 - Did you encounter any problems with the product? If so, how did you encounter them?
-  - put response here
+  - No problems with it.
 - Is the aesthetics of our product good? If not then why do you think so?
-  - put response here
+  - Could use some color.
 - How does the product compare to other sign up and login systems?
-  - put response here
+  - Other systems work just fine.
 - Overall, what did you think of the product?
-  - put response here
+  - Cool concept but not something needed. 
 - Do you have anything that you would like to add?
-  - put response here
+  - Nope.
 
 ### Reflections
 
