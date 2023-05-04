@@ -1,0 +1,76 @@
+import unittest
+from typelock_client import Signup, Login
+import socket
+import time
+
+class SignupTest(unittest.TestCase):
+
+    def test_signup_user(self):
+        signup = Signup(new_user_pass="[['h', 1683157524.7541332], ['e', 1683157524.8751712], ['l', 1683157525.0680695], ['l', 1683157525.2276244], ['o', 1683157525.4800634], [' ', 1683157525.677095], ['w', 1683157525.779029], ['o', 1683157525.92367], ['r', 1683157526.0096216], ['l', 1683157526.1363332], ['d', 1683157526.2713227]]", new_user_name= "Admin Tester", new_user_username= "adm123", passphrase_key= "hello world")
+
+        result = signup.user_signup()
+        print("The value of signup test is: {}".format(result))
+        self.assertTrue(result)
+
+
+class LoginTest(unittest.TestCase):
+    def test_login_success(self):
+
+        username = "adm123"
+        password = "[['h', 1683157524.7541332], ['e', 1683157524.8751712], ['l', 1683157525.0680695], ['l', 1683157525.2276244], ['o', 1683157525.4800634], [' ', 1683157525.677095], ['w', 1683157525.779029], ['o', 1683157525.92367], ['r', 1683157526.0096216], ['l', 1683157526.1363332], ['d', 1683157526.2713227]]" 
+        id_phrase = "hello world"
+
+        login = Login(password, username, id_phrase)
+        result = login.user_login()
+        print("The value of login success test is: {}".format(result))
+
+        self.assertTrue(result)
+
+    def test_login_speed_fail(self):
+
+        username = "adm123"
+        password = "[['h', 1683157750.9632764], ['e', 1683157751.2672715], ['l', 1683157751.6381001], ['l', 1683157752.8400621], ['o', 1683157753.1803865], [' ', 1683157753.4859385], ['w', 1683157754.3624082], ['o', 1683157754.743144], ['r', 1683157755.7659526], ['l', 1683157756.123571], ['d', 1683157757.2657416]]"
+        id_phrase = "hello world"
+
+        login = Login(password, username, id_phrase)
+        result = login.user_login()
+        print("The value of login speed test is: {}".format(result))
+
+        self.assertFalse(result)
+
+    def test_login_spellcheck_fail(self):
+        username = "adm123"
+        password = "[['h', 1683157524.7541332], ['e', 1683157524.8751712], ['l', 1683157525.0680695], ['l', 1683157525.2276244], ['o', 1683157525.4800634], [' ', 1683157525.677095], ['w', 1683157525.779029], ['i', 1683157525.92367], ['r', 1683157526.0096216], ['l', 1683157526.1363332], ['d', 1683157526.2713227]]" 
+        id_phrase = "hello world"
+
+        login = Login(password, username, id_phrase)
+        result = login.user_login()
+        print("The value of login spellcheck test is: {}".format(result))
+
+        self.assertFalse(result)
+
+if __name__ == '__main__':
+    suite = unittest.TestSuite()
+
+    suite.addTest(SignupTest('test_signup_user'))
+    suite.addTest(LoginTest('test_login_success'))
+    suite.addTest(LoginTest('test_login_speed_fail'))
+    suite.addTest(LoginTest('test_login_spellcheck_fail'))
+
+    runner = unittest.TextTestRunner()
+    runner.run(suite)
+
+# def main():
+#     print("Testing the signup functionality\n")
+#     test_signup_user()
+
+#     print("Testing login success\n")
+#     test_login_success()
+
+#     print("Testing login speed fail\n")
+#     test_login_speed_fail()
+
+#     print("Testing login spellcheck fail\n")
+#     test_login_spellcheck_fail()
+
+# main()
