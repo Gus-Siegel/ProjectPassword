@@ -65,71 +65,71 @@ The primary objective of the system is to establish a secure, reliable, and user
 **User 1:**
 
 - What do you think of the product?
-  - put response here
+  - I like how it looks. Really clean and simple. Takes a little longer than regular login to verify.
 - Do you prefer the biometric login to regular password login?
-  - put response here
+  - I can't say that I prefer it really. I seems pretty similar to typical logins.
 - How easy was it to navigate through the product?
-  - put response here
+  - Pretty easy. Not a lot of clutter.
 - Was it clear to you what you had to do in each section?
-  - put response here
+  - Yep, stays pretty true to typical login page looks.
 - If it wasn’t clear enough what would you suggest we add to fix that?
-  - put response here
+  - N/A
 - Did you encounter any problems with the product? If so, how did you encounter them?
-  - put response here
+  - No, I was able to sign up and log in pretty easily.
 - Is the aesthetics of our product good? If not then why do you think so?
-  - put response here
+  - I like it. You have a logo which is pretty cool. Nothing is difficult to see or navigate.
 - How does the product compare to other sign up and login systems?
-  - put response here
+  - The app looks pretty similar to other systems. When using it you can't tell it does anything alternative to mainstream options.
 - Overall, what did you think of the product?
-  - put response here
+  - I like it. It's really simple to use and looks very organized. I think it's a cool idea and am interested to see how it improves.
 - Do you have anything that you would like to add?
-  - put response here
+  - I think a longer phrase would be smart because it might make it more secure. Harder for people to mimic your style. A recovery button would be really helpful.
 
 **User 2:**
 
 - What do you think of the product?
-  - put response here
+  - I think it's an interesting product. It seems easy to use. 
 - Do you prefer the biometric login to regular password login?
-  - put response here
+  - I like using finger print verification but I'd have to see how it went over time.
 - How easy was it to navigate through the product?
-  - put response here
+  - I didn't have any difficulty logining in or signing up.
 - Was it clear to you what you had to do in each section?
-  - put response here
+  - Yep sign in and log in were easy to navigate. It looks just like other logins.
 - If it wasn’t clear enough what would you suggest we add to fix that?
-  - put response here
+  
 - Did you encounter any problems with the product? If so, how did you encounter them?
-  - put response here
+  - No issues with it. It does seem slower to respond.
 - Is the aesthetics of our product good? If not then why do you think so?
-  - put response here
+  - I think it looks nice. Everything looks good
 - How does the product compare to other sign up and login systems?
-  - put response here
+  - Works almost the same other products.
 - Overall, what did you think of the product?
-  - put response here
+  - The product seems really simple and minimal. I'd like to see it on a phone.
 - Do you have anything that you would like to add?
-  - put response here
+  - Maybe a processing wheel like the apple spinny wheel of death or a loading bar for login.
 
 **User 3:**
 
 - What do you think of the product?
-  - put response here
+  - Not a lot going on. Really minimal.
 - Do you prefer the biometric login to regular password login?
-  - put response here
+  - I like face recognition and fingerprints more than regular logins.
 - How easy was it to navigate through the product?
-  - put response here
+  - I didn't have any issues with the application.
 - Was it clear to you what you had to do in each section?
-  - put response here
+  - I think the practice field should clear after you finish typing it so you can go without stopping.
 - If it wasn’t clear enough what would you suggest we add to fix that?
-  - put response here
+  - N/A
 - Did you encounter any problems with the product? If so, how did you encounter them?
-  - put response here
+  - The product was easy to use.
 - Is the aesthetics of our product good? If not then why do you think so?
-  - put response here
+  - I really like the product. I think it looks really good for a sign in system.
 - How does the product compare to other sign up and login systems?
-  - put response here
+  - It certainly seems like it would be a better service than having to remember your passwords for everything.
 - Overall, what did you think of the product?
-  - put response here
+  - I think this could be really cool to use in the future so you didn't need to look up your passwords for everything. I can never remember my passwords.
 - Do you have anything that you would like to add?
-  - put response here
+  - It would be cool to use this on other applications or websites.
 
 ### Reflections
 
