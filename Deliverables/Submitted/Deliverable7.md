@@ -41,33 +41,26 @@ An acceptance test is a test that verifies the correct implementation of a featu
 
 ## Validation (user evaluation) (Gus)
 
-Validation aims to ensure that you developed the right product. At the beginning of the semester, you talked to the clients/potential users to understand their needs. Now it is time to check if you are on the right track by conducting some user evaluation on the actual system. Include in this deliverable the following information: What did the users like and dislike in your system?
+### Script
 
-### Script (Levi)
+**Tasks for the user:**
 
-Introduce yourself and the product
+- Navigate to sign up page
+- Follow sign up procedure
+- Follow login procedure
 
-Instructions for interviewee:
- - Navigate to sign up page
- - Follow sign up procedure
- - Follow login procedure
+**Interview questions:**
 
-Explain that the interview is about their thoughts of our product
-
-Questions to be asked:
- - What do you think of the product?
- - Do you prefer the biometric login to regular password login?
- - How easy was it to navigate through the product?
- - Was it clear to you what you had to do in each section?
- - If it wasn’t clear enough what would you suggest we add to fix that?
- - Did you encounter any problems with the product? If so, how did you encounter them?
- - Is the aesthetics of our product good? If not then why do you think so?
- - How does the product compare to other sign up and login systems?
- - Overall, what did you think of the product?
- - Do you have anything that you would like to add?
-
-Thank them for taking the time to test the product and conduct the interview
-
+- What do you think of the product?
+- Do you prefer the biometric login to regular password login?
+- How easy was it to navigate through the product?
+- Was it clear to you what you had to do in each section?
+- If it wasn’t clear enough what would you suggest we add to fix that?
+- Did you encounter any problems with the product? If so, how did you encounter them?
+- Is the aesthetics of our product good? If not then why do you think so?
+- How does the product compare to other sign up and login systems?
+- Overall, what did you think of the product?
+- Do you have anything that you would like to add?
 
 ### Results
 
