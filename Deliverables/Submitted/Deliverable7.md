@@ -13,40 +13,32 @@ The primary objective of the system is to establish a secure, reliable, and user
 
 ## Verification (tests)
 
-Verification aims to ensure that you correctly developed the product.
+### Unit test
 
-### Unit test (Michael)
+- The test framework **Gtest** was used to develop the automated unit tests.
 
-- gtest was chosen to create the tests
+- Link to folder: [Automated unit tests](https://github.com/Gus-Siegel/ProjectPassword/tree/main/Current_Release/BackEndServer)
 
-- [Folder of Mock Tests](https://github.com/Gus-Siegel/ProjectPassword/tree/main/Current_Release/BackEndServer)
-
-- The [database](https://github.com/Gus-Siegel/ProjectPassword/blob/main/Current_Release/BackEndServer/mockTestWithServer.cpp) class is being tested [using a DatabaseMock](https://github.com/Gus-Siegel/ProjectPassword/blob/main/Current_Release/BackEndServer/mockTestWithServer.cpp)
-\
+- The [database](https://github.com/Gus-Siegel/ProjectPassword/blob/main/Current_Release/BackEndServer/mockTestWithServer.cpp) class is being tested [using a DatabaseMock](https://github.com/Gus-Siegel/ProjectPassword/blob/main/Current_Release/BackEndServer/mockTestWithServer.cpp).\
 ![Class Code](https://cdn.discordapp.com/attachments/856622349516144665/1103493888615923752/image.png)
 
-- Execution Results:\
+- Automated unit test execution results:\
 ![Execution Results](https://cdn.discordapp.com/attachments/856622349516144665/1103494402497859644/image.png)
 
-### Acceptance test (TBD)
+### Acceptance test
 
-An acceptance test is a test that verifies the correct implementation of a feature from the user interface perspective. An acceptance test is a black box test (the system is tested without knowledge about its internal implementation). Provide the following information:
+- The test framework **Unittest**, a Python testing library, was used to develop the automated acceptance tests.
 
-- Test framework you used to develop your tests (e.g., Selenium, Katalon Studio, Espresso2, Cucumber, etc.):
+- Link to folder: [Automated acceptance tests](https://github.com/Gus-Siegel/ProjectPassword/tree/main/Current_Release/FrontEndClient)
 
-Unittest - Python testing library
+- The automated acceptance test performs 3 different tests. The first is a signup test to make sure that we can add a new user. The second test, tests that the user can log in as seen in the [LoginTest](https://github.com/Gus-Siegel/ProjectPassword/blob/main/Current_Release/FrontEndClient/acceptanceTestTypelock) class below. The third test checks that the user will not be able to sign in if the speed of the passphrase is incorrect. The fourth test checks for a fail if the passphrase has spellcheck mistakes that are abnormal to the user. Each of these tests modifies the user entries and connects to the server, testing the clinet/server connection as well as the algorithm.\
+![Class Code](https://cdn.discordapp.com/attachments/1103515433862172673/1103517277489483816/acceptanceTestExample.jpg)
 
-- Link to your GitHub folder where your automated acceptance tests are located.
-
-Test Link: [Link to Test location](https://github.com/Gus-Siegel/ProjectPassword/tree/main/Current_Release/FrontEndClient)
-
-- An example of an acceptance test. Include in your answer a GitHub link to the test and an explanation about the tested feature.
-
+- Automated acceptance test execution results:\
 ![AcceptanceTestResults](https://github.com/Gus-Siegel/ProjectPassword/blob/main/Deliverables/Submitted/AcceptanceTest.png)
 
-The above test performs 3 different tests. The first is a signup test to make sure that we can add a new user. The second test, tests that the user can log in. The third test checks that the user will not be able to sign in if the speed of the passphrase is incorrect. The fourth test checks for a fail if the passphrase has spellcheck mistakes that are abnormal to the user. Each of these tests modifies the user entries and connects to the server, testing the clinet/server connection as well as the algorithm.
 
-## Validation (user evaluation) (Gus)
+## Validation (user evaluation)
 
 ### Script
 
@@ -56,7 +48,7 @@ The above test performs 3 different tests. The first is a signup test to make su
 - Follow sign up procedure
 - Follow login procedure
 
-**Interview questions:**
+**Interview questions for the user:**
 
 - What do you think of the product?
 - Do you prefer the biometric login to regular password login?
@@ -75,4 +67,4 @@ Conduct the user evaluation with at least 3 users. Report the data that you coll
 
 ### Reflections
 
-Reflect on what you observed. Some questions that you can explore: What features worked well? What can be changed? How is the learning curve of your system? Did the users perform the tasks as you expected? Did the users’ actions produce the results they expected? What did the users like the most? Is your value proposition accomplished?
+Overall, our user feedback was positive and provided us with a number of great suggestions on how to improve our product and its functionality. Throughout the testing process, users found the product to be consistently reliable and user-friendly, with secure login features they could see themselves using every day. The features that worked well included the sign-up and login processes, which allowed a new user to create an account and log in using their unique typing biometrics. The features and users' actions performed as expected, providing successful authentication upon logging in. The users appreciated the product's combination of convenience and security, including the easy login process and the ability to ensure that no one but them could access their account. They found value in its reliability and effectiveness, as they were able to log in without hassle throughout multiple attempts. The learning curve of our program is not too difficult since it uses the familiar processes of creating an account and logging in, which most internet users are accustomed to. As a result, users did not struggle navigating our system and performed the expected tasks without issues. However, users expressed concerns about the program's invasiveness and their inability to reset their typing baseline. To address these concerns and better fit our users' needs, we can make several changes. First, we can randomize passphrases for enhanced security. Second, we can provide recovery options for users who are locked out of their accounts and need to reset their typing baseline. Third, we can allow users to reset their typing baseline to accommodate changes in their typing style. In conclusion, we believe we accomplished our value proposition and brought our vision to life, achieving the results and success we desired. The valuable user feedback and suggestions we received will drive the next phase of our development, ensuring that we continue to meet the needs of our users.
